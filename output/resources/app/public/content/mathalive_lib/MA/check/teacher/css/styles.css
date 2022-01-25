@@ -1,52 +1,12 @@
-@font-face {
-    font-family: Visang_e_HT;
-    src: url(/content/mathalive_lib/font/Visang_e_HT.woff) format("woff");
-}
-
-@font-face {
-    font-family: Visang_e_HT;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/Visang_e_HT_Bold.woff) format("woff");
-}
-
-@font-face {
-    font-family: NotoSans_bold;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/NotoSans-Bold.woff) format("woff");
-}
-
-@font-face {
-    font-family: NotoSans_light;
-    font-weight: lighter;
-    src: url(/content/mathalive_lib/font/NotoSans-Light.woff) format("woff");
-}
-
-@font-face {
-    font-family: NotoSans-Regular;
-    src: url(/content/mathalive_lib/font/NotoSans-Regular.woff) format("woff");
-}
-
+@charset "UTF-8";
 @font-face {
     font-family: NotoSans-Black;
-    src: url(/content/mathalive_lib/font/NotoSansCJKkr-Black.woff) format("woff");
+    src: url(/content/mathalive_lib/font/NotoSansCJKkr-Black-en.woff) format("woff");
 }
 
 @font-face {
     font-family: NotoSans;
-    /* src: url(/content/mathalive_lib/font/NotoSansCJKkr-Medium.woff) format('woff'); */
     src: url(/content/mathalive_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
-}
-
-@font-face {
-    font-family: HelveticaRounded;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/HelveticaRounded-Bold.woff) format("woff");
-}
-
-@font-face {
-    font-family: HelveticaRoundedLTStd;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/HelveticaRoundedLTStd-Bd.woff) format("woff");
 }
 
 @font-face {
@@ -59,6 +19,67 @@
     font-family: Maplestory-Light;
     font-weight: bold;
     src: url(/content/mathalive_lib/font/Maplestory-Light.woff) format("woff");
+}
+
+/* 
+  21-06-24 최순철 수학셀 김민정CP님이 요청
+  Xelf 저작 결과물에 폰트 네임이 KR 이 붙어서 나오게 되어 있어서 추가
+*/
+@font-face {
+    font-family: NotoSansKR-Light;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Medium;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Medium.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+/* 
+  21-07-02 최순철 기오정CP님과 변경
+*/
+@font-face {
+    font-family: NotoSansB_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSans-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB-Regular;
+    src: url(/content/mathalive_lib/font/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
 }
 
 @charset "UTF-8";
@@ -300,11 +321,6 @@
     content: url("/content/mathalive_lib/images/page_right_R.png") url("/content/mathalive_lib/images/page_right_R.png") url("/content/mathalive_lib/images/page_right_R_dis.png");
 }
 
-/* 스크롤이 들어갈만한 컨텐츠 */
-/* grade domain 내의 topic */
-/* grade 내의 module1 ... 부분들의 제목 */
-/* grade domain 제목 옆의 캐럿 클릭시 나타나는 드롭다운 메뉴 */
-/* 검색결과의 타이틀 */
 @keyframes arrowMove {
     from {
         opacity: 0.2;
@@ -373,7 +389,6 @@ body {
     top: 0px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("/content/mathalive_lib/MA/check/common/bg_direction.jpg");
 }
 
 #wrap .video-direction > div.direction {
@@ -647,7 +662,7 @@ body {
 #wrap .t_check .checkContent .maheader {
     position: absolute;
     top: 0;
-    font-family: NotoSans-Regular;
+    font-family: NotoSansB-Regular;
     width: 100%;
     height: 67px;
     padding: 18px 45px 7px;
@@ -1520,7 +1535,6 @@ body {
     height: 59px;
     background-color: #6c44b1;
     border-radius: 30px 30px 0 0;
-    /*overflow: hidden; ㅅㅜㅈㅣㄴA 2021_05_18 */
 }
 
 #wrap .t_check .submituserlist .header .quiz_tit {
@@ -1558,7 +1572,6 @@ body {
 }
 
 #wrap .t_check .submituserlist .header .score_set ul li:first-child {
-    /* 210527 삭제 */
     background-image: none;
 }
 
@@ -1592,7 +1605,6 @@ body {
 }
 
 #wrap .t_check .submituserlist .header .score_set ul li.on {
-    background-color: #4f2794;
     background-image: none;
     color: #fff;
 }
@@ -1605,6 +1617,10 @@ body {
     background-image: none;
 }
 
+#wrap .t_check .submituserlist .header .score_set ul li.arrow {
+    background-color: #4f2794;
+}
+
 #wrap .t_check .submituserlist.nonum .quiz_tit {
     display: none;
 }
@@ -1614,11 +1630,10 @@ body {
 }
 
 #wrap .t_check .submituserlist.nonum .header .score_set ul li:first-child {
-    /* 210527 수정 */
     border-top-left-radius: 30px;
 }
 
-#wrap .t_check .submituserlist.nonum .header .score_set ul li.on {
+#wrap .t_check .submituserlist.nonum .header .score_set ul li.arrow {
     background-color: #f06157;
 }
 
@@ -1626,7 +1641,6 @@ body {
     content: "";
     position: absolute;
     bottom: -1px;
-    /* ㅅㅜㅈㅣㄴA 2021_05_18 */
     left: 50%;
     width: 0;
     height: 0;
@@ -1789,7 +1803,7 @@ body {
 }
 
 #wrap .t_check .submituserlist .list_box .swiper-container {
-    height: 458px;
+    height: 483px;
 }
 
 #wrap .t_check .submituserlist .list_box .swiper-container .swiper-slide {
@@ -1822,22 +1836,59 @@ body {
 #wrap .t_check .submituserlist .list_box .swiper-container li {
     float: left;
     width: 20%;
-    padding: 30px 0;
+    padding: 30px 0 20px;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 2021 08 06 성준 추가 */
+}
+
+#wrap .t_check .submituserlist .list_box .swiper-container li:nth-child(1), #wrap .t_check .submituserlist .list_box .swiper-container li:nth-child(2), #wrap .t_check .submituserlist .list_box .swiper-container li:nth-child(3), #wrap .t_check .submituserlist .list_box .swiper-container li:nth-child(4), #wrap .t_check .submituserlist .list_box .swiper-container li:nth-child(5) {
+    padding-top: 0;
+}
+
+#wrap .t_check .submituserlist .list_box .swiper-container li .defaultImg_m,
+#wrap .t_check .submituserlist .list_box .swiper-container li .defaultImg_f {
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+}
+
+#wrap .t_check .submituserlist .list_box .swiper-container li .defaultImg_m div,
+#wrap .t_check .submituserlist .list_box .swiper-container li .defaultImg_f div {
+    font-size: 30px;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     text-align: center;
 }
 
+#wrap .t_check .submituserlist .list_box .swiper-container li .defaultImg_m {
+    background-color: #2cd1c3;
+    border: 4px solid #d8d9db;
+}
+
+#wrap .t_check .submituserlist .list_box .swiper-container li .defaultImg_f {
+    background-color: #ffa1a7;
+    border: 4px solid #d8d9db;
+}
+
 #wrap .t_check .submituserlist .list_box .swiper-container li img {
-    width: 74px;
-    height: 74px;
+    width: 78px;
+    height: 78px;
     border-radius: 100%;
     box-sizing: border-box;
     background-color: #fff;
+    border: 4px solid #d8d9db;
 }
 
 #wrap .t_check .submituserlist .list_box .swiper-container li .name {
     display: block;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 10px;
     font-size: 22px;
     text-align: center;
     text-overflow: ellipsis;
@@ -1944,66 +1995,102 @@ body {
     position: absolute;
     z-index: 11;
     touch-action: none;
-    bottom: 0;
-    right: 5px;
-    touch-action: none;
-    padding: 0px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    background-image: url("/content/mathalive_lib/images/topad.png");
-    background-repeat: no-repeat;
-    width: 104px;
-    height: 104px;
-    cursor: pointer;
-    pointer-events: unset;
+    bottom: 15px;
+    right: 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    /*
+	.revise {
+		position: absolute;
+		top: -50px;
+		left: 3px;
+		display: inline-block;
+		width: 79px;
+		height: 74px;
+		line-height: 55px;
+		padding-left: 8px;
+		font-size: 20px;
+		font-family: "maplestory-bold";
+		text-align: left;
+		color: #ea7145;
+		background: resolve('mathalive_lib/images/bg_bubble.png') no-repeat;
+
+		&:after {
+			content: "!";
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			font-size: 50px;
+			transform: translate(-90%, -65%);
+			opacity: 0;
+			transition: all 1s;
+		}
+
+		&.on {
+			&:after {
+				top: 50%;
+				opacity: 0.4;
+			}
+		}
+	}*/
+}
+
+#wrap .fel_topad:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 27px;
+    height: 31px;
+    background: url("/content/mathalive_lib/images/fel_arr_up.png") no-repeat center;
+    transform: translate(-50%, -25%) rotate(180deg);
+    animation-name: arrowMove;
+    animation-direction: alternate;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: .1s;
+}
+
+#wrap .fel_topad:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 27px;
+    height: 31px;
+    background: url("/content/mathalive_lib/images/fel_arr_up.png") no-repeat center;
+    transform: translate(-50%, -70%) rotate(180deg);
+    animation-name: arrowMove;
+    animation-direction: alternate;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 #wrap .fel_topad .revise {
     position: absolute;
-    top: -50px;
-    left: 10px;
+    top: 12px;
+    left: -96px;
     display: inline-block;
-    width: 79px;
+    width: 96px;
     height: 74px;
     line-height: 55px;
-    padding-left: 5px;
+    padding-left: 8px;
     font-size: 20px;
     font-family: "maplestory-bold";
     text-align: left;
     color: #ea7145;
-    background: url("/content/mathalive_lib/images/bg_bubble.png") no-repeat;
-}
-
-#wrap .fel_topad .revise:after {
-    content: "!";
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    font-size: 50px;
-    transform: translate(-110%, -60%);
-    opacity: 0;
-    transition: all 1s;
+    background: url("/content/mathalive_lib/images/img_revise.png") no-repeat;
 }
 
 #wrap .fel_topad .revise.on:after {
     top: 50%;
     opacity: 0.4;
-}
-
-#wrap .fel_topad.on {
-    background-image: url("/content/mathalive_lib/images/topad.png");
-}
-
-#wrap .fel_topad:before {
-    position: absolute;
-    pointer-events: none;
-    width: 0px;
-    height: 0px;
-    visibility: hidden;
-    overflow: hidden;
-    z-index: -1;
-    content: url("/content/mathalive_lib/images/topad.png") url("/content/mathalive_lib/images/topad.png");
 }
 
 #wrap .fel_stop {
@@ -2038,561 +2125,6 @@ body {
     overflow: hidden;
     z-index: -1;
     content: url("/content/mathalive_lib/images/ico_stop.png") url("/content/mathalive_lib/images/ico_stop.png");
-}
-
-#wrap .cl_background {
-    z-index: 110;
-    background-color: #fff;
-    display: block;
-    font-size: 0;
-    height: calc(731px);
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    top: 0px;
-    height: 100%;
-}
-
-#wrap .cl_background * {
-    word-break: keep-all;
-}
-
-#wrap .cl_background button {
-    font-size: 0px;
-    border: 0px;
-}
-
-#wrap .cl_background header {
-    position: relative;
-    width: 1280px;
-    height: 69px;
-    background: url("/content/mathalive_lib/images/cl_titlebg.jpg");
-}
-
-#wrap .cl_background header h1 {
-    position: absolute;
-    top: 0px;
-    left: 22px;
-    width: 216px;
-    height: 69px;
-    line-height: 69px;
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 600;
-}
-
-#wrap .cl_background header form {
-    position: absolute;
-    top: 22px;
-    left: 289px;
-    display: block;
-    height: 69px;
-}
-
-#wrap .cl_background header form > * {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#wrap .cl_background header form input {
-    width: 503px;
-    height: 34px;
-    border: 0px;
-    border-radius: 5px 0px 0px 5px;
-    padding-left: 10px;
-    color: #333333;
-    font-size: 19px;
-    font-weight: 400;
-}
-
-#wrap .cl_background header form input::-webkit-input-placeholder {
-    color: #8f8f8f;
-    font-weight: 400;
-}
-
-#wrap .cl_background header form input::placeholder {
-    color: #8f8f8f;
-    font-weight: 400;
-}
-
-#wrap .cl_background header form button.clear {
-    position: absolute;
-    top: 3px;
-    left: 470px;
-    width: 27px;
-    height: 27px;
-    background: url("/content/mathalive_lib/images/cl_search_clear.jpg");
-}
-
-#wrap .cl_background header form button.search_btn {
-    width: 39px;
-    height: 34px;
-    background: url("/content/mathalive_lib/images/cl_search_btn.jpg");
-}
-
-#wrap .cl_background header button.closebutton {
-    position: absolute;
-    top: 18px;
-    right: 21px;
-    width: 31px;
-    height: 31px;
-    background: url("/content/mathalive_lib/images/cl_close_btn.jpg");
-}
-
-#wrap .leftside {
-    width: 478px;
-    vertical-align: top;
-    font-size: 15px;
-    display: none;
-}
-
-#wrap .leftside.active {
-    display: inline-block;
-}
-
-#wrap .rightside {
-    width: calc(1280px - 478px);
-    display: inline-block;
-    vertical-align: top;
-    font-size: 15px;
-    height: calc(639px);
-    overflow: overlay;
-    height: calc(731px);
-}
-
-#wrap .rightside::-webkit-scrollbar {
-    width: 6px;
-    background: transparent;
-}
-
-#wrap .rightside::-webkit-scrollbar-thumb {
-    background: #808080;
-    border-radius: 5px;
-}
-
-#wrap .rightside::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-#wrap .rightside::-webkit-scrollbar-track-piece {
-    background: transparent;
-}
-
-#wrap .rightside.full {
-    width: 1280px;
-    display: block;
-}
-
-#wrap .toggle_grade li {
-    display: inline-block;
-    width: 50%;
-}
-
-#wrap .toggle_grade li button {
-    width: 100%;
-    height: 50px;
-    border: 0px;
-    color: #ffffff;
-    background: #ababab;
-    font-size: 23px;
-    font-weight: 900;
-}
-
-#wrap .toggle_grade li button.domain.active {
-    background: #5165c6;
-}
-
-#wrap .toggle_grade li button.grade.active {
-    background: #38a794;
-}
-
-#wrap .submenu_detail.domain {
-    position: relative;
-    text-align: center;
-}
-
-#wrap .submenu_detail.domain strong {
-    position: relative;
-    display: block;
-    z-index: 2;
-    width: 100%;
-    height: 42px;
-    background: #d4d6ee;
-    line-height: 42px;
-    color: #5165c6;
-    font-size: 20px;
-    font-weight: 900;
-    text-align: center;
-}
-
-#wrap .submenu_detail.domain .toggler {
-    position: absolute;
-    top: 12px;
-    right: 8px;
-    width: 18px;
-    height: 18px;
-    background: url("/content/mathalive_lib/images/cl_carrot_blue.jpg");
-    transform-origin: center center;
-    z-index: 3;
-}
-
-#wrap .submenu_detail.domain .toggler.active {
-    transform: rotate(-180deg);
-}
-
-#wrap .submenu_detail.domain ul {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    display: none;
-    width: 245px;
-    padding-top: 32px;
-    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
-    background: #ffffff;
-    z-index: 1;
-}
-
-#wrap .submenu_detail.domain ul.active {
-    display: block;
-}
-
-#wrap .submenu_detail.domain ul.active li {
-    font-size: 18px;
-    font-weight: 600;
-    height: 44px;
-    line-height: 44px;
-    color: #767676;
-    background: #ffffff;
-}
-
-#wrap .submenu_detail.domain ul.active li.active {
-    color: #333333;
-}
-
-#wrap .submenu_detail.domain ul.active li:hover {
-    color: #767676;
-    background: #d4d6ee;
-}
-
-#wrap .submenu_detail.grade {
-    position: relative;
-    text-align: center;
-}
-
-#wrap .submenu_detail.grade strong {
-    position: relative;
-    display: block;
-    z-index: 2;
-    width: 100%;
-    height: 42px;
-    background: #d1eae6;
-    line-height: 42px;
-    color: #38a794;
-    font-size: 20px;
-    font-weight: 900;
-    text-align: center;
-}
-
-#wrap .submenu_detail.grade .toggler {
-    position: absolute;
-    top: 12px;
-    right: 8px;
-    width: 18px;
-    height: 18px;
-    background: url("/content/mathalive_lib/images/cl_carrot_green.jpg");
-    transform-origin: center center;
-    z-index: 3;
-}
-
-#wrap .submenu_detail.grade .toggler.active {
-    transform: rotate(-180deg);
-}
-
-#wrap .submenu_detail.grade ul {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    display: none;
-    width: 245px;
-    padding-top: 32px;
-    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
-    background: #ffffff;
-    z-index: 1;
-}
-
-#wrap .submenu_detail.grade ul.active {
-    display: block;
-}
-
-#wrap .submenu_detail.grade ul.active li {
-    font-size: 18px;
-    font-weight: 600;
-    height: 44px;
-    line-height: 44px;
-    color: #767676;
-    background: #ffffff;
-}
-
-#wrap .submenu_detail.grade ul.active li.active {
-    color: #333333;
-}
-
-#wrap .submenu_detail.grade ul.active li:hover {
-    color: #767676;
-    background: #d1eae6;
-}
-
-#wrap .topic_list {
-    display: block;
-    background: #f2f2f2;
-}
-
-#wrap .topic_list .topic_title {
-    display: table;
-    width: 478px;
-    background: #f2f2f2;
-    border-bottom: 2px solid #ffffff;
-    color: #333333;
-    font-size: 0px;
-}
-
-#wrap .topic_list .topic_title h2:after {
-    position: absolute;
-    top: calc(50% - 7px);
-    left: 20px;
-    content: " ";
-    display: block;
-    transform-origin: center center;
-    background: url("/content/mathalive_lib/images/cl_mini_carrot.jpg");
-    width: 15px;
-    height: 15px;
-}
-
-#wrap .topic_list .topic_title > .contents {
-    display: none;
-}
-
-#wrap .topic_list .topic_title.active > .contents {
-    display: block;
-}
-
-#wrap .topic_list .topic_title.active h2:after {
-    transform: rotate(-180deg);
-}
-
-#wrap .topic_list .topic_title h2 {
-    position: relative;
-    padding: 25px 15px 25px 47px;
-    white-space: nowrap;
-}
-
-#wrap .topic_list .topic_title h2 strong {
-    position: relative;
-    display: table-cell;
-    width: 103px;
-    vertical-align: middle;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-#wrap .topic_list .topic_title h2 span {
-    display: table-cell;
-    vertical-align: top;
-    font-size: 18px;
-    width: calc(100% - 103px);
-    white-space: normal;
-    letter-spacing: -1px;
-    font-weight: 100;
-}
-
-#wrap .overflowscroll {
-    height: calc(639px);
-    overflow: overlay;
-}
-
-#wrap .overflowscroll::-webkit-scrollbar {
-    width: 6px;
-    background: transparent;
-}
-
-#wrap .overflowscroll::-webkit-scrollbar-thumb {
-    background: #808080;
-    border-radius: 5px;
-}
-
-#wrap .overflowscroll::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-#wrap .overflowscroll::-webkit-scrollbar-track-piece {
-    background: transparent;
-}
-
-#wrap section.books {
-    padding: 20px 20px 10px 20px;
-    box-sizing: content-box;
-}
-
-#wrap section.books > h3 {
-    position: relative;
-    font-size: 20px;
-    line-height: 35px;
-    height: 35px;
-    width: auto;
-    z-index: 1;
-    display: table;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-#wrap section.books > h3::after {
-    position: absolute;
-    z-index: -1;
-    bottom: 0px;
-    left: -10px;
-    width: calc(100% + 25px);
-    height: 15px;
-    background: #f0f1bb;
-    content: " ";
-    display: block;
-}
-
-#wrap section.books h4 {
-    color: #4f8b00;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-#wrap section.books li {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 8px;
-}
-
-#wrap .topic_box {
-    background: #e2e2e2;
-    position: relative;
-    padding: 47px 60px 37px 32px;
-    font-size: 18px;
-}
-
-#wrap .topic_box > strong {
-    position: absolute;
-    left: 32px;
-    top: 18px;
-    color: #ffffff;
-    width: 68px;
-    height: 24px;
-    line-height: 20px;
-    background: #ababab;
-    font-size: 16px;
-    font-weight: 100;
-    text-align: center;
-    border-radius: 3px;
-}
-
-#wrap .topic_box ol {
-    color: #333333;
-    margin-top: 8px;
-}
-
-#wrap .topic_box ol li {
-    display: table;
-    margin-bottom: 25px;
-}
-
-#wrap .topic_box ol li.active *, #wrap .topic_box ol li:hover * {
-    color: #e10098;
-}
-
-#wrap .topic_box ol li:last-child {
-    margin-bottom: 0px;
-}
-
-#wrap .topic_box ol .number {
-    display: table-cell;
-    width: 19px;
-    vertical-align: top;
-}
-
-#wrap .topic_box ol .con {
-    display: table-cell;
-    width: calc(100% - 19px);
-    vertical-align: top;
-}
-
-#wrap .search_result > .title {
-    width: 100%;
-    height: 49px;
-    background: #eaf9d4;
-    text-align: center;
-    line-height: 49px;
-    white-space: nowrap;
-    font-size: 0px;
-}
-
-#wrap .search_result > .title > span {
-    display: inline-block;
-    vertical-align: middle;
-    color: #5a9f00;
-    font-weight: 900;
-    font-size: 23px;
-    height: 49px;
-    line-height: 47px;
-}
-
-#wrap .search_result > .title > button {
-    display: inline-block;
-    vertical-align: middle;
-    width: 29px;
-    height: 28px;
-    border: 0px;
-    background: transparent url("/content/mathalive_lib/images/cl_result_arrow.jpg");
-    margin-right: 10px;
-}
-
-#wrap .search_result .no_result {
-    width: 1280px;
-    text-align: center;
-}
-
-#wrap .search_result .no_result img {
-    margin-top: 150px;
-}
-
-#wrap .search_result .no_result > * {
-    display: block;
-    margin: auto;
-    margin-bottom: 50px;
-    font-size: 28px;
-    font-weight: 900;
-    color: #000000;
-}
-
-#wrap .search_result .odd {
-    background: #f2f2f2;
-}
-
-#wrap .search_result .sectionbox {
-    width: 1280px;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
-#wrap .search_result .sectionbox em {
-    display: block;
-    color: #7e7e7e;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 100;
-}
-
-#wrap .search_result .sectionbox > * {
-    padding-top: 0px;
-    width: 775px;
-    margin: auto;
-    text-align: left;
 }
 
 @charset "UTF-8";

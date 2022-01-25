@@ -63,7 +63,6 @@
     top: 0px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("/content/mathalive_lib/MA/check/common/bg_direction.jpg");
 }
 
 #wrap .video-direction > div.direction {
@@ -695,6 +694,7 @@
     z-index: 100;
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 
 #wrap .s_check .warningpopup .msg {
@@ -836,7 +836,7 @@
     position: absolute;
     z-index: 11;
     touch-action: none;
-    bottom: 65px !important;
+    bottom: 15px !important;
     right: 20px;
     width: 80px;
     height: 80px;
@@ -956,55 +956,15 @@
     color: #fff;
 }
 
-@font-face {
-    font-family: Visang_e_HT;
-    src: url(/content/mathalive_lib/font/Visang_e_HT.woff) format("woff");
-}
-
-@font-face {
-    font-family: Visang_e_HT;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/Visang_e_HT_Bold.woff) format("woff");
-}
-
-@font-face {
-    font-family: NotoSans_bold;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/NotoSans-Bold.woff) format("woff");
-}
-
-@font-face {
-    font-family: NotoSans_light;
-    font-weight: lighter;
-    src: url(/content/mathalive_lib/font/NotoSans-Light.woff) format("woff");
-}
-
-@font-face {
-    font-family: NotoSans-Regular;
-    src: url(/content/mathalive_lib/font/NotoSans-Regular.woff) format("woff");
-}
-
+@charset "UTF-8";
 @font-face {
     font-family: NotoSans-Black;
-    src: url(/content/mathalive_lib/font/NotoSansCJKkr-Black.woff) format("woff");
+    src: url(/content/mathalive_lib/font/NotoSansCJKkr-Black-en.woff) format("woff");
 }
 
 @font-face {
     font-family: NotoSans;
-    /* src: url(/content/mathalive_lib/font/NotoSansCJKkr-Medium.woff) format('woff'); */
     src: url(/content/mathalive_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
-}
-
-@font-face {
-    font-family: HelveticaRounded;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/HelveticaRounded-Bold.woff) format("woff");
-}
-
-@font-face {
-    font-family: HelveticaRoundedLTStd;
-    font-weight: bold;
-    src: url(/content/mathalive_lib/font/HelveticaRoundedLTStd-Bd.woff) format("woff");
 }
 
 @font-face {
@@ -1017,6 +977,67 @@
     font-family: Maplestory-Light;
     font-weight: bold;
     src: url(/content/mathalive_lib/font/Maplestory-Light.woff) format("woff");
+}
+
+/* 
+  21-06-24 최순철 수학셀 김민정CP님이 요청
+  Xelf 저작 결과물에 폰트 네임이 KR 이 붙어서 나오게 되어 있어서 추가
+*/
+@font-face {
+    font-family: NotoSansKR-Light;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Medium;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Medium.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+/* 
+  21-07-02 최순철 기오정CP님과 변경
+*/
+@font-face {
+    font-family: NotoSansB_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSans-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB-Regular;
+    src: url(/content/mathalive_lib/font/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
 }
 
 @charset "UTF-8";
