@@ -89,7 +89,6 @@ export class MAHeader extends React.Component<IMAHeader> {
     }
     public select_box_parse() {
         if(!this.lesson || !this.curStep || this.lesson.div === undefined) return;
-        if(ma_adaptive_learning_t) return;
         if(parseDept4Div(this.lesson.div) === LessonType.CONCEPT) {
             let step_group = this.lesson.childrenList.filter((item) => parseDept5Div(item.div) === StepGroupType.WARMUP);
             if(step_group) {
