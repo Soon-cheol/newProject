@@ -1,0 +1,218 @@
+@mixin AlertPopup {
+    .alert_popup {
+		@include CoverPopup(10001);
+		.pop_box {
+			width: 310px;
+			height: 282px;
+			background: #fff;
+			border-radius: 30px;
+			box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16); 
+			position: absolute;
+			top: 0; bottom: 0;
+			left: 0; right: 0;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 32px;
+			.ico_alert {
+				width: width('mathalive_lib/images/ico_alert.png');
+				height: height('mathalive_lib/images/ico_alert.png');
+				background: resolve('mathalive_lib/images/ico_alert.png');
+				display: inline-block;
+			}
+			.text {
+				font-size: 16px;
+				line-height: 1;
+				font-family: "Maplestory-Light";
+				margin-top: 20px;
+				text-align: center;
+                &.long {
+                    font-size: 14px;
+                    margin-top: 10px;
+                }
+                &.middle {
+                    font-size: 14px;
+                    margin-top: 25px;
+                }
+			}
+			.btns {
+				position: absolute;
+				bottom: 20px;
+				left: 30px;
+				right: 30px;
+				display: flex;
+				justify-content: center;
+				button {
+					width: 120px;
+					height: 38px;
+					border-radius: 19px;
+					border: none;
+					outline: none;
+					font-family: "Maplestory-Light";
+					&.btn_cancel {
+						background-color: #a6a6a6;
+					}
+					&.btn_ok {
+						margin-left: 10px;
+						background-color: #eb6f7b;
+					}
+					span {
+						font-family: "Maplestory-Light";
+						font-size: 16px;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+@mixin WarningPopup {
+	.warningpopup {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        .msg {
+            position: absolute;
+            left:50%;
+            top:50%;
+            min-width:450px;
+            height: 58px;
+            line-height: 58px;
+            padding-left: 70px;
+            padding-right: 20px;
+            border-radius: 58px;
+            background:rgba(0,0,0,.45) resolve('mathalive_lib/images/ico_alert_notice.png') no-repeat 20px center;
+            transform: translate(-50%,-50%);
+            font-family: "maplestory-light";
+            font-size: 20px;
+            color: #fff;
+            strong{
+                font-family: "maplestory-bold";
+            }
+        }
+    }
+}
+
+@mixin StrategyPopup {
+    .alertpop{
+        display:none;
+        @include page;
+        z-index: 100;
+        &.show{
+            display:block;
+        }
+        .alertpop-inner {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 316px;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-sizing: border-box;
+            letter-spacing: -1px;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+           
+            .exclamation {
+                margin-top: 20px;
+                height: 111px;
+                background:resolve('mathalive_lib/images/ico_exclamation.png') no-repeat center;
+            }
+            .nocamera {
+                margin-top: 30px;
+                height: 110px;
+                background:resolve('mathalive_lib/images/ico_nocamera.png') no-repeat center;
+            }
+            .ment {
+                padding: 25px 45px;
+                color: #333;
+                font-size: 14px;
+                white-space: break-spaces;
+            }
+            .buttons {
+                display: block;
+                position: relative;
+                border-radius: 0 0 10px 10px;
+                overflow: hidden;
+                &.hide{
+                    display:none;
+                }
+                &.single{
+                    .btn{
+                        width:100%;
+                    }
+                }
+                .btn {
+                    &.hide{
+                        display:none;
+                    }
+                    width: 50%;
+                    height: 50px;
+                    border: 0;
+                    font-size: 19px;
+                    &.cancel {
+                        float: left;
+                        background-color: #e6e6e6;
+                        color: #787878;
+                    }
+                    &.ok {
+                        float: right;
+                        background-color: #75c906;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        &.strategy{
+            .ment{
+                padding-top: 20px;
+                text-align: center;
+                font-size: 16px;
+            }
+            .buttons{
+                margin-top: 15px;
+                text-align: center;
+                &.single{
+                    .btn{
+                        width:100%;
+                    }
+                    .cancel{
+                        display: none;
+                    }
+                }
+                .ok{
+                    float: none !important;
+                    display: inline-block;
+                    width:120px !important;
+                    height:38px;
+                    margin:0 5px 20px;
+                    padding-bottom: 3px;
+                    border-radius: 30px;
+                    background-color: #223478 !important;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-family: "notoSans_medium" !important;
+                    font-weight: bold;
+                }
+                .cancel{
+                    float: none !important;
+                    display: inline-block;
+                    width:120px !important;
+                    height:38px;
+                    margin:0 5px 20px;
+                    padding-bottom: 3px;
+                    border-radius: 30px;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-family: "notoSans_medium" !important;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

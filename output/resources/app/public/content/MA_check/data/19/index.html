@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<title>Math Alive Content</title>
+    <link href="/content/mathalive_lib/font.css" rel="stylesheet" />
+    <link href="/content/mathalive_lib/common_v1.css" rel="stylesheet" />
+    <link href="./content.css" rel="stylesheet" />
+    <script src="/content/mathalive_lib/mathcontent_v1.js"></script>
+    <script src="/content/mathalive_lib/libdragdrop.min.js"></script>
+    <script>
+        MobileDragDrop.polyfill({
+            dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+        });
+    </script>
+</head>
+<body>
+	<div class="content_page">
+        <p class="problem_explain right_btn">
+            <button class="btn_sound"></button>
+            <audio></audio>
+            Choose the one that does NOT show a way to make 10.
+        </p>
+        <div class="choiceWrap">
+            <div class="btn_wrap type_label"> <!-- type_label: 레이블 타입의 버튼 -->
+                <button class="btn tp01" id="choice1" value="1" data-type="choice">
+                    <span>A</span>
+                    <img src="./btn_img_01.png">
+                </button>
+                <button class="btn tp02 wrong" id="choice2" value="2" data-type="choice">
+                    <span>B</span>
+                    <img src="./btn_img_02.png">
+                </button>
+                <button class="btn tp03 right" id="choice3" value="3" data-type="choice">
+                    <span>C</span>
+                    <img src="./btn_img_03.png">
+                </button>
+                <button class="btn tp04" id="choice4" value="4" data-type="choice">
+                    <span>D</span>
+                    <img src="./btn_img_04.png">
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./content.js"></script>
+</html>

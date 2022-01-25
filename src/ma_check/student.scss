@@ -1,0 +1,113 @@
+@import "../config.scss";
+@import "../common/component/button.scss";
+@import "../share/video-direction.scss";
+@import "../share/sendui.scss";
+@import "../share/loading.scss";
+
+@import "./student/s_check.scss";
+
+
+#wrap{
+	font-family: NotoSans;
+
+	.eyeon_svg{
+		@include page;
+		pointer-events: none;
+	}
+	.goodjob-svg{
+		@include page;
+		z-index: 100;
+	}
+	.content-container{
+		@include page;
+
+		.content-wrapper{
+			position: absolute;
+			left: 0px; top: 0px;
+			width: 100%;
+			height: 100%;
+			white-space: nowrap;
+
+			transition: left 0.3s ease-in-out;
+			&>div{
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.video-direction{
+		@include video-direction;
+		
+
+		&>.movieclip{
+			position:absolute;
+		}
+		&>div.direction{
+			position: absolute;
+			background-image: resolve("common/direction.png");
+			width: width("common/direction.png");
+			height:  height("common/direction.png");
+			left: calc(50% - width("common/direction.png")/2);
+			top: calc(50% - height("common/direction.png")/2);
+		}
+		&>div.text{
+			position: absolute;
+			left: 82px;
+			top: 282px;
+			.t1{
+				opacity: 0;
+			}
+			.t2{
+				color:#8c65f4;
+			}
+		}
+		&>div.text_cate{
+			position: absolute;
+			background-image: resolve("common/text_cate.png");
+			width: width("common/text_cate.png");
+			height:  height("common/text_cate.png");
+			right: 20px;
+			top: 15px;
+		}
+		&>div.lesson{
+			font-size: 40px;
+			position: absolute;
+			left: 30px;
+			top: 20px;		
+			color: #fff;
+		}
+	}
+
+	@include s_check;
+	
+	.fel_toteacher{
+		@include fel_toteacher;
+	}
+
+	@include loading;
+	.attention{
+        position: fixed;
+        width:100%;
+        height:100%;
+        left:0;
+        right:0;
+        top:0;
+		bottom:0;
+		background-image: resolve('mathalive_lib/images/eyeon_ma.jpg');
+        &.hide{
+            display: none;
+        }
+		span{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 100px;
+			font-family: "Maplestory-Bold";
+			color: #fff;
+		}
+    }
+}

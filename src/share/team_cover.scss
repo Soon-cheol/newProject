@@ -1,0 +1,138 @@
+@mixin team_cover {
+    .cover_teamselection {
+        position: absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        z-index: 100;
+        .img_text{
+            position: absolute;
+            left:50%;
+            top:50%;
+            opacity: 0;
+            z-index: 10;
+            transform: translate(-50%,-50%) scale(0, 0);
+	        transition: transform 0.3s, opacity 0.3s;
+            transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+            transition-delay: 0.4s;
+        }
+        .circle{
+            div{
+                position: absolute;
+                left:50%;
+                top:50%;
+                border-radius: 100%;
+                opacity: 0;
+                transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%) scale(0, 0);
+                transition: transform 0.3s, opacity 0.3s;
+                transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+                &.c01{
+                    width:600px;
+                    height:600px;
+                    background: rgba(255,255,255,.1);
+                    transition-delay: 0.1s;
+                }
+                &.c02{
+                    width:460px;
+                    height:460px;
+                    background: rgba(255,255,255,.2);
+                    transition-delay: 0.2s;
+                }
+                &.c03{
+                    width:340px;
+                    height:340px;
+                    background: rgba(255,255,255,1);
+                    transition-delay: 0.3s;
+                }
+            }
+            
+        }
+        &.red{
+            background: #ff8472;
+            .img_text{
+                width:237px;
+                height:185px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_r.png');
+            }
+        }
+        &.yellow{
+            background: #ffb400;
+            .img_text{
+                width:402px;
+                height:192px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_y.png');
+            }
+        }
+        &.green{
+            background: #75c906;
+            .img_text{
+                width:377px;
+                height:168px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_g.png');
+            }
+        }
+        &.greenyellow{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_gy.png');
+            .img_text{
+                width:402px;
+                height:267px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_gy.png');
+            }
+        }
+        &.redyellow{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_yr.png');
+            .img_text{
+                width:402px;
+                height:286px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_yr.png');
+            }
+        }
+        &.redgreen{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_gr.png');
+            .img_text{
+                width:376px;
+                height:263px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_gr.png');
+            }
+        }
+        &.yellowgreenred{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_gyr.png');
+            .img_text{
+                width:402px;
+                height:359px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_gyr.png');
+            }
+        }
+        &.redgreenyellow{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_gyr.png');
+            .img_text{
+                width:402px;
+                height:359px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_gyr.png');
+            }
+        }
+        &.presenter{
+            background: #b678ef;
+            .img_text{
+                width:width('mathalive_lib/images/txt_presenter.png');
+                height:height('mathalive_lib/images/txt_presenter.png');
+                background:resolve('mathalive_lib/images/txt_presenter.png');
+            }
+        }
+        &.open{
+            .img_text{
+                opacity: 1;
+                transform: translate(-50%,-50%) scale(1,1);
+            }
+            .circle{
+                div{
+                    opacity: 1;
+                    transform: translate(-50%,-50%) scale(1,1);
+                }
+            }
+        }
+    }
+}
+@include team_cover();

@@ -1,0 +1,14 @@
+@charset "utf-8";
+body {background: #ffe9e6;}
+
+.btn_wrap{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width:230px;
+    height:100px;
+}
+.btn+.btn{
+    margin-left: 40px;
+}

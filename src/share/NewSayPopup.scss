@@ -1,0 +1,241 @@
+@mixin say_pop {
+    .msg_rst{
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom: 0;
+        z-index: 30;
+        .imgtxt{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            &.great{
+                width:384px;
+                height:276px;
+                background: resolve('mathalive_lib/images/msg_rst_great.png') no-repeat center;
+                transform: translate(-50%,-50%) scale(0.2, 0.2);
+                transition: transform 0.3s, opacity 0.3s;
+                opacity: 0;
+            }
+            &.keeptry{
+                width:384px;
+                height:276px;
+                background: resolve('mathalive_lib/images/msg_rst_great.png') no-repeat center;
+                transform: translate(-50%,-50%) scale(0.2, 0.2);
+                transition: transform 0.3s, opacity 0.3s;
+                opacity: 0;
+            }
+            &.awesome{
+                width:475px;
+                height:266px;
+                background: resolve('mathalive_lib/images/msg_rst_awesome.png') no-repeat center;
+                transform: translate(-50%,-50%) scale(0.2, 0.2);
+                transition: transform 0.3s, opacity 0.3s;
+                opacity: 0;
+            }
+            &.perfect{
+                width:413px;
+                height:275px;
+                background: resolve('mathalive_lib/images/msg_rst_perfect.png') no-repeat center;
+                transform: translate(-50%,-50%) scale(0.2, 0.2);
+                transition: transform 0.3s, opacity 0.3s;
+                opacity: 0;
+            }
+            &.excellent{
+                width:467px;
+                height:275px;
+                background: resolve('mathalive_lib/images/msg_rst_excellent.png') no-repeat center;
+                transform: translate(-50%,-50%) scale(0.2, 0.2);
+                transition: transform 0.3s, opacity 0.3s;
+                opacity: 0;
+            }
+            &.sorry{
+                width:318px;
+                height:263px;
+                margin-top: -100px;
+                background: resolve('mathalive_lib/images/msg_rst_sorry.png') no-repeat center;
+                transform: translate(-50%,-50%);
+                transition: margin-top 0.5s, transform 0.3s, opacity 0.3s;
+                opacity: 0;
+                &+.twinkle{
+                    opacity: 0;
+                }
+            }
+            &.bonus{
+                width:100%;
+                height:100%;
+                background: resolve('mathalive_lib/images/msg_rst_bonus.png') no-repeat center, resolve('mathalive_lib/images/ani_effect_result.gif');
+                transform: translate(-50%,-50%);
+                transition: margin-top 0.2s, transform 0.3s, opacity 0.3s;
+                opacity: 0;
+                &+.twinkle{
+                    opacity: 0;
+                }
+            }
+            &.retry{
+                width:315px;
+                height:121px;
+                margin-top: -100px;
+                background: resolve('mathalive_lib/images/msg_rst_retry.png') no-repeat center;
+                transform: translate(-50%,-50%);
+                transition: margin-top 0.5s, transform 0.3s, opacity 0.3s;
+                opacity: 0;
+                &+.twinkle{
+                    opacity: 0;
+                }
+            }
+        }
+        &.open{
+            .imgtxt{
+                &.great{
+                    opacity: 1;
+                    transform:translate(-50%,-50%) scale(1, 1);
+                    transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+                    &:after{
+                        opacity: 1;
+                    }
+                    &+.twinkle{
+                        opacity: 1;
+                    }
+                }
+                &.awesome{
+                    opacity: 1;
+                    transform:translate(-50%,-50%) scale(1, 1);
+                    transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+                    &:after{
+                        opacity: 1;
+                    }
+                    &+.twinkle{
+                        opacity: 1;
+                    }
+                }
+                &.perfect{
+                    opacity: 1;
+                    transform:translate(-50%,-50%) scale(1, 1);
+                    transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+                    &:after{
+                        opacity: 1;
+                    }
+                    &+.twinkle{
+                        opacity: 1;
+                    }
+                }
+                &.excellent{
+                    opacity: 1;
+                    transform:translate(-50%,-50%) scale(1, 1);
+                    transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+                    &:after{
+                        opacity: 1;
+                    }
+                    &+.twinkle{
+                        opacity: 1;
+                    }
+                }
+                &.sorry{
+                    opacity: 1;
+                    margin-top: 0;
+                }
+                &.bonus{
+                    opacity: 1;
+                    margin-top: 0;
+                    transform:translate(-50%,-50%) scale(1, 1);
+                }
+                &.retry{
+                    opacity: 1;
+                    margin-top: 0;
+                }
+            }
+            .flip-card {
+                .flip-card-inner {
+                    transform: rotateY(180deg);
+                    opacity: 1;
+                }
+            }
+        }
+        .twinkle{
+            position: absolute;
+            width:384px;
+            height:105px;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-90%);
+            transition: opacity 0.3s;
+            opacity: 0;
+            span{
+                position: absolute;
+                width:30px;
+                height:44px;
+                background:resolve('mathalive_lib/images/msg_rst_twinkle.png') no-repeat center;
+                background-size: contain;
+                &:nth-child(1){
+                    left:0;
+                    top:53px;
+                    width:20px;
+                    height:29px;
+                    background-size: contain;
+                    animation: star01 .2s alternate infinite;
+                }
+                &:nth-child(2){
+                    left:18px;
+                    top:63px;
+                    width:25px;
+                    height:32px;
+                    background-size: contain;
+                    animation: star01 .23s alternate infinite;
+                }
+                &:nth-child(3){
+                    left:92px;
+                    top:8px;
+                    width:20px;
+                    height:29px;
+                    background-size: contain;
+                    animation: star01 .25s alternate infinite;
+                }
+                &:nth-child(4){
+                    left:91px;
+                    top:72px;
+                    width: 20px;
+                    height: 29px;
+                    animation: star01 .23s alternate infinite;
+                }
+                &:nth-child(5){
+                    left:274px;
+                    top:89px;
+                    width:20px;
+                    height:25px;
+                    background-size: contain;
+                    animation: star01 .37s alternate infinite;
+                }
+                &:nth-child(6){
+                    left:286px;
+                    top:70px;
+                    width:20px;
+                    height:29px;
+                    animation: star01 .26s alternate infinite;
+                }
+                &:nth-child(7){
+                    left:317px;
+                    top:0px;
+                    width:20px;
+                    height:29px;
+                    background-size: contain;
+                    animation: star01 .28s alternate infinite;
+                }
+                &:nth-child(8){
+                    left:373px;
+                    top:68px;
+                    width:15px;
+                    height:24px;
+                    background-size: contain;
+                    animation: star01 .2s alternate infinite;
+                }
+            }
+        }
+    }
+    @keyframes star01 {
+        from {transform:scale(.2);}
+        to {transform:scale(1);}
+    }
+}

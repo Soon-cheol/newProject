@@ -1,0 +1,3009 @@
+
+@charset "UTF-8";
+@keyframes arrowMove {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: "NotoSansB-Regular";
+    background-color: #3f362e;
+    image-rendering: -webkit-optimize-contrast;
+    text-rendering: optimizeSpeed;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+    font-family: NotoSans;
+    /* 
+	&>div{
+		position:absolute;
+		left:16px;right:17px;
+		top:24px;bottom:17px;
+		border-radius:50%;
+		padding-top: 18px;
+		text-align: center;
+		font-size:16px;
+		font-weight: bold;
+		color:#fff;
+	}
+	*/
+}
+
+#wrap .eyeon_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+}
+
+#wrap .goodjob-svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: 100;
+}
+
+#wrap .content-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .content-container .content-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transition: left 0.3s ease-in-out;
+}
+
+#wrap .content-container .content-wrapper > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+
+#wrap .video-direction {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    transform: translateY(100px);
+    transition: transform 0.5s ease-out, opacity 0.5s;
+    opacity: 0;
+}
+
+#wrap .video-direction.on > div.direction {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+#wrap .video-direction .direction_top_menu {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 40px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_top_menu.png");
+    z-index: 100;
+}
+
+#wrap .video-direction .direction_left_menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 30;
+}
+
+#wrap .video-direction .direction_left_menu.show {
+    display: block;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox {
+    width: 354px;
+    height: 100%;
+    background-color: #394ec0;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox .close {
+    padding: 43px 25px 0 0;
+    text-align: right;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox .close .btn_close {
+    width: 30px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_menu_close.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul {
+    padding: 40px 0 0 30px;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li {
+    margin-bottom: 38px;
+    padding-left: 80px;
+    height: 42px;
+    line-height: 42px;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+    font-size: 28px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(1) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_lesson.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(2) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_endclass.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(3) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_logout.png");
+}
+
+#wrap .video-direction .concept_name {
+    position: absolute;
+    left: 80px;
+    top: 19px;
+    font-size: 28px;
+    color: #fff;
+    font-family: "Maplestory-Bold";
+    z-index: 10;
+}
+
+#wrap .video-direction .video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 800px;
+}
+
+#wrap .video-direction .progress_dot {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 67px;
+    padding: 25px 10px 0  0;
+    text-align: center;
+    z-index: 10;
+}
+
+#wrap .video-direction .progress_dot span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#wrap .video-direction .progress_dot span.on {
+    background-color: #f5e942;
+}
+
+#wrap .video-direction .text {
+    font-family: "maplestory-bold";
+    white-space: normal;
+    /* 210520 2�� ���� �߰� */
+}
+
+#wrap .video-direction .text .t1 {
+    font-size: 35px;
+    color: #fff;
+    height: 39px;
+}
+
+#wrap .video-direction .text .t2 {
+    margin-top: 6px;
+    font-size: 81px;
+    color: #f5e942;
+    word-break: keep-all;
+    /* 210520 2�� ���� �߰� */
+}
+
+#wrap .video-direction.hide > div.direction {
+    visibility: hidden;
+}
+
+#wrap .video-direction.loaded > video {
+    opacity: 1;
+}
+
+#wrap .video-direction .course .title, #wrap .video-direction .course .concept {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    padding-top: 17px;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #999;
+}
+
+#wrap .video-direction .course .concept span.tit {
+    display: block;
+    width: 100%;
+    float: none;
+    color: royalblue;
+}
+
+#wrap .video-direction .course .title {
+    top: 110px;
+    left: 30%;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#wrap .video-direction .course .c1 {
+    left: 55%;
+    top: 110px;
+    border-color: royalblue;
+}
+
+#wrap .video-direction .course .c2 {
+    left: 75%;
+    top: 40%;
+    border-color: royalblue;
+}
+
+#wrap .video-direction .course .c3 {
+    left: 60%;
+    top: 70%;
+    border-color: coral;
+}
+
+#wrap .video-direction .course .black {
+    color: #000;
+}
+
+#wrap .video-direction .course .type2 {
+    padding: 20px 40px 30px;
+}
+
+#wrap .video-direction .course .type2 .small-title {
+    left: 40px;
+    top: -25px;
+    color: #ffff;
+}
+
+#wrap .video-direction .course.independent .type2 .small-title {
+    top: -10px;
+    color: #999;
+}
+
+#wrap .video-direction > .movieclip {
+    position: absolute;
+}
+
+#wrap .video-direction > div.text {
+    position: absolute;
+    left: 82px;
+    top: 173px;
+}
+
+#wrap .video-direction > div.text .t1 {
+    opacity: 0;
+}
+
+#wrap .video-direction > div.text .t2 {
+    color: #f5e942;
+}
+
+#wrap .video-direction > div.lesson {
+    font-size: 40px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    color: #fff;
+}
+
+#wrap .video-direction.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .intro_hitmoles {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #75c906;
+}
+
+#wrap .intro_hitmoles.open .inner .hammer {
+    opacity: 1;
+    transform: rotate(0);
+}
+
+#wrap .intro_hitmoles.open .inner .stars .star_01 {
+    opacity: 1;
+    left: 0 !important;
+    top: 0 !important;
+}
+
+#wrap .intro_hitmoles.open .inner .stars .star_02 {
+    opacity: 1;
+    left: 55px !important;
+    top: 13px !important;
+}
+
+#wrap .intro_hitmoles.open .inner .stars .star_03 {
+    opacity: 1;
+    left: 0px !important;
+    top: 53px !important;
+}
+
+#wrap .intro_hitmoles.open .inner .intro_img {
+    pointer-events: unset;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .intro_hitmoles.open .inner .cards .card_01 {
+    top: 0;
+    opacity: 1;
+}
+
+#wrap .intro_hitmoles.open .inner .cards .card_02 {
+    top: 0;
+    opacity: 1;
+}
+
+#wrap .intro_hitmoles .inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 470px;
+    height: 242px;
+    margin: -121px 0 0 -235px;
+}
+
+#wrap .intro_hitmoles .inner .intro_img {
+    position: relative;
+    width: 363px;
+    height: 242px;
+    margin-left: 43px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_hitmoles_text.png");
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .intro_hitmoles .inner .hammer {
+    position: absolute;
+    right: 1px;
+    top: 12px;
+    width: 155px;
+    height: 144px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_hitmoles_hammer.png");
+    z-index: 20;
+    transform: rotate(10deg);
+    opacity: 0;
+    transition: all .2s;
+    transform-origin: 0% 100%;
+    transition-delay: .3s;
+}
+
+#wrap .intro_hitmoles .inner .stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 128px;
+    height: 130px;
+    z-index: 1;
+}
+
+#wrap .intro_hitmoles .inner .stars .star_01 {
+    position: absolute;
+    left: 110px;
+    top: 130px;
+    width: 43px;
+    height: 43px;
+    transition: all 0.3s;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_hitmoles_star_01.png");
+    z-index: 1;
+    opacity: 0;
+    transition-delay: .3s;
+}
+
+#wrap .intro_hitmoles .inner .stars .star_02 {
+    position: absolute;
+    left: 120px;
+    top: 130px;
+    width: 75px;
+    height: 61px;
+    transition: all 0.3s;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_hitmoles_star_02.png");
+    z-index: 1;
+    opacity: 0;
+    transition-delay: .4s;
+}
+
+#wrap .intro_hitmoles .inner .stars .star_03 {
+    position: absolute;
+    left: 120px;
+    top: 130px;
+    width: 136px;
+    height: 75px;
+    transition: all 0.3s;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_hitmoles_star_03.png");
+    z-index: 1;
+    opacity: 0;
+    transition-delay: .5s;
+}
+
+@keyframes swingLR {
+    from {
+        transform: translateX(-2%);
+    }
+    to {
+        transform: translateX(2%);
+    }
+}
+
+#wrap .alert_notice {
+    display: none;
+    position: absolute;
+    left: 20px;
+    bottom: -32px;
+    min-width: 276px;
+    height: 58px;
+    padding-left: 60px;
+    line-height: 58px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.45) url("/content/mathalive_lib/images/ico_alert_notice.png") no-repeat 13px center;
+    color: #fff;
+    font-family: "maplestory-light";
+    font-size: 20px;
+}
+
+#wrap .alert_notice.show {
+    display: block;
+}
+
+#wrap .alert_notice strong {
+    font-family: "maplestory-bold";
+    border-bottom: 1px solid #fff;
+}
+
+#wrap .q_timer {
+    position: relative;
+    width: 150px;
+    height: 155px;
+}
+
+#wrap .q_timer.swing {
+    animation: swingLR alternate infinite linear 0.08s;
+}
+
+#wrap .q_timer .watch {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 10px;
+    top: 10px;
+    background: url("/content/mathalive_lib/images/bg_timer.png") no-repeat center;
+    background-size: 100%;
+    z-index: 1;
+}
+
+#wrap .q_timer > svg {
+    position: absolute;
+    left: 60px;
+    top: 59px;
+    z-index: 1;
+    overflow: inherit;
+}
+
+#wrap .q_timer > svg .circle {
+    z-index: 2;
+}
+
+#wrap .q_timer .m_text {
+    position: absolute;
+    width: 142px;
+    padding-top: 48px;
+    text-align: center;
+    font-size: 38px;
+    color: #000;
+    font-family: "Maplestory-Bold";
+    line-height: 1.2;
+    z-index: 1;
+}
+
+#wrap .q_timer.assess .watch {
+    z-index: 0 !important;
+}
+
+#wrap .q_timer .m_holl {
+    position: absolute;
+    left: 1.5rem;
+    top: 2.29rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background: white;
+    z-index: 1;
+}
+
+#wrap .q_timer .live_guage {
+    position: absolute;
+    width: 205px;
+    height: 77px;
+    left: 75px;
+    top: 25px;
+    background-color: #5400bc;
+    border-radius: 0 23px 23px 0;
+}
+
+#wrap .q_timer .live_guage.individual {
+    top: 43px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 25px 25px 0;
+}
+
+#wrap .q_timer .live_guage.individual .bar_wrap {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#wrap .q_timer .live_guage.individual .ico_heart {
+    top: 5px;
+    left: 50px;
+}
+
+#wrap .q_timer .live_guage .ico_heart {
+    position: absolute;
+    left: 45px;
+    top: 30px;
+    width: 48px;
+    height: 40px;
+    background: url("/content/mathalive_lib/images/ico_livegauge_heart.png");
+    z-index: 1;
+}
+
+#wrap .q_timer .live_guage .bar_wrap {
+    position: absolute;
+    width: 123px;
+    height: 28px;
+    left: 70px;
+    top: 36px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+#wrap .q_timer .live_guage .bar_wrap .bar {
+    position: relative;
+    background: transparent;
+    z-index: 0;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, #ffc744 0%, #ff9600 100%);
+    border-radius: 20px;
+}
+
+#wrap .q_timer .live_guage .bar_wrap .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 20px;
+    color: #2e2e2e;
+    font-family: "maplestory-bold";
+    transform: translate(-50%, -50%);
+}
+
+#wrap .q_timer .live_guage .bar_wrap .text.overmax {
+    color: #ff6c00;
+    font-size: 24px;
+}
+
+#wrap .q_timer .live_guage .bar_wrap .text.overmax:before {
+    content: attr(data-value);
+    position: absolute;
+    -webkit-text-stroke: 0.2em #fff;
+    left: 0;
+    z-index: -1;
+}
+
+#wrap .q_timer .live_guage .team_name {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 11px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    font-family: "maplestory-bold";
+    font-size: 16px;
+}
+
+#wrap .q_timer .live_guage .team_name.red {
+    background: linear-gradient(90deg, #f8403a 0%, #f9413a 100%);
+}
+
+#wrap .q_timer .live_guage .team_name.red:before {
+    content: "Red";
+}
+
+#wrap .q_timer .live_guage .team_name.yellow {
+    background: linear-gradient(90deg, #fbb004 0%, #ffb201 100%);
+}
+
+#wrap .q_timer .live_guage .team_name.yellow:before {
+    content: "Yellow";
+}
+
+#wrap .q_timer .live_guage .team_name.green {
+    background: linear-gradient(90deg, #74c40a 0%, #74c50a 100%);
+}
+
+#wrap .q_timer .live_guage .team_name.green:before {
+    content: "Green";
+}
+
+#wrap .q_timer .live_guage .team_name.lucky {
+    background: #4d62d1;
+}
+
+#wrap .q_timer .live_guage .team_name.lucky:before {
+    content: "Lucky";
+}
+
+#wrap .q_timer .circle {
+    position: absolute;
+    left: 32px;
+    top: 30px;
+    width: 76px;
+    height: 76px;
+    z-index: 1;
+}
+
+#wrap .q_timer .minute {
+    position: absolute;
+    left: -5px;
+    bottom: 57px;
+    width: 100%;
+    font-size: 10px;
+    color: #d43030;
+    font-family: "maplestory-light";
+    text-align: center;
+    z-index: 1;
+}
+
+#wrap .q_timer .progress-circle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #e3ecf4;
+    z-index: 1;
+}
+
+#wrap .q_timer .progress-circle:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: colorload 2s;
+    transition: 1s all;
+}
+
+#wrap .q_timer .progress-circle span {
+    font-size: 1.5rem;
+    color: #8b8b8b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    text-align: center;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+}
+
+#wrap .q_timer .progress-circle span:after {
+    content: "%";
+    font-weight: 600;
+    color: #8b8b8b;
+}
+
+#wrap .q_timer .progress-circle.progress-0:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(90deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-1:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(93.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-2:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(97.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-3:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(100.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-4:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(104.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-5:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(108deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-6:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(111.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-7:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(115.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-8:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(118.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-9:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(122.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-10:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(126deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-11:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(129.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-12:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(133.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-13:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(136.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-14:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(140.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-15:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(144deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-16:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(147.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-17:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(151.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-18:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(154.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-19:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(162deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-20:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(165.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-21:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(169.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-22:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(172.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-23:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(176.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-24:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(180deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-25:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(183.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-26:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(187.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-27:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(190.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-28:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(194.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-29:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(198deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-30:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(201.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-31:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(205.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-32:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(208.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-33:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(212.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-34:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(216deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-35:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(223.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-40:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(226.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-36:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(230.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-37:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(234deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-38:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(237.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-39:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(241.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-41:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(244.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-42:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(248.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-43:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(252deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-44:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(255.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-45:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-46:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-47:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-48:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-49:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(266.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-50:after {
+    background-image: linear-gradient(-90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-51:after {
+    background-image: linear-gradient(-86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-52:after {
+    background-image: linear-gradient(-82.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-53:after {
+    background-image: linear-gradient(-79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-54:after {
+    background-image: linear-gradient(-75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-55:after {
+    background-image: linear-gradient(-72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-56:after {
+    background-image: linear-gradient(-68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-57:after {
+    background-image: linear-gradient(-64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-58:after {
+    background-image: linear-gradient(-61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-59:after {
+    background-image: linear-gradient(-57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-60:after {
+    background-image: linear-gradient(-54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-61:after {
+    background-image: linear-gradient(-50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-62:after {
+    background-image: linear-gradient(-46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-63:after {
+    background-image: linear-gradient(-43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-64:after {
+    background-image: linear-gradient(-39.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-65:after {
+    background-image: linear-gradient(-36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-66:after {
+    background-image: linear-gradient(-32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-67:after {
+    background-image: linear-gradient(-28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-68:after {
+    background-image: linear-gradient(-25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-69:after {
+    background-image: linear-gradient(-21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-70:after {
+    background-image: linear-gradient(-18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-71:after {
+    background-image: linear-gradient(-14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-72:after {
+    background-image: linear-gradient(-10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-73:after {
+    background-image: linear-gradient(-7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-74:after {
+    background-image: linear-gradient(-3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-75:after {
+    background-image: linear-gradient(0deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-76:after {
+    background-image: linear-gradient(3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-77:after {
+    background-image: linear-gradient(7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-78:after {
+    background-image: linear-gradient(10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-79:after {
+    background-image: linear-gradient(14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-80:after {
+    background-image: linear-gradient(18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-81:after {
+    background-image: linear-gradient(21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-82:after {
+    background-image: linear-gradient(25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-83:after {
+    background-image: linear-gradient(28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-84:after {
+    background-image: linear-gradient(32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-85:after {
+    background-image: linear-gradient(36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-86:after {
+    background-image: linear-gradient(39.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-87:after {
+    background-image: linear-gradient(43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-88:after {
+    background-image: linear-gradient(46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-89:after {
+    background-image: linear-gradient(50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-90:after {
+    background-image: linear-gradient(54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-91:after {
+    background-image: linear-gradient(57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-92:after {
+    background-image: linear-gradient(61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-93:after {
+    background-image: linear-gradient(64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-94:after {
+    background-image: linear-gradient(68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-95:after {
+    background-image: linear-gradient(72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-96:after {
+    background-image: linear-gradient(75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-97:after {
+    background-image: linear-gradient(79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-98:after {
+    background-image: linear-gradient(82.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-99:after {
+    background-image: linear-gradient(86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .q_timer .progress-circle.progress-100:after {
+    background-image: linear-gradient(90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .timer {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    z-index: 10;
+    /* 
+	&>div{
+		position:absolute;
+		left:16px;right:17px;
+		top:24px;bottom:17px;
+		border-radius:50%;
+		padding-top: 18px;
+		text-align: center;
+		font-size:16px;
+		font-weight: bold;
+		color:#fff;
+	}
+	*/
+}
+
+@keyframes swingLR {
+    from {
+        transform: translateX(-2%);
+    }
+    to {
+        transform: translateX(2%);
+    }
+}
+
+#wrap .timer .alert_notice {
+    display: none;
+    position: absolute;
+    left: 20px;
+    bottom: -32px;
+    min-width: 276px;
+    height: 58px;
+    padding-left: 60px;
+    line-height: 58px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.45) url("/content/mathalive_lib/images/ico_alert_notice.png") no-repeat 13px center;
+    color: #fff;
+    font-family: "maplestory-light";
+    font-size: 20px;
+}
+
+#wrap .timer .alert_notice.show {
+    display: block;
+}
+
+#wrap .timer .alert_notice strong {
+    font-family: "maplestory-bold";
+    border-bottom: 1px solid #fff;
+}
+
+#wrap .timer .q_timer {
+    position: relative;
+    width: 150px;
+    height: 155px;
+}
+
+#wrap .timer .q_timer.swing {
+    animation: swingLR alternate infinite linear 0.08s;
+}
+
+#wrap .timer .q_timer .watch {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 10px;
+    top: 10px;
+    background: url("/content/mathalive_lib/images/bg_timer.png") no-repeat center;
+    background-size: 100%;
+    z-index: 1;
+}
+
+#wrap .timer .q_timer > svg {
+    position: absolute;
+    left: 60px;
+    top: 59px;
+    z-index: 1;
+    overflow: inherit;
+}
+
+#wrap .timer .q_timer > svg .circle {
+    z-index: 2;
+}
+
+#wrap .timer .q_timer .m_text {
+    position: absolute;
+    width: 142px;
+    padding-top: 48px;
+    text-align: center;
+    font-size: 38px;
+    color: #000;
+    font-family: "Maplestory-Bold";
+    line-height: 1.2;
+    z-index: 1;
+}
+
+#wrap .timer .q_timer.assess .watch {
+    z-index: 0 !important;
+}
+
+#wrap .timer .q_timer .m_holl {
+    position: absolute;
+    left: 1.5rem;
+    top: 2.29rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background: white;
+    z-index: 1;
+}
+
+#wrap .timer .q_timer .live_guage {
+    position: absolute;
+    width: 205px;
+    height: 77px;
+    left: 75px;
+    top: 25px;
+    background-color: #5400bc;
+    border-radius: 0 23px 23px 0;
+}
+
+#wrap .timer .q_timer .live_guage.individual {
+    top: 43px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 25px 25px 0;
+}
+
+#wrap .timer .q_timer .live_guage.individual .bar_wrap {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#wrap .timer .q_timer .live_guage.individual .ico_heart {
+    top: 5px;
+    left: 50px;
+}
+
+#wrap .timer .q_timer .live_guage .ico_heart {
+    position: absolute;
+    left: 45px;
+    top: 30px;
+    width: 48px;
+    height: 40px;
+    background: url("/content/mathalive_lib/images/ico_livegauge_heart.png");
+    z-index: 1;
+}
+
+#wrap .timer .q_timer .live_guage .bar_wrap {
+    position: absolute;
+    width: 123px;
+    height: 28px;
+    left: 70px;
+    top: 36px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+#wrap .timer .q_timer .live_guage .bar_wrap .bar {
+    position: relative;
+    background: transparent;
+    z-index: 0;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, #ffc744 0%, #ff9600 100%);
+    border-radius: 20px;
+}
+
+#wrap .timer .q_timer .live_guage .bar_wrap .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 20px;
+    color: #2e2e2e;
+    font-family: "maplestory-bold";
+    transform: translate(-50%, -50%);
+}
+
+#wrap .timer .q_timer .live_guage .bar_wrap .text.overmax {
+    color: #ff6c00;
+    font-size: 24px;
+}
+
+#wrap .timer .q_timer .live_guage .bar_wrap .text.overmax:before {
+    content: attr(data-value);
+    position: absolute;
+    -webkit-text-stroke: 0.2em #fff;
+    left: 0;
+    z-index: -1;
+}
+
+#wrap .timer .q_timer .live_guage .team_name {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 11px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    font-family: "maplestory-bold";
+    font-size: 16px;
+}
+
+#wrap .timer .q_timer .live_guage .team_name.red {
+    background: linear-gradient(90deg, #f8403a 0%, #f9413a 100%);
+}
+
+#wrap .timer .q_timer .live_guage .team_name.red:before {
+    content: "Red";
+}
+
+#wrap .timer .q_timer .live_guage .team_name.yellow {
+    background: linear-gradient(90deg, #fbb004 0%, #ffb201 100%);
+}
+
+#wrap .timer .q_timer .live_guage .team_name.yellow:before {
+    content: "Yellow";
+}
+
+#wrap .timer .q_timer .live_guage .team_name.green {
+    background: linear-gradient(90deg, #74c40a 0%, #74c50a 100%);
+}
+
+#wrap .timer .q_timer .live_guage .team_name.green:before {
+    content: "Green";
+}
+
+#wrap .timer .q_timer .live_guage .team_name.lucky {
+    background: #4d62d1;
+}
+
+#wrap .timer .q_timer .live_guage .team_name.lucky:before {
+    content: "Lucky";
+}
+
+#wrap .timer .q_timer .circle {
+    position: absolute;
+    left: 32px;
+    top: 30px;
+    width: 76px;
+    height: 76px;
+    z-index: 1;
+}
+
+#wrap .timer .q_timer .minute {
+    position: absolute;
+    left: -5px;
+    bottom: 57px;
+    width: 100%;
+    font-size: 10px;
+    color: #d43030;
+    font-family: "maplestory-light";
+    text-align: center;
+    z-index: 1;
+}
+
+#wrap .timer .q_timer .progress-circle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #e3ecf4;
+    z-index: 1;
+}
+
+#wrap .timer .q_timer .progress-circle:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: colorload 2s;
+    transition: 1s all;
+}
+
+#wrap .timer .q_timer .progress-circle span {
+    font-size: 1.5rem;
+    color: #8b8b8b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    text-align: center;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+}
+
+#wrap .timer .q_timer .progress-circle span:after {
+    content: "%";
+    font-weight: 600;
+    color: #8b8b8b;
+}
+
+#wrap .timer .q_timer .progress-circle.progress-0:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(90deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-1:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(93.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-2:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(97.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-3:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(100.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-4:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(104.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-5:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(108deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-6:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(111.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-7:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(115.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-8:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(118.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-9:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(122.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-10:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(126deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-11:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(129.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-12:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(133.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-13:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(136.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-14:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(140.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-15:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(144deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-16:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(147.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-17:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(151.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-18:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(154.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-19:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(162deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-20:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(165.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-21:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(169.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-22:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(172.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-23:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(176.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-24:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(180deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-25:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(183.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-26:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(187.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-27:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(190.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-28:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(194.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-29:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(198deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-30:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(201.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-31:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(205.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-32:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(208.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-33:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(212.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-34:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(216deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-35:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(223.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-40:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(226.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-36:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(230.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-37:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(234deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-38:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(237.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-39:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(241.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-41:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(244.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-42:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(248.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-43:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(252deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-44:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(255.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-45:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-46:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-47:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-48:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-49:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(266.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-50:after {
+    background-image: linear-gradient(-90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-51:after {
+    background-image: linear-gradient(-86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-52:after {
+    background-image: linear-gradient(-82.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-53:after {
+    background-image: linear-gradient(-79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-54:after {
+    background-image: linear-gradient(-75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-55:after {
+    background-image: linear-gradient(-72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-56:after {
+    background-image: linear-gradient(-68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-57:after {
+    background-image: linear-gradient(-64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-58:after {
+    background-image: linear-gradient(-61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-59:after {
+    background-image: linear-gradient(-57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-60:after {
+    background-image: linear-gradient(-54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-61:after {
+    background-image: linear-gradient(-50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-62:after {
+    background-image: linear-gradient(-46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-63:after {
+    background-image: linear-gradient(-43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-64:after {
+    background-image: linear-gradient(-39.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-65:after {
+    background-image: linear-gradient(-36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-66:after {
+    background-image: linear-gradient(-32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-67:after {
+    background-image: linear-gradient(-28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-68:after {
+    background-image: linear-gradient(-25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-69:after {
+    background-image: linear-gradient(-21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-70:after {
+    background-image: linear-gradient(-18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-71:after {
+    background-image: linear-gradient(-14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-72:after {
+    background-image: linear-gradient(-10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-73:after {
+    background-image: linear-gradient(-7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-74:after {
+    background-image: linear-gradient(-3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-75:after {
+    background-image: linear-gradient(0deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-76:after {
+    background-image: linear-gradient(3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-77:after {
+    background-image: linear-gradient(7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-78:after {
+    background-image: linear-gradient(10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-79:after {
+    background-image: linear-gradient(14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-80:after {
+    background-image: linear-gradient(18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-81:after {
+    background-image: linear-gradient(21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-82:after {
+    background-image: linear-gradient(25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-83:after {
+    background-image: linear-gradient(28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-84:after {
+    background-image: linear-gradient(32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-85:after {
+    background-image: linear-gradient(36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-86:after {
+    background-image: linear-gradient(39.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-87:after {
+    background-image: linear-gradient(43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-88:after {
+    background-image: linear-gradient(46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-89:after {
+    background-image: linear-gradient(50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-90:after {
+    background-image: linear-gradient(54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-91:after {
+    background-image: linear-gradient(57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-92:after {
+    background-image: linear-gradient(61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-93:after {
+    background-image: linear-gradient(64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-94:after {
+    background-image: linear-gradient(68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-95:after {
+    background-image: linear-gradient(72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-96:after {
+    background-image: linear-gradient(75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-97:after {
+    background-image: linear-gradient(79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-98:after {
+    background-image: linear-gradient(82.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-99:after {
+    background-image: linear-gradient(86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .progress-circle.progress-100:after {
+    background-image: linear-gradient(90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+#wrap .timer .q_timer .live_guage {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 205px;
+    height: 50px;
+    left: 75px;
+    top: 40px;
+}
+
+#wrap .timer .q_timer .live_guage .bar_wrap {
+    left: 75px;
+    top: 11px;
+}
+
+#wrap .timer .q_timer .live_guage .bar_wrap .bar {
+    width: 0%;
+}
+
+#wrap .timer .q_timer .live_guage .ico_heart {
+    display: block;
+    left: 50px;
+    top: 5px;
+}
+
+#wrap .timer .q_timer .live_guage .team_name {
+    display: none;
+}
+
+#wrap .msg_rst {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 30;
+}
+
+#wrap .msg_rst .imgtxt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#wrap .msg_rst .imgtxt.great {
+    width: 384px;
+    height: 276px;
+    background: url("/content/mathalive_lib/images/msg_rst_great.png") no-repeat center;
+    transform: translate(-50%, -50%) scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.keeptry {
+    width: 384px;
+    height: 276px;
+    background: url("/content/mathalive_lib/images/msg_rst_great.png") no-repeat center;
+    transform: translate(-50%, -50%) scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.awesome {
+    width: 475px;
+    height: 266px;
+    background: url("/content/mathalive_lib/images/msg_rst_awesome.png") no-repeat center;
+    transform: translate(-50%, -50%) scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.perfect {
+    width: 413px;
+    height: 275px;
+    background: url("/content/mathalive_lib/images/msg_rst_perfect.png") no-repeat center;
+    transform: translate(-50%, -50%) scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.excellent {
+    width: 467px;
+    height: 275px;
+    background: url("/content/mathalive_lib/images/msg_rst_excellent.png") no-repeat center;
+    transform: translate(-50%, -50%) scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.sorry {
+    width: 318px;
+    height: 263px;
+    margin-top: -100px;
+    background: url("/content/mathalive_lib/images/msg_rst_sorry.png") no-repeat center;
+    transform: translate(-50%, -50%);
+    transition: margin-top 0.5s, transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.sorry + .twinkle {
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.bonus {
+    width: 100%;
+    height: 100%;
+    background: url("/content/mathalive_lib/images/msg_rst_bonus.png") no-repeat center, url("/content/mathalive_lib/images/ani_effect_result.gif");
+    transform: translate(-50%, -50%);
+    transition: margin-top 0.2s, transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.bonus + .twinkle {
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.retry {
+    width: 315px;
+    height: 121px;
+    margin-top: -100px;
+    background: url("/content/mathalive_lib/images/msg_rst_retry.png") no-repeat center;
+    transform: translate(-50%, -50%);
+    transition: margin-top 0.5s, transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .imgtxt.retry + .twinkle {
+    opacity: 0;
+}
+
+#wrap .msg_rst.open .imgtxt.great {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .msg_rst.open .imgtxt.great:after {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.great + .twinkle {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.awesome {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .msg_rst.open .imgtxt.awesome:after {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.awesome + .twinkle {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.perfect {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .msg_rst.open .imgtxt.perfect:after {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.perfect + .twinkle {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.excellent {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .msg_rst.open .imgtxt.excellent:after {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.excellent + .twinkle {
+    opacity: 1;
+}
+
+#wrap .msg_rst.open .imgtxt.sorry {
+    opacity: 1;
+    margin-top: 0;
+}
+
+#wrap .msg_rst.open .imgtxt.bonus {
+    opacity: 1;
+    margin-top: 0;
+    transform: translate(-50%, -50%) scale(1, 1);
+}
+
+#wrap .msg_rst.open .imgtxt.retry {
+    opacity: 1;
+    margin-top: 0;
+}
+
+#wrap .msg_rst.open .flip-card .flip-card-inner {
+    transform: rotateY(180deg);
+    opacity: 1;
+}
+
+#wrap .msg_rst .twinkle {
+    position: absolute;
+    width: 384px;
+    height: 105px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -90%);
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+#wrap .msg_rst .twinkle span {
+    position: absolute;
+    width: 30px;
+    height: 44px;
+    background: url("/content/mathalive_lib/images/msg_rst_twinkle.png") no-repeat center;
+    background-size: contain;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(1) {
+    left: 0;
+    top: 53px;
+    width: 20px;
+    height: 29px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(2) {
+    left: 18px;
+    top: 63px;
+    width: 25px;
+    height: 32px;
+    background-size: contain;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(3) {
+    left: 92px;
+    top: 8px;
+    width: 20px;
+    height: 29px;
+    background-size: contain;
+    animation: star01 .25s alternate infinite;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(4) {
+    left: 91px;
+    top: 72px;
+    width: 20px;
+    height: 29px;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(5) {
+    left: 274px;
+    top: 89px;
+    width: 20px;
+    height: 25px;
+    background-size: contain;
+    animation: star01 .37s alternate infinite;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(6) {
+    left: 286px;
+    top: 70px;
+    width: 20px;
+    height: 29px;
+    animation: star01 .26s alternate infinite;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(7) {
+    left: 317px;
+    top: 0px;
+    width: 20px;
+    height: 29px;
+    background-size: contain;
+    animation: star01 .28s alternate infinite;
+}
+
+#wrap .msg_rst .twinkle span:nth-child(8) {
+    left: 373px;
+    top: 68px;
+    width: 15px;
+    height: 24px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+@keyframes star01 {
+    from {
+        transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#wrap .content_page .quizWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#wrap .content_page ._left {
+    position: relative;
+    float: left;
+    width: 580px;
+    height: 100%;
+    padding: 200px 40px 0 40px;
+    background-color: #c0c0c0;
+    box-shadow: 3px 0 3px rgba(0, 0, 0, 0.3);
+}
+
+#wrap .content_page ._right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 700px;
+    height: 100%;
+    padding: 0;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/bg_mole_stage.png");
+}
+
+#wrap .top_answer {
+    padding: 0 10px;
+}
+
+#wrap .top_answer li {
+    position: relative;
+    float: left;
+    width: 10%;
+    height: 79px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_answer_off.png") no-repeat center;
+}
+
+#wrap .top_answer li.on {
+    background-image: url("/content/mathalive_lib/MA/hit_mole/common/ico_answer_on.png");
+}
+
+#wrap .top_answer li.on:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+}
+
+#wrap .top_answer li.on.o:after {
+    width: 65px;
+    height: 65px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_answer_o.png") no-repeat center;
+}
+
+#wrap .top_answer li.on.oo:after {
+    width: 65px;
+    height: 65px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_answer_oo.png") no-repeat center;
+}
+
+#wrap .top_answer li.on.x:after {
+    width: 62px;
+    height: 61px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_answer_x.png") no-repeat center;
+}
+
+#wrap .question {
+    text-align: center;
+}
+
+#wrap .question .formule {
+    font-size: 56px;
+    color: #000;
+    font-family: "maplestory-bold";
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+#wrap .question .formule .answer_left {
+    display: inline-block;
+    height: 90px;
+    line-height: 85px;
+    padding-top: 5px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+#wrap .question .formule .answer_right {
+    display: inline-block;
+    width: 113px;
+    height: 90px;
+    line-height: 85px;
+    box-sizing: border-box;
+    border: 5px solid #646464;
+    background-color: #fff;
+    border-radius: 20px;
+    vertical-align: middle;
+    letter-spacing: 0;
+}
+
+#wrap .hitmole_open .open {
+    width: 395px;
+    height: 400px;
+    margin-left: 65px;
+    cursor: pointer;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_mole_open.png") no-repeat left bottom;
+}
+
+#wrap .moles {
+    position: absolute;
+    left: 10px;
+    top: 165px;
+}
+
+#wrap .moles li {
+    position: relative;
+    float: left;
+    width: 223px;
+    height: 188px;
+}
+
+#wrap .moles li img {
+    position: relative;
+    top: -170px;
+}
+
+#wrap .moles .start {
+    top: -5px;
+    left: 10px;
+}
+
+#wrap .moles .middle {
+    top: -170px;
+}
+
+#wrap .moles .end {
+    top: -170px;
+}
+
+#wrap .moles .middle {
+    display: none;
+}
+
+#wrap .moles .end {
+    display: none;
+}
+
+#wrap .moles li .txt_value {
+    position: absolute;
+    left: 62px;
+    top: 102px;
+    width: 111px;
+    height: 60px;
+    line-height: 63px;
+    font-size: 44px;
+    text-align: center;
+    font-family: "maplestory-bold";
+    transition: 1s opacity;
+    transition-delay: 1s;
+    opacity: 0;
+}
+
+#wrap .moles li .txt_value.on {
+    opacity: 1;
+}
+
+#wrap .moles li .result {
+    position: absolute;
+    left: 50px;
+    top: 0px;
+}
+
+#wrap .moles li .result.o {
+    width: 130px;
+    height: 131px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_result_o.png") no-repeat center;
+}
+
+#wrap .moles li .result.oo {
+    width: 130px;
+    height: 131px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_result_oo.png") no-repeat center;
+}
+
+#wrap .moles li .result.o span, #wrap .moles li .result.oo span {
+    position: absolute;
+    width: 18px;
+    height: 25px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/img_star.png") no-repeat center;
+    background-size: contain;
+}
+
+#wrap .moles li .result.o span:nth-child(1), #wrap .moles li .result.oo span:nth-child(1) {
+    left: 0;
+    top: 53px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(1), #wrap .moles li .result.oo span:nth-child(1) {
+    left: 0;
+    top: 53px;
+    width: 20px;
+    height: 29px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(2), #wrap .moles li .result.oo span:nth-child(2) {
+    left: 18px;
+    top: 63px;
+    width: 10px;
+    height: 13px;
+    background-size: contain;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(3), #wrap .moles li .result.oo span:nth-child(3) {
+    left: 92px;
+    top: 8px;
+    width: 10px;
+    height: 13px;
+    background-size: contain;
+    animation: star01 .25s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(4), #wrap .moles li .result.oo span:nth-child(4) {
+    left: 108px;
+    top: 79px;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(5), #wrap .moles li .result.oo span:nth-child(5) {
+    left: 74px;
+    top: 89px;
+    background-size: contain;
+    animation: star01 .37s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(6), #wrap .moles li .result.oo span:nth-child(6) {
+    left: 106px;
+    top: 30px;
+    animation: star01 .26s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(7), #wrap .moles li .result.oo span:nth-child(7) {
+    left: 17px;
+    top: 0px;
+    width: 18px;
+    height: 25px;
+    background-size: contain;
+    animation: star01 .28s alternate infinite;
+}
+
+#wrap .moles li .result.o span:nth-child(8), #wrap .moles li .result.oo span:nth-child(8) {
+    left: 73px;
+    top: 28px;
+    width: 18px;
+    height: 25px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .moles li .result.x {
+    left: 60px;
+    width: 122px;
+    height: 131px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_result_x.png") no-repeat center;
+}
+
+#wrap .moles li .result.retry {
+    left: 60px;
+    width: 122px;
+    height: 131px;
+    background: url("/content/mathalive_lib/MA/hit_mole/common/ico_result_retry.png") no-repeat center;
+}
+
+@keyframes star01 {
+    from {
+        transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#wrap .pop_liveget {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+#wrap .pop_liveget .inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 982px;
+    height: 656px;
+    border-radius: 35px;
+    background-color: #410097;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#wrap .pop_liveget .inner .btn_close {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    right: 20px;
+    border-radius: 100%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.3) url("/content/mathalive_lib/images/ico_video_menu_close.png") no-repeat center;
+    background-size: 22px;
+}
+
+#wrap .pop_liveget .inner .left {
+    position: absolute;
+    width: 336px;
+    height: 455px;
+    left: 100px;
+    top: 100px;
+}
+
+#wrap .pop_liveget .inner .left .heartbox {
+    text-align: center;
+    font-family: "maplestory-bold";
+}
+
+#wrap .pop_liveget .inner .left .heartbox .ani_image {
+    width: 266px;
+    height: 186px;
+    margin: 0 auto;
+    background: url("/content/mathalive_lib/images/ani_heartbox_small.gif") no-repeat;
+}
+
+#wrap .pop_liveget .inner .left .heartbox .text {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ffb400;
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 100px;
+    font-size: 36px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box.hide {
+    display: none;
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box strong {
+    font-size: 50px;
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box.heart {
+    bottom: 89px;
+    background: #425cc5 url("/content/mathalive_lib/images/ico_livegauge_heart.png") no-repeat 33px center;
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box.rank {
+    bottom: 0;
+    background: #b780ce no-repeat 25px center;
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box.rank.no_01 {
+    background-image: url("/content/mathalive_lib/images/ico_medal01_large.png");
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box.rank.no_02 {
+    background-image: url("/content/mathalive_lib/images/ico_medal02_large.png");
+}
+
+#wrap .pop_liveget .inner .left .heartbox .box.rank.no_03 {
+    background-image: url("/content/mathalive_lib/images/ico_medal03_large.png");
+}
+
+#wrap .pop_liveget .inner .right {
+    position: absolute;
+    width: 548px;
+    height: 455px;
+    right: 0;
+    top: 100px;
+}
+
+#wrap .pop_liveget .inner .right:after {
+    content: "";
+    position: absolute;
+    width: 376px;
+    height: 376px;
+    left: 50%;
+    top: 50%;
+    border-radius: 100%;
+    background: #390978;
+    transform: translate(-50%, -50%);
+}
+
+#wrap .pop_liveget .inner .right .ani_image {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#wrap .pop_liveget .inner .right .ani_image.type_01 {
+    background: url("/content/mathalive_lib/images/ani_liveget_type01.gif");
+}
+
+#wrap .pop_liveget .inner .right .ani_image.type_02 {
+    background: url("/content/mathalive_lib/images/ani_liveget_type02.gif");
+}
+
+#wrap .pop_liveget .inner .right .ani_image.type_03 {
+    background: url("/content/mathalive_lib/images/ani_liveget_type03.gif");
+}
+
+#wrap .pop_liveget .inner .right .ani_image.type_04 {
+    background: url("/content/mathalive_lib/images/ani_liveget_type04.gif");
+}
+
+#wrap .pop_liveget .inner .right .ani_image.type_gold_01 {
+    background: url("/content/mathalive_lib/images/ani_liveget_type_gold_01.gif");
+}
+
+#wrap .pop_liveget .inner .right .ani_image.type_gold_02 {
+    background: url("/content/mathalive_lib/images/ani_liveget_type_gold_02.gif");
+}
+
+#wrap .pop_liveget.show {
+    display: block;
+}
+
+@keyframes star01 {
+    from {
+        transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#wrap .dim_control {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+#wrap .loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 110;
+}
+
+#wrap .loading.hide {
+    display: none;
+}
+
+#wrap .loading_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#wrap .loading_img {
+    position: relative;
+    width: 177px;
+    margin: 240px auto 0;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    font-size: 28px;
+}
+
+#wrap .loading_img .img {
+    display: block;
+    width: 182px;
+    height: 200px;
+    margin-bottom: 10px;
+    background-image: url("/content/mathalive_lib/images/loading.png");
+    animation: loading 1s steps(37) infinite;
+}
+
+@keyframes loading {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: -6734px;
+    }
+}
+
+#wrap .attention {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url("/content/mathalive_lib/images/bg_ready.jpg");
+}
+
+#wrap .attention.hide {
+    display: none;
+}
+
+#wrap .attention span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+}
+
+@charset "UTF-8";
+@font-face {
+    font-family: NotoSans-Black;
+    src: url(/content/mathalive_lib/font/NotoSansCJKkr-Black-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans;
+    src: url(/content/mathalive_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: Maplestory-Bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/Maplestory-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: Maplestory-Light;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/Maplestory-Light.woff) format("woff");
+}
+
+/* 
+  21-06-24 최순철 수학셀 김민정CP님이 요청
+  Xelf 저작 결과물에 폰트 네임이 KR 이 붙어서 나오게 되어 있어서 추가
+*/
+@font-face {
+    font-family: NotoSansKR-Light;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Medium;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Medium.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+/* 
+  21-07-02 최순철 기오정CP님과 변경
+*/
+@font-face {
+    font-family: NotoSansB_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSans-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB-Regular;
+    src: url(/content/mathalive_lib/font/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@charset "UTF-8";
+html, body {
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+    border: 0px;
+    backface-visibility: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: none;
+    font-size: 12px;
+    overflow: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    text-rendering: optimizeSpeed;
+}
+
+body, h1, h2, h3, h4, input, button {
+    /*font-family:Helvetica,Arial,"����",Dotum,sans-serif;*/
+    font-size: 12px;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, p {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+img, fieldset, iframe {
+    border: 0 none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: none;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+div, p {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+#common_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#ding_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#dingend_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#wrap {
+    width: 1280px;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+.swiper-scrollbar.white {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.white .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar.black {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.black .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/*
+.common_back{
+	background-size: 100% 100%;
+	@include btn_down_dis(
+		resolve('mathalive_lib/images/btn_back.png'), 
+		resolve('mathalive_lib/images/btn_back_down.png'),
+		'',
+		width('mathalive_lib/images/btn_back.png'),
+		height('mathalive_lib/images/btn_back.png')
+	);
+	&.down{
+		transform: scale(1.1, 1.1);
+	}
+}
+*/
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #47F6E9;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#preload_hidden {
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#preload_hidden .helvetica {
+    font-family: HelveticaRounded;
+}
+
+#preload_hidden .helveticastd {
+    font-family: HelveticaRoundedLTStd;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.none {
+    display: none;
+}
+

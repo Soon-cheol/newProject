@@ -1,0 +1,42 @@
+@mixin liveget_motion {
+    .liveget_motion{
+        position: absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-color: rgba(0,0,0,.8);
+        z-index: 25;
+        &.show {
+            display: block;
+        }
+        .inner{
+            position: absolute;
+            left:50%;
+            top:50%;
+            width:380px;
+            height:370px;
+            transform: translate(-50%,-50%);
+            .ani_heartbox{
+                width:380px;
+                height:265px;
+                background: resolve('mathalive_lib/images/ani_heartbox_large.gif') no-repeat;
+            }
+            .text{
+                width:268px;
+                height:80px;
+                line-height:80px;
+                margin: 25px auto 0;
+                border-radius: 10px;
+                font-size: 36px;
+                text-align: center;
+                color:#fff;
+                font-family: "maplestory-bold";
+                background-color: #75c906;
+                strong{
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}

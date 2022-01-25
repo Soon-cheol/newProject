@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>Math Alive Content</title>
+    <link href="/content/mathalive_lib/common.css" rel="stylesheet" />
+	<link href="content.css" rel="stylesheet" />
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+    <script src="/content/mathalive_lib/libdragdrop.min.js"></script>
+    <script src="/content/mathalive_lib/mathcontent_prod.js"></script>
+    <script>
+        MobileDragDrop.polyfill({
+            dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+        });
+    </script>
+</head>
+<body>
+	<div class="content_page">
+		<div class="quizContent">
+			<div class="cntInner">
+				<div class="quizWrap">
+                    <h3>Complete the name of the unit fraction.</h3>
+                    <div class="box_set">
+                        <div class="box left">
+                            <div class="fraction">
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mfrac>
+                                        <mn>1</mn>
+                                        <mn>5</mn>
+                                    </mfrac>
+                                </math>
+                            </div>
+                            <div class="target">
+                                <div id="tgt1" class="text_dest"></div>
+                                <div id="tgt2" class="text_dest"></div>
+                            </div>
+                        </div>
+                        <div class="box right">
+                            <div id="srcbox" class="source">
+                                <div id="srcnumber1" class="number n1"><img id="src1" src="btn_num_five.png" alt="five"></div>
+                                <div id="srcnumber2" class="number n2"><img id="src2" src="btn_num_one.png" alt="one"></div>
+                                <div id="srcnumber3" class="number n3"><img id="src3" src="btn_num_fifth.png" alt="fifth"></div>
+                                <div id="srcnumber4" class="number n4"><img id="src4" src="btn_num_first.png" alt="first"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	(function () {
+        var idx = util_o.getQuery('idx');
+
+        mdragdropcard_o.setIndex(idx);
+        mdragdropcard_o.setTarget("tgt1");
+        mdragdropcard_o.setTarget("tgt2");
+        mdragdropcard_o.setSource("src1", "srcnumber1");
+        mdragdropcard_o.setSource("src2", "srcnumber2");
+        mdragdropcard_o.setSource("src3", "srcnumber3");
+        mdragdropcard_o.setSource("src4", "srcnumber4");
+        mdragdropcard_o.setSourceBox("srcbox");
+
+        current_o.init(idx);
+    })();
+</script>
+</html>

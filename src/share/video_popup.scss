@@ -1,0 +1,183 @@
+@mixin t_video_popup {
+.t_video_popup {
+        .video_box{
+            width: 924px;
+            height: 523px;
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            margin: auto;
+            .video_play{
+                position: absolute;
+                left:0px; right: 0px;
+                top:0px; bottom: 48px;
+                border-radius: 10px 10px 0 0;
+                overflow: hidden;
+                &>video{
+                    width:100%; height: 100%;
+                    object-fit: fill;
+                }
+                .video_basis_img{
+                    position: absolute;
+                    left:0px; right: 0px;
+                    top:0px; bottom: 0px;
+                    width:100%; height: 100%;
+                    background-size: contain;
+                    background-position: 0% 0%;
+                    background-size: 100% 100%;
+                    object-fit: fill;
+                    z-index: 10;
+                }
+                .btn_play_video{
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/player/btn_play_video.png'),
+                        resolve('mathalive_lib/images/player/btn_play_video.png'),
+                        resolve('mathalive_lib/images/player/btn_play_video.png'),
+                        width('mathalive_lib/images/player/btn_play_video.png'),
+                        height('mathalive_lib/images/player/btn_play_video.png')
+                    );
+                    position: absolute;
+                    left: 0; right: 0;
+                    top: 0; bottom: 0;
+                    margin: auto;
+                }
+            }        
+            .control_box{
+                background: #bebebe;
+                height:48px;
+                position:absolute;
+                left:0; right:0; 
+                bottom:0;   
+                border-radius: 0 0 10px 10px;        
+                .video-play-pause{
+                    @include btn_on(
+                        resolve('mathalive_lib/images/player/btn_play.png'),
+                        resolve('mathalive_lib/images/player/btn_pause.png'),
+                        width('mathalive_lib/images/player/btn_play.png'),
+                        height('mathalive_lib/images/player/btn_play.png')
+                    );
+                    position:absolute;
+                    left:22px;
+                    bottom:8px;
+                }
+                /*.video-stop{
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/player/btn_stop.png'),
+                        resolve('mathalive_lib/images/player/btn_stop_down.png'),
+                        resolve('mathalive_lib/images/player/btn_stop.png'),
+                        width('mathalive_lib/images/player/btn_stop.png'),
+                        height('mathalive_lib/images/player/btn_stop.png')
+                    );
+                    position:absolute;
+                    left:83px !important;
+                    bottom:17px;
+                }
+                .video-sound{
+                    @include btn_on(
+                        resolve('mathalive_lib/images/player/btn_sound.png'),
+                        resolve('mathalive_lib/images/player/btn_mute_down.png'),
+                        width('mathalive_lib/images/player/btn_sound.png'),
+                        height('mathalive_lib/images/player/btn_sound.png')
+                    );	
+                    position:absolute;
+                    right:75px;
+                    bottom:17px;
+                }
+                .video_fullscreen{
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/player/btn_vfullscreen.png'),
+                        resolve('mathalive_lib/images/player/btn_vfullscreen_down.png'),
+                        '',
+                        width('mathalive_lib/images/player/btn_vfullscreen.png'),
+                        height('mathalive_lib/images/player/btn_vfullscreen.png')
+                    );	
+                    position:absolute;
+                    right:17px;
+                    bottom:17px; 
+                }
+                .video_fullscreen_off{
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/player/btn_vsmallscreen.png'),
+                        resolve('mathalive_lib/images/player/btn_vsmallscreen_down.png'),
+                        '',
+                        width('mathalive_lib/images/player/btn_vsmallscreen.png'),
+                        height('mathalive_lib/images/player/btn_vsmallscreen.png')
+                    );	
+                    display:none;
+                    position:absolute;
+                    right:17px;
+                    bottom:17px; 
+                }*/
+                .prog_box{
+                    position: absolute;
+                    top: 0; left: 0; right: 0;
+                    .prog_bg{
+                        height: 11px;
+                        width: 100%;
+                        background-color: rgba(0, 0, 0, 0.6);
+                    }
+                    .prog_tmp{
+                        position: absolute;
+                        left: 0px; right: 0px;
+                        top: -8px;
+                        height: 20px;
+                    }
+                    .prog_btn{
+                        @include btn_down_dis(
+                            resolve('mathalive_lib/images/player/btn_play_bar.png'),
+                            resolve('mathalive_lib/images/player/btn_play_bar.png'),
+                            resolve('mathalive_lib/images/player/btn_play_bar.png'),
+                            width('mathalive_lib/images/player/btn_play_bar.png'),
+                            height('mathalive_lib/images/player/btn_play_bar.png')
+                        );
+                        position: absolute;
+                        left: 0px;
+                        top: 4px;
+                        transform: translate(-50%, -50%);
+                    }
+                    .prog_bar{
+                        height: 100%;
+                        background-color: #75bb2a;
+                    }
+                }
+
+                .video_time{
+                    position: absolute;
+                    top: 11px;
+                    left: 77px;
+                    font-size: 18px;
+                    color: #fff;
+                    line-height: 37px;
+                }
+            }
+
+            &:fullscreen{
+                object-fit: contain;
+                position: fixed !important;
+                top: 0px !important;
+                right: 0px !important;
+                bottom: 0px !important;
+                left: 0px !important;
+                box-sizing: border-box !important;
+                min-width: 0px !important;
+                max-width: none !important;
+                min-height: 0px !important;
+                max-height: none !important;
+                width: 100% !important;
+                height: 100% !important;
+                transform: none !important;
+                margin: 0px !important;
+
+                
+                &>.control_box{
+                    &>.video_fullscreen{
+                        display: none;
+                    }
+                    &>.video_fullscreen_off{
+                        display: unset;
+                    }
+                }
+            }
+        }
+    }
+}

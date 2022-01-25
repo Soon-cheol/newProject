@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<title>Math Alive Content</title>
+    <link href="/content/mathalive_lib/common.css" rel="stylesheet" />
+	<link href="content.css" rel="stylesheet" />
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+    <script src="/content/mathalive_lib/mathcontent_prod.js"></script>
+</head>
+<body>
+	<div class="content_page">
+		<div class="quizContent">
+			<div class="cntInner">
+				<div class="quizWrap">
+                    <h3>Write the missing number to name the shaded part.
+                    </h3>
+                    <div class="box_set">
+                        <div class="box left">
+                            <img src="img_01.png" />
+                        </div>
+                        <div class="box right">
+                            <div class="fraction">
+                                <input type="text" id="numinput1" value="" autocomplete="off" inputmode="none">
+                                <span class="bar"></span>
+                                <span class="txt">7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	(function () {
+        var idx = util_o.getQuery('idx');
+
+        numpad_o.init(idx);
+        numpad_o.attach({id: "numinput1", pos: 'left'});
+
+        current_o.init(idx);
+    })();
+</script>
+</html>

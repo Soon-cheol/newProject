@@ -1,0 +1,10 @@
+@import "../config.scss";
+
+@import "./teacher/t_sample.scss";
+
+body{
+	background-color: transparent;
+}
+#wrap{
+	@include t_sample;
+}

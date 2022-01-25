@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title></title>
+<script defer src="./js/base.common.js"></script>
+<script defer src="./js/base.bundle.js"></script>
+<script defer src="./js/base.js"></script>
+<link href="./base.css" rel="stylesheet"></head>
+</head>
+<body>
+	<!--
+		<div id="control" >
+			<input type="text" id="pad_id"/><input type="button" value="add student" onclick="javascript:my_o.add();"></input>	
+			<br/>
+			<input type="button" value="start" onclick="javascript:my_o.start();"></input>
+		</div>
+		<div id="view" style="display:none;width:100%;height:100%;text-align:center;">
+			<br/><input type="button" value="reload" onclick="javascript:my_o.reload();"></input>	
+		</div>
+	-->
+	<div id="teacher">
+		<iframe frameborder="0" scrolling="no" allowFullScreen="true"></iframe>
+		<v-t-report-popup></v-t-report-popup>
+		<v-player-manager></v-player-manager>
+	</div>
+	<div id="student">
+		<iframe frameborder="0" scrolling="no" allowFullScreen="true"></iframe>
+	</div>
+
+	<div class="control">
+		<div>
+			<button class="add">학생추가</button>
+		</div>
+		<div>
+			<button class="teacher">강사확대</button>
+			<button class="same">동일</button>
+			<button class="student">학생확대</button>
+		</div>
+		
+	</div>
+</body>
+</html>

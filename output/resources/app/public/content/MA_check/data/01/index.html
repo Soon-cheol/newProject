@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>Math Alive Content</title>
+    <link href="/content/mathalive_lib/font.css" rel="stylesheet" />
+    <link href="/content/mathalive_lib/common.css" rel="stylesheet" />
+    <link href="content.css" rel="stylesheet" />
+    <script src="/content/mathalive_lib/mathcontent_prod.js"></script>   
+</head>
+<body>
+	<div class="content_page">
+		<div class="quizContent">
+			<div class="cntInner">
+				<div class="quizWrap">
+                    <h3>Choose the correct word to complete the sentence.</h3>
+                    <div class="box type01">
+                        A <span class="underline"></span> is exactly one equal part of a whole.
+                    </div>
+                    <div class="btn_triple">
+                        <button id="choice1" class="btn type01" value="1">fraction</button>
+                        <button id="choice2" class="btn type01" value="2">unit fraction</button>
+                        <button id="choice3" class="btn type01" value="3">numerator</button>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	(function () {
+        var idx = util_o.getQuery('idx');
+
+        var ids = [];
+        ids.push("choice1");
+        ids.push("choice2");
+        ids.push("choice3");
+
+        choicebtn_o.init(idx, ids);
+        current_o.init(idx);
+    })();
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<title>Math Alive Content</title>
+    <link href="/content/mathalive_lib/common.css" rel="stylesheet" />
+    <link href="content.css" rel="stylesheet" />
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+    <script src="/content/mathalive_lib/mathcontent_prod.js"></script>
+</head>
+<body>
+	<div class="content_page">
+		<div class="quizContent">
+			<div class="cntInner">
+				<div class="quizWrap">
+                    <h3>Match each vocabulary term to its meaning.</h3>
+                    <div id="box" class="box type01 clear">
+                    	<canvas id="canvas"></canvas>
+                        <div id="tbox1" class="word w1">
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mfrac>
+                                    <mn>3</mn>
+                                    <mn>8</mn>
+                                </mfrac>
+                            </math>
+                            <span id="tpos1" class="dot d1"></span>
+                        </div>
+                        <div id="tbox2" class="word w2">
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mfrac>
+                                    <mn>2</mn>
+                                    <mn>4</mn>
+                                </mfrac>
+                            </math>
+                            <span id="tpos2" class="dot d2"></span>
+                        </div>
+                        <div id="tbox3" class="word w3">
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mfrac>
+                                    <mn>5</mn>
+                                    <mn>6</mn>
+                                </mfrac>
+                            </math>
+                            <span id="tpos3" class="dot d3"></span>
+                        </div>
+                        <div id="bbox1" class="word w4">five-sixths
+                            <span id="bpos1" class="dot d4"></span>
+                        </div>
+                        <div id="bbox2" class="word w5">three-eights
+                            <span id="bpos2" class="dot d5"></span>
+                        </div>
+                        <div id="bbox3" class="word w6">two-fourths
+                            <span id="bpos3" class="dot d6"></span>
+                        </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+    (function () {
+        var idx = util_o.getQuery('idx');
+
+        drawing_o.setObject('tpos1', 'tbox1', 't');
+        drawing_o.setObject('tpos2', 'tbox2', 't');
+        drawing_o.setObject('tpos3', 'tbox3', 't');
+
+        drawing_o.setObject('bpos1', 'bbox1', 'b');
+        drawing_o.setObject('bpos2', 'bbox2', 'b');
+        drawing_o.setObject('bpos3', 'bbox3', 'b');
+
+        drawing_o.setCanvas('canvas');
+        drawing_o.setDrawingBox('box');
+        drawing_o.init();
+        current_o.init(idx);
+    })();
+</script>
+</html>

@@ -1,0 +1,24 @@
+@charset "utf-8";
+body {background: #f0f6dd;}
+
+.sample_img{
+    width: 800px;
+    height: 181px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.btn_wrap{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn{
+    width:400px;
+    height:100px;
+    padding-left: 50px;
+    margin: 45px 33px 8px;
+}

@@ -1,0 +1,391 @@
+@mixin masubmituserlist{
+    .submituserlist_bg {
+        display:none;
+        position: absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        background-color: rgba(0,0,0,0.75);
+        z-index: 99;
+    }
+    .submituserlist {
+        display: none;
+        position: absolute;
+        left:50%;
+        top:50%;
+        width:982px;
+        height:567px;
+        padding:0;
+        margin:-283px 0 0 -491px;
+        background-color: #fff;
+        border-radius: 33px;
+        z-index: 100;
+        box-sizing: border-box;
+        font-family: 'MapleStory-Bold';
+        .header{
+            height:59px;
+            background-color: #6c44b1;
+            border-radius: 30px 30px 0 0;
+            .quiz_tit{
+                float:left;
+                width:96px;
+                height:59px;
+                line-height:59px;
+                background-color: #fdc644;
+                color:#001a72;
+                font-size: 29px;
+                text-align: center;
+                border-radius: 30px 0 0 0;
+            }
+            .submitter{
+                display: none;
+            }
+            .score_set{
+                float: left;
+                padding:0;
+                ul{
+                    li{
+                        position: relative;
+                        float:left;
+                        width:126px;
+                        height:59px;
+                        line-height:62px;
+                        padding:0 0 0 75px;
+                        font-size: 20px;
+                        font-family: "maplestory-light";
+                        color:rgba(255,255,255,0.4);
+                        background: resolve('mathalive_lib/images/submituserlist_header_slice.png') no-repeat 0 center;
+                        &:first-child{
+                            background-image: none;
+                        }
+                        &:after{
+                            content:"";
+                            position:absolute;
+                            left:25px;
+                            top:50%;
+                            width:25px;
+                            height:25px;
+                            margin-top: -12px;
+                            background-repeat: no-repeat;
+                            background-position-y: center;
+                            opacity: .4;
+                            
+                        }
+                        &.type01{
+                            &:after{
+                                background-image: resolve('mathalive_lib/images/ico_submituser_type01.png');
+                            }
+                        }
+                        &.type02{
+                            &:after{
+                                background-image: resolve('mathalive_lib/images/ico_submituser_type02.png');
+                            }
+                        }
+                        &.type03{
+                            &:after{
+                                background-image: resolve('mathalive_lib/images/ico_submituser_type03.png');
+                            }
+                        }
+                        &.type04{
+                            &:after{
+                                background-image: resolve('mathalive_lib/images/ico_submituser_type04.png');
+                            }
+                        }
+                        &.on{
+                            background-image: none;
+                            &:after{
+                            opacity: 1;
+                            }
+                            &+li{
+                                background-image: none;
+                            }
+                            color:#fff;
+                        }
+                        &.arrow{
+                            background-color: #4f2794;
+                        }
+                    }
+                }
+            }
+        }
+        &.nonum{
+            .quiz_tit{
+                display: none;
+            }
+            .header{
+                background-color: #ff7e75;
+                .score_set{
+                    ul{
+                        li{
+                            &:first-child{
+                                border-top-left-radius: 30px;
+                            }    
+                            &.arrow{
+                                background-color: #f06157;
+                                &:before{
+                                    content:"";
+                                    position: absolute;
+                                    bottom:-1px;
+                                    left:50%;
+                                    width: 0; 
+                                    height: 0; 
+                                    margin-left: -12px;
+                                    border-left: 12px solid transparent;
+                                    border-right: 12px solid transparent;
+                                    border-bottom: 8px solid #fff;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        &.assessment{
+            .quiz_tit, .score_set{
+                display: none;
+            }
+            .header{
+                background-color: #ffb81f;
+            }
+            .submitter {
+                display: block;
+                padding:20px 0 0 30px;
+                font-size: 20px;
+                color: #fff;
+                span{
+                    color: #ffe1b3;
+                    margin-left: 15px;
+                    font-family: "maplestory-light";
+                    strong{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .btn_close{
+            position: absolute;
+            right:5px;
+            top:5px;
+            display: inline-block;
+            width:50px;
+            height:50px;
+            border:0;
+            border-radius: 50px;
+            background: resolve('mathalive_lib/images/ico_video_menu_close.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+        .submit {
+            margin: 0 100px;
+            button{
+                width:50%;
+                height:45px;
+                border:none;
+                color:#fff;
+                font-size: 24px;
+                background-color: #c8c8c8;
+                vertical-align: middle;
+                cursor: pointer;
+                &:nth-child(1){
+                    border-radius: 10px 0 0 10px;
+                }
+                &:nth-child(2){
+                    border-radius: 0 10px 10px 0;
+                }
+            }
+            &.set3{
+                button{
+                    width:33.3%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-left: 2px solid #8c8c8c;
+                    &:first-child{
+                        border-left: 0;
+                    }
+                    &:nth-child(2){
+                        border-radius: 0;
+                    }
+                    &:nth-child(3){
+                        border-radius: 0 10px 10px 0;
+                    }
+                    &.heart0{
+                        background-image:resolve('mathalive_lib/images/ico_heart0.png');
+                    }
+                    &.heart1{
+                        background-image:resolve('mathalive_lib/images/ico_heart1.png');
+                    }
+                }
+            }
+            &.set4{
+                button{
+                    width:25%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-left: 2px solid #8c8c8c;
+                    &:first-child{
+                        border-left: 0;
+                    }
+                    &:nth-child(2){
+                        border-radius: 0;
+                    }
+                    &:nth-child(4){
+                        border-radius: 0 10px 10px 0;
+                    }
+                    &.heart0{
+                        background-image:resolve('mathalive_lib/images/ico_heart0.png');
+                    }
+                    &.heart1{
+                        background-image:resolve('mathalive_lib/images/ico_heart1.png');
+                    }
+                    &.heart2{
+                        background-image:resolve('mathalive_lib/images/ico_heart2.png');
+                    }
+                }
+            }
+            .on{
+                background-color: #75c906;
+            }
+        }
+        .user_num{
+            width: 125px;
+            height: 34px;
+            margin: 0 100px;
+            line-height: 34px;
+            padding-left: 70px;
+            margin-top: 20px;
+            background-color: #75c906;
+            border-radius: 34px;
+            box-sizing: border-box;
+            color:#fff;
+            font-size: 24px;
+            background:#75c906 resolve('mathalive_lib/images/ico_user.png') no-repeat 26px center;
+            background-size: auto 22px;
+        }
+        .list_box {
+            /*min-height: 139px;*/
+            height: 574px;
+            overflow-y: hidden;
+            box-sizing: border-box;
+            .innerbox{
+                height:573px;
+                padding:25px 0 0;
+            }
+            .swiper-container{
+                height: 483px;
+                .swiper-slide{
+                    height: auto;
+                }
+                .swiper-scrollbar{
+                    width: 8px;
+                    height:100%;
+                    background-color: transparent;
+                    top:0;
+                    right: 30px;
+                    .swiper-scrollbar-drag {
+                        background-color: #ebebeb;
+                    }
+                }
+                .inner{
+                    width: 96%;
+                    /*margin:0 auto;*/
+                    &:after{
+                        content: "";
+                        display: block;
+                        clear: both;
+                    }
+                }
+                li{
+                    float: left;
+                    width:20%;
+                    padding: 30px 0 20px;
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5){
+                        padding-top: 0;
+                    }
+                    .defaultImg_m,
+                    .defaultImg_f {
+                        border-radius: 50%;    
+                        width: 78px;
+                        height: 78px;
+                        div {
+                            font-size: 30px;
+                            font-family: "Maplestory-Bold";
+                            color: #fff;    
+                            width: 70px;
+                            height: 70px;
+                            line-height: 70px;    
+                            text-align: center;  
+                        }
+                    }/* 2021 08 06 성준 추가 */
+                    .defaultImg_m {
+                        background-color: #2cd1c3;
+                        border: 4px solid #d8d9db;
+                    }
+                    .defaultImg_f {
+                        background-color: #ffa1a7;
+                        border: 4px solid #d8d9db;
+                    }
+                    img{
+                        width: 78px;
+                        height: 78px;
+                        border-radius: 100%;
+                        box-sizing: border-box;
+                        background-color: #fff;
+                        border: 4px solid #d8d9db;
+                    }
+                    .name{
+                        display: block;
+                        width:100%;
+                        margin-top: 10px;
+                        font-size: 22px;
+                        text-align: center;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden; 
+                        font-family: "MapleStory-Light";
+                        color:#5d5d5d;
+                    }
+                }
+            }
+        }
+    }
+    .submituserlist_bg.show, 
+    .submituserlist.show {
+        display: block;
+    }
+}
+@mixin masubmitusers{
+    .submitusers {
+        float:right;
+        width:147px;
+        height:44px;
+        margin:25px 10px 0 0;
+        padding-left:40px;
+        line-height:40px;
+        font-size: 2em;
+        font-weight: bold;
+        color:#999;
+        border-radius: 100px;
+        text-align: center;
+        background: #75c906 resolve('mathalive_lib/images/ico_user.png') no-repeat 20px center;
+        color:#fff;
+        box-sizing: border-box;
+        display: block;
+        cursor: pointer;
+        span{
+            color:#2e4c0c;
+        }
+        &.hide {
+            display: none;
+        }
+    }
+}

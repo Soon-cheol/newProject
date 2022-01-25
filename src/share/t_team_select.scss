@@ -1,0 +1,751 @@
+@import '../common/component/button.scss';
+@import "./maheader_old.scss";
+@import './CoverPopup.scss';
+
+@import url("./AlertPopup.scss");
+
+@include maheader;
+
+@mixin t_teamselect{
+    
+    .t_teamselect {
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+        text-align:center;
+        background: #485cc7;
+        height: 100%;
+        .tit{
+            margin-bottom: 140px;
+            font-size: 46px;
+            color:#fff;
+            font-family: "Maplestory-Bold";
+        }
+        .team{
+            position: relative;
+            display:inline-block;
+            width:194px;
+            height:255px;
+            margin:0 71px;
+            border-radius: 7px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            transition: transform .2s;
+            font-family: "Maplestory-Bold";
+            cursor: pointer;
+            background:resolve('mathalive_lib/images/teams/ico_team_off.png') no-repeat;
+            &.on, &:hover{
+                background:resolve('mathalive_lib/images/teams/ico_team_on.png') no-repeat;
+                .title{
+                    color:#fff;
+                }
+            }
+            .title{
+                font-size:32px;
+                font-weight: bold;
+                color:#b5b5b5;
+                margin-top: 210px;
+                line-height: 1;
+            }
+            .setpoint {
+                display: none;
+                transform: scale(0.8);
+                position: relative;
+                width: 313px;
+                margin-top: 25px;
+                &.show { display: block; }
+                .setNum {
+                    position: absolute;
+                    top: 0; left: 0;
+                    width: 222px; height: 80px;
+                    background: #fff;
+                    border: 3px solid #e5e5e4;
+                    border-radius: 3px;
+                    font-size: 42px;
+                    padding-top: 3px;
+                    font-weight: bold;
+                }
+                .btn_setting {
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/teams/btn_setting.png'),
+                        resolve('mathalive_lib/images/teams/btn_setting.png'),
+                        '',
+                        width('mathalive_lib/images/teams/btn_setting.png'),
+                        height('mathalive_lib/images/teams/btn_setting.png')
+                    );
+                    position: absolute;
+                    top: 0; right: 0;
+                }
+            }
+            &.on, &:hover {
+                transform:scale(1.26);
+            }
+            &.setted {
+                .vs {
+                    padding-top: 35px;
+                }
+            }
+       }
+       .btn-done{
+           @include btn_down_dis(
+                resolve('mathalive_lib/images/teams/btn_done.png'),
+                resolve('mathalive_lib/images/teams/btn_done.png'),
+                '',
+                width('mathalive_lib/images/teams/btn_done.png'),
+                height('mathalive_lib/images/teams/btn_done.png')
+            );
+            position: absolute;
+            top: 600px;
+            left: 0; right: 0;
+            margin: 0 auto;
+       }
+
+       .setting_popup {
+            position: relative;
+            @include CoverPopup(100);
+            background: rgba(0,0,0,.5);
+            width: 100vw;
+            height: 100vh;
+            top: 0px;
+            left: 0px;
+            .popContainer {
+                background: #485cc7;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: auto;
+                .tit {
+                    margin: 0;
+                    font-size: 46px;
+                    color: #fff;
+                    line-height: 1;
+                    font-weight: bold;
+                }
+                .teamNum {
+                    position: absolute;
+                    top: 42px; right: 180px;
+                    button {
+                        @include btn_on(
+                            resolve('mathalive_lib/images/teams/btn_number.png'),
+                            resolve('mathalive_lib/images/teams/btn_number_on.png'),
+                            width('mathalive_lib/images/teams/btn_number.png'),
+                            height('mathalive_lib/images/teams/btn_number.png')
+                        );
+                        font-size: 20px;
+                        color: #fff;
+                        padding-bottom: 7px;
+                        margin: 0 -1px;
+                    }
+                }
+                .btn_shuffle {
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/teams/btn_shuffle.png'),
+                        resolve('mathalive_lib/images/teams/btn_shuffle.png'),
+                        '',
+                        width('mathalive_lib/images/teams/btn_shuffle.png'),
+                        height('mathalive_lib/images/teams/btn_shuffle.png')
+                    );
+                    position: absolute; top: 42px; right: 100px;
+                }
+                .listWrap {
+                    margin: 40px auto 0;
+                    width: 910px;
+                    padding-left: 27px;
+                    .teamList {
+                        height: 98px;
+                        background: #edfcdf;
+                        border-radius: 20px;
+                        position: relative;
+                        margin-bottom: 15px;
+                        display: block;
+                        &.hide { display: none; }
+                        .teamImg {
+                            display: block;
+                            width: 73px;
+                            height: 74px;
+                            border: 2px solid #3c874b;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 0; bottom: 0;
+                            left: -27px;
+                            margin: auto 0;
+                            background: #000;
+                            box-sizing: border-box;
+                        }
+                        .teamName {
+                            float: left;
+                            width: 234px;
+                            padding-left: 65px;
+                            font-size: 27px;
+                            line-height: 98px;
+                            letter-spacing: -0.5px;
+                            text-align: left;
+                            .txt{
+                                display:inline-block;
+                                text-overflow:ellipsis;
+                                white-space:nowrap;
+                                word-wrap:normal;
+                                max-width:115px;
+                                line-height: 33px;
+                                overflow:hidden;
+                                vertical-align: middle;
+                            }
+                            .number {
+                                font-size: 22px;
+                                margin-left: 10px;
+                            }
+                        }
+                        .lineupSlide {
+                            float: left;
+                            width: 611px;
+                            position: relative;
+                            height: 100%;
+                            .btn_prev {
+                                @include btn_down_dis(
+                                    resolve('mathalive_lib/images/teams/btn_team_prev.png'),
+                                    resolve('mathalive_lib/images/teams/btn_team_prev.png'),
+                                    resolve('mathalive_lib/images/teams/btn_team_prev_dis.png'),
+                                    width('mathalive_lib/images/teams/btn_team_prev.png'),
+                                    height('mathalive_lib/images/teams/btn_team_prev.png')
+                                );
+                                position: absolute;
+                                top: 0; bottom: 0;
+                                left: 0; margin: auto 0;
+                                z-index: 10;
+                            }
+                            .btn_next {
+                                @include btn_down_dis(
+                                    resolve('mathalive_lib/images/teams/btn_team_next.png'),
+                                    resolve('mathalive_lib/images/teams/btn_team_next.png'),
+                                    resolve('mathalive_lib/images/teams/btn_team_next_dis.png'),
+                                    width('mathalive_lib/images/teams/btn_team_next.png'),
+                                    height('mathalive_lib/images/teams/btn_team_next.png')
+                                );
+                                position: absolute;
+                                top: 0; bottom: 0;
+                                right: 0; margin: auto 0;
+                                z-index: 10;
+                            }
+                            .swiper-container{
+                                width: 611px;
+                                height: 98px;
+                                overflow-x: hidden;
+                              
+                                .lineup {
+                                    width: 611px;
+                                    height: 98px;
+                                    /*position: absolute;*/
+                                    top: 0; bottom: 0;
+                                    left: 0; right: 0;
+                                    margin: auto;
+                                    padding: 0 10px 0 20px;
+                                    .user {
+                                        width: 116px;
+                                        float: left;
+                                        height: 100%;
+                                        font-size: 0;
+                                        padding-top: 7px;
+                                        position: relative;
+                                        .img {
+                                            display: inline-block;
+                                            width: 64px;
+                                            height: 64px;
+                                            border-radius: 50%;
+                                            background: #5e15b7;
+                                        }
+                                        .name {
+                                            font-size: 19px;
+                                            line-height: 1;
+                                            margin: 1px auto 0;
+                                            display: block;
+                                            text-align: center;
+                                            text-overflow:ellipsis;
+                                            white-space:nowrap;
+                                            word-wrap:normal;
+                                            width:100px;
+                                            overflow:hidden;
+                                        }
+                                        &.popular {
+                                            &::before {
+                                                content: '';
+                                                width: width('mathalive_lib/images/teams/popular.png');
+                                                height: height('mathalive_lib/images/teams/popular.png');
+                                                background: resolve('mathalive_lib/images/teams/popular.png');
+                                                position: absolute;
+                                                top: 0; left: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .list_team{
+                    text-align: left;
+                    font-family: "Maplestory-Bold";
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 65px;
+                    .teamtype{
+                        position: relative;
+                        float:left;
+                        padding:0 10px 0 40px;
+                        width:308px;
+                        height:414px;
+                        border-radius: 24px;
+                        background-color: #fff;
+                        margin: 0 15px;
+                        .title{
+                            position: absolute;
+                            left:50%;
+                            top:-20px;
+                            width:200px;
+                            height:40px;
+                            line-height:40px;
+                            margin-left:-100px;
+                            font-size: 20px;
+                            text-align:center;
+                            color:#fff;
+                            border-radius: 20px;
+                            .btn_plus{
+                                position: absolute;
+                                right:14px;
+                                top:50%;
+                                width:14px;
+                                height:14px;
+                                margin-top: -7px;
+                                border:0;
+                                background:resolve('mathalive_lib/images/teams/ico_plus.png') no-repeat center;
+                            }
+                            .btn_minus{
+                                position: absolute;
+                                right:14px;
+                                top:50%;
+                                width:14px;
+                                height:14px;
+                                margin-top: -7px;
+                                border:0;
+                                background:resolve('mathalive_lib/images/teams/ico_minus.png') no-repeat center;
+                            }
+                        }
+                        &.red{
+                            .title{
+                                background-color: #ed544b;
+                            }
+                        }
+                        &.green{
+                            .title{
+                                background-color: #70c433;
+                            }
+                        }
+                        &.yellow{
+                            .title{
+                                background-color: #ffb515;
+                            }
+                        }
+                        .crew{
+                            overflow-y: auto;
+                            height:350px;
+                            margin-top:40px;
+                            
+                            &::-webkit-scrollbar-thumb {
+                                background: rgba(0, 0, 0, 0.1);
+                                border-radius: 10px;
+                            }
+                            &::-webkit-scrollbar-thumb:hover {
+                                background: rgba(0,0, 0, 0.3);
+                            }
+                            
+                            .student{
+                                margin-bottom: 10px;
+                                font-size: 21px;
+                                color:#585858;
+                                img{
+                                    width:50px;
+                                    height:50px;
+                                    min-width: 50px !important;
+                                    min-height: 50px !important;
+                                    vertical-align: middle;
+                                    border-radius: 50%;
+                                }
+                                >span{
+                                    display: inline-block;
+                                    max-width:160px;
+                                    text-overflow:ellipsis;
+                                    white-space:nowrap;
+                                    word-wrap:normal;
+                                    overflow:hidden;
+                                    vertical-align: middle;
+                                }
+                                &.on{
+                                    >span{
+                                        color:#485cc7;
+                                        background-color: #fff;
+                                    }
+                                }
+                                >span{
+                                    margin-left: 8px;
+                                    padding:3px 12px 4px;
+                                    border-radius: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .btn_btm{
+                    margin-top: 45px;
+                    .btn_random {
+                        width:70px;
+                        height:78px;
+                        border:0;
+                        background:resolve('mathalive_lib/images/teams/btn_random.png') no-repeat;
+                        background-position: bottom center !important;
+                        &:disabled {
+                            background:resolve('mathalive_lib/images/teams/btn_random_off.png') no-repeat;
+                        }
+                    }
+                    .btn_done{
+                        margin-left: 10px;
+                        width:200px;
+                        height:78px;
+                        border:0;
+                        background:resolve('mathalive_lib/images/teams/btn_teamsetting_done.png')
+                    }
+                }
+                .btn_cancel {
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/teams/btn_cancel.png'),
+                        resolve('mathalive_lib/images/teams/btn_cancel.png'),
+                        resolve('mathalive_lib/images/teams/btn_cancel.png'),
+                        width('mathalive_lib/images/teams/btn_cancel.png'),
+                        height('mathalive_lib/images/teams/btn_cancel.png')
+                    );
+                    position: absolute; 
+                    bottom: 10px; right: 206px;
+                }
+                .btn_submit {
+                    @include btn_down_dis(
+                        resolve('mathalive_lib/images/teams/btn_submit.png'),
+                        resolve('mathalive_lib/images/teams/btn_submit.png'),
+                        resolve('mathalive_lib/images/teams/btn_submit.png'),
+                        width('mathalive_lib/images/teams/btn_submit.png'),
+                        height('mathalive_lib/images/teams/btn_submit.png')
+                    );
+                    position: absolute; 
+                    bottom: 10px; right: 30px;
+                }
+            }
+            &.open{ z-index: 10; }
+       }
+    }
+    .cover_teamselection {
+        position: absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        z-index: 100;
+        .img_text{
+            position: absolute;
+            left:50%;
+            top:50%;
+            opacity: 0;
+            z-index: 10;
+            transform: translate(-50%,-50%) scale(0, 0);
+	        transition: transform 0.3s, opacity 0.3s;
+            transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+            transition-delay: 0.4s;
+        }
+        .circle{
+            div{
+                position: absolute;
+                left:50%;
+                top:50%;
+                border-radius: 100%;
+                opacity: 0;
+                transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%) scale(0, 0);
+                transition: transform 0.3s, opacity 0.3s;
+                transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+                &.c01{
+                    width:600px;
+                    height:600px;
+                    background: rgba(255,255,255,.1);
+                    transition-delay: 0.1s;
+                }
+                &.c02{
+                    width:460px;
+                    height:460px;
+                    background: rgba(255,255,255,.2);
+                    transition-delay: 0.2s;
+                }
+                &.c03{
+                    width:340px;
+                    height:340px;
+                    background: rgba(255,255,255,1);
+                    transition-delay: 0.3s;
+                }
+            }
+            
+        }
+        &.red{
+            background: #ff8472;
+            .img_text{
+                width:237px;
+                height:185px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_r.png');
+            }
+        }
+        &.yellow{
+            background: #ffb400;
+            .img_text{
+                width:402px;
+                height:192px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_y.png');
+            }
+        }
+        &.green{
+            background: #75c906;
+            .img_text{
+                width:377px;
+                height:168px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_g.png');
+            }
+        }
+        &.greenyellow{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_gy.png');
+            .img_text{
+                width:402px;
+                height:267px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_gy.png');
+            }
+        }
+        &.yellowred{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_yr.png');
+            .img_text{
+                width:402px;
+                height:286px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_yr.png');
+            }
+        }
+        &.greenred{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_gr.png');
+            .img_text{
+                width:376px;
+                height:263px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_gr.png');
+            }
+        }
+        &.greenyellowred{
+            background: resolve('mathalive_lib/images/teams/bg_teamselection_gyr.png');
+            .img_text{
+                width:402px;
+                height:359px;
+                background:resolve('mathalive_lib/images/teams/txt_teamselection_gyr.png');
+            }
+        }
+        &.open{
+            .img_text{
+                opacity: 1;
+                transform: translate(-50%,-50%) scale(1,1);
+            }
+            .circle{
+                div{
+                    opacity: 1;
+                    transform: translate(-50%,-50%) scale(1,1);
+                }
+            }
+        }
+    }
+    .pop_result{
+        position: absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        background:rgba(0,0,0,.8);
+        .content{
+            position: absolute;
+            width:982px;
+            height: 654px;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            background:#410097;
+            border-radius: 35px;
+            .btn_close{
+                position: absolute;
+                right:20px;
+                top:20px;
+                width:50px;
+                height:50px;
+                border-radius: 100%;
+                border:0;
+                background:#5a23a3 resolve('mathalive_lib/images/ico_video_menu_close.png') no-repeat center;
+                background-size: 22px auto;
+            }
+            .giftbox{
+                position: absolute;
+                width:336px;
+                height:366px;
+                left:100px;
+                top:144px;
+                background:resolve('mathalive_lib/images/teams/ico_giftbox.png') no-repeat center 0;
+                .text{
+                    position: absolute;
+                    left:0;
+                    bottom:0;
+                    width:100%;
+                    height:80px;
+                    line-height: 80px;
+                    color:#fff;
+                    font-size: 36px;
+                    text-align: center;
+                    font-family: "maplestory-bold";
+                    background:#425cc5 resolve('mathalive_lib/images/teams/ico_redheart.png') no-repeat 33px center;
+                    border-radius: 10px;
+                    span{
+                        font-size: 50px;
+                    }
+                }
+            }
+            .ani{
+                position: absolute;
+                width:376px;
+                height:423px;
+                right:100px;
+                top:107px;
+                &:after{
+                    content:"";
+                    position: absolute;
+                    width:376px;
+                    height:376px;
+                    top: 30px;
+                    left:0;
+                    border-radius: 100%;
+                    background:#3b097d;
+                }
+                &:before{
+                    content: "";
+                    position: absolute;
+                    width: 406px;
+                    height: 450px;
+                    top: -20px;
+                    left: -50px;
+                    background: url(/content/mathalive_lib/images/saypop_correct_01.gif);
+                    z-index: 10;
+                    background-size: 120%;
+                }
+            }
+        }
+    }
+    .bridge_short {
+        position: absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        background:rgba(0,0,0,.8);
+        font-family: "maplestory-bold";
+        text-align: center;
+        opacity: 0;
+        transition: 1s all;
+        h2{
+            display:inline-block;
+            height:56px;
+            line-height:56px;
+            padding: 0 32px;
+            margin:300px auto 0;
+            background-color: #fff;
+            border-radius: 30px;
+            font-size: 30px;
+        }
+        h1{
+            color:#fff;
+            font-size: 80px;
+            margin-top: 30px;
+        }
+        &.show{
+            opacity:1;
+        }
+        &.hide{
+            opacity: 0;
+            top : -100%;
+        }
+    }
+    .concept_summary {
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        text-align: center;
+        &.bg01{
+            background:resolve('mathalive_lib/images/bg_conceptsummary_01.png');
+        }
+        &.bg02{
+            background:resolve('mathalive_lib/images/bg_conceptsummary_02.png');
+        }
+        h1{
+            margin: 70px 0 50px;
+            font-size: 40px;
+            font-family: "maplestory-bold";
+        }
+        h2{
+            margin-top: 45px;
+            font-size: 26px;
+            font-family: "notoSans_light";
+        }
+        &.type02{
+            h1{
+                margin-bottom: 30px;
+            }
+            h2{
+                margin: 0 0 50px;
+            }
+        }
+    }
+    @include AlertPopup;
+    .t_teamselect .alert_popup .pop_box {
+        width: 370px !important;
+        .text {
+            width: 313px !important;
+            font-family: NotoSansKR-Medium, sans-serif;
+        }
+    }
+    .t_teamselect .custom_thumbnail {
+        display: inline-block;
+        width: 50px !important;
+        height:50px !important;
+        line-height: 50px !important;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        vertical-align: middle !important;
+        box-sizing: border-box;
+        .text {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: "maplestory-bold";
+            font-size: 13px;
+        }
+        &.defaultImg_m {
+            background-color: #2cd1c3;
+        }
+        &.defaultImg_f {
+            background-color: #ffa1a7;
+        }
+        &.no-bold {
+            border: 0px;
+            background-color: transparent;
+        }
+    }
+}
+
+@include t_teamselect();

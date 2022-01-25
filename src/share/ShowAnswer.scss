@@ -1,0 +1,31 @@
+#answerLayer[data-custom=true] {
+    position:fixed;
+    z-index: 1000;
+    width: 3500px;
+    height: 250px;
+    opacity: 0.7;
+    button {
+        position:absolute;
+        top: 0px;
+        left: 0px;
+        width: 80px;
+        height: 20px;
+        font-size: 13px;
+    }
+    > div {
+        position:relative;
+        overflow: hidden;
+        height: 1;
+    }
+    > div+button {
+        position:absolute;
+        left: 82px;
+        z-index: 2;
+        &+button {
+            left: 164px;
+        }
+        &+button+button {
+            left: 244px;
+        }
+    }
+}

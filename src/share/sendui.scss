@@ -1,0 +1,196 @@
+@import '../common/component/button.scss';
+
+@mixin sendbtn {
+	position: absolute;
+	z-index: 11;
+	touch-action: none;
+}
+
+@mixin fel_topad {
+	@include sendbtn;
+	bottom: 15px;
+	right: 15px;
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	border: 0;
+	background-color: rgba(0,0,0,.3);
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, .15);
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 27px;
+		height: 31px;
+		background: resolve('mathalive_lib/images/fel_arr_up.png') no-repeat center;
+		transform: translate(-50%, -25%) rotate(180deg);
+		animation-name: arrowMove;
+		animation-direction: alternate;
+		animation-duration: .4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-delay: .1s;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 27px;
+		height: 31px;
+		background: resolve('mathalive_lib/images/fel_arr_up.png') no-repeat center;
+		transform: translate(-50%, -70%) rotate(180deg);
+		animation-name: arrowMove;
+		animation-direction: alternate;
+		animation-duration: .4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	.revise {
+		position: absolute;
+		top: 12px;
+		left: -96px;
+		display: inline-block;
+		width: 96px;
+		height: 74px;
+		line-height: 55px;
+		padding-left: 8px;
+		font-size: 20px;
+		font-family: "maplestory-bold";
+		text-align: left;
+		color: #ea7145;
+		background: resolve('mathalive_lib/images/img_revise.png') no-repeat;
+
+		&.on {
+			&:after {
+				top: 50%;
+				opacity: 0.4;
+			}
+		}
+	}
+	/*
+	.revise {
+		position: absolute;
+		top: -50px;
+		left: 3px;
+		display: inline-block;
+		width: 79px;
+		height: 74px;
+		line-height: 55px;
+		padding-left: 8px;
+		font-size: 20px;
+		font-family: "maplestory-bold";
+		text-align: left;
+		color: #ea7145;
+		background: resolve('mathalive_lib/images/bg_bubble.png') no-repeat;
+
+		&:after {
+			content: "!";
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			font-size: 50px;
+			transform: translate(-90%, -65%);
+			opacity: 0;
+			transition: all 1s;
+		}
+
+		&.on {
+			&:after {
+				top: 50%;
+				opacity: 0.4;
+			}
+		}
+	}*/
+}
+
+@mixin fel_lock {
+	@include sendbtn;
+	bottom: 65px;
+	right: 65px;
+
+	@include btn_on(resolve('mathalive_lib/images/ico_pause.png'),
+		resolve('mathalive_lib/images/ico_pause.png'),
+		width('mathalive_lib/images/ico_pause.png'),
+		height('mathalive_lib/images/ico_pause.png'));
+}
+
+@mixin fel_pause {
+	@include sendbtn;
+	bottom: 65px;
+	right: 5px;
+
+	@include btn_on(resolve('mathalive_lib/images/ico_pause.png'),
+		resolve('mathalive_lib/images/ico_pause.png'),
+		width('mathalive_lib/images/ico_pause.png'),
+		height('mathalive_lib/images/ico_pause.png'));
+}
+
+@mixin fel_stop {
+	@include sendbtn;
+	bottom: 65px;
+	right: 5px;
+
+	@include btn_on(resolve('mathalive_lib/images/ico_stop.png'),
+		resolve('mathalive_lib/images/ico_stop.png'),
+		width('mathalive_lib/images/ico_stop.png'),
+		height('mathalive_lib/images/ico_stop.png'));
+}
+
+@mixin fel_toteacher {
+	@include sendbtn;
+	bottom: 15px !important;
+	right: 20px;
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	border: 0;
+	background-color: #f1436d;
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, .15);
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 27px;
+		height: 31px;
+		background: resolve('mathalive_lib/images/fel_arr_up.png') no-repeat center;
+		transform: translate(-50%, -30%);
+		animation-name: arrowMove;
+		animation-direction: alternate;
+		animation-duration: .4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 27px;
+		height: 31px;
+		background: resolve('mathalive_lib/images/fel_arr_up.png') no-repeat center;
+		transform: translate(-50%, -75%);
+		animation-name: arrowMove;
+		animation-direction: alternate;
+		animation-duration: .4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-delay: .1s;
+	}
+}
+
+@keyframes arrowMove {
+	from {
+		opacity: 0.2;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

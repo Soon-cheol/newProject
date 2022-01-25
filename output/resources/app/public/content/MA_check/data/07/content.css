@@ -1,0 +1,47 @@
+@charset "utf-8";
+.box{
+    position:relative;
+    height:273px;
+    padding:15px 175px;
+    margin-bottom: 10px;
+    font-size:20px;
+    text-align:center;
+    border:2px solid #818080;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+.box canvas{position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 10; background-color:transparent; touch-action: none;}
+.btn.submit{float:right;width:100px;height:50px;margin-top: 10px;}
+.box .word {
+    position: absolute;
+    width:247px;
+    height:72px;
+    border:2px solid #3d7c70;
+    line-height: 63px;
+    border-radius: 10px;
+    background-color: #66b0a4;
+    font-size:24px;
+    color:#fff;
+}
+.box .word.w1:after,.box .word.w2:after{left:50%;bottom: -20px;}
+.box .word.w3:after,.box .word.w4:after{left:50%;top: -20px;}
+.box .word.w2 {right:175px;}
+.box .word.w3 {bottom:15px;height: 83px;line-height: 28px;padding-top: 10px;}
+.box .word.w4 {bottom:15px;right:175px;height: 83px;line-height: 28px;padding-top: 10px;}
+.box .dot {position: absolute;background: url(ico_dot.png); width: 14px; height: 15px;}
+.box .dot.d1, 
+.box .dot.d2 {left:50%;bottom:-44%;margin-left: -7px; }
+.box .dot.d3,
+.box .dot.d4{left:50%;top:-44%;margin-left: -7px;}
+mjx-line{margin: .2em -.1em 0 !important;}
+
+.desc{
+    padding:20px 0;
+    font-size:21px;
+    font-family: "NotoSans";
+    color:#3c3c3c;
+}
+.desc img{
+    float: right;
+}
+.desc p{margin-top: 20px;}

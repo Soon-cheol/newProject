@@ -1,0 +1,11 @@
+@mixin btn_ranking {
+    .btn_ranking {
+        @include btn_down_dis(
+            resolve('mathalive_lib/images/btn_ranking.png'),
+            resolve('mathalive_lib/images/btn_ranking.png'),
+            resolve('mathalive_lib/images/btn_ranking_dis.png'),
+            width('mathalive_lib/images/btn_ranking.png'),
+            height('mathalive_lib/images/btn_ranking.png')
+        );
+    }
+}

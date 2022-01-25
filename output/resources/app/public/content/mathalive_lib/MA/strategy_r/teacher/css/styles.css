@@ -1,0 +1,4721 @@
+@charset "UTF-8";
+@font-face {
+    font-family: NotoSans-Black;
+    src: url(/content/mathalive_lib/font/NotoSansCJKkr-Black-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans;
+    src: url(/content/mathalive_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: Maplestory-Bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/Maplestory-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: Maplestory-Light;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/Maplestory-Light.woff) format("woff");
+}
+
+/* 
+  21-06-24 최순철 수학셀 김민정CP님이 요청
+  Xelf 저작 결과물에 폰트 네임이 KR 이 붙어서 나오게 되어 있어서 추가
+*/
+@font-face {
+    font-family: NotoSansKR-Light;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Medium;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Medium.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+/* 
+  21-07-02 최순철 기오정CP님과 변경
+*/
+@font-face {
+    font-family: NotoSansB_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSans-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB-Regular;
+    src: url(/content/mathalive_lib/font/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@charset "UTF-8";
+#common_navi_left {
+    left: 0;
+    position: absolute;
+    display: table;
+    width: auto;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+    transition: left 0.5s, right 0.5s;
+    /* transition-property: left right; */
+    z-index: 20;
+}
+
+#common_navi_left > div {
+    width: auto;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+#common_navi_left > div > div {
+    position: relative;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#common_navi_left.off {
+    left: -66px;
+}
+
+#common_navi_left.off button.left {
+    pointer-events: none;
+}
+
+#common_navi_left.off button.right {
+    pointer-events: none;
+}
+
+#common_navi_left button.left {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 0;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_left_L.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_left button.left:disabled {
+    background-image: url("/content/mathalive_lib/images/page_left_L_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_left button.left.down {
+    background-image: url("/content/mathalive_lib/images/page_left_L.png");
+}
+
+#common_navi_left button.left:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_left_L.png") url("/content/mathalive_lib/images/page_left_L.png") url("/content/mathalive_lib/images/page_left_L_dis.png");
+}
+
+#common_navi_left button.right {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    pointer-events: auto;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_right_L.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_left button.right:disabled {
+    background-image: url("/content/mathalive_lib/images/page_right_L_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_left button.right.down {
+    background-image: url("/content/mathalive_lib/images/page_right_L.png");
+}
+
+#common_navi_left button.right:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_right_L.png") url("/content/mathalive_lib/images/page_right_L.png") url("/content/mathalive_lib/images/page_right_L_dis.png");
+}
+
+#common_navi_right {
+    right: 0;
+    position: absolute;
+    display: table;
+    width: auto;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+    transition: left 0.5s, right 0.5s;
+    /* transition-property: left right; */
+    z-index: 20;
+}
+
+#common_navi_right > div {
+    width: auto;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+#common_navi_right > div > div {
+    position: relative;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#common_navi_right.off {
+    right: -66px;
+}
+
+#common_navi_right.off button.left {
+    pointer-events: none;
+}
+
+#common_navi_right.off button.right {
+    pointer-events: none;
+}
+
+#common_navi_right button.left {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 0;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_left_R.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_right button.left:disabled {
+    background-image: url("/content/mathalive_lib/images/page_left_R_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_right button.left.down {
+    background-image: url("/content/mathalive_lib/images/page_left_R.png");
+}
+
+#common_navi_right button.left:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_left_R.png") url("/content/mathalive_lib/images/page_left_R.png") url("/content/mathalive_lib/images/page_left_R_dis.png");
+}
+
+#common_navi_right button.right {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    pointer-events: auto;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_right_R.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_right button.right:disabled {
+    background-image: url("/content/mathalive_lib/images/page_right_R_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_right button.right.down {
+    background-image: url("/content/mathalive_lib/images/page_right_R.png");
+}
+
+#common_navi_right button.right:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_right_R.png") url("/content/mathalive_lib/images/page_right_R.png") url("/content/mathalive_lib/images/page_right_R_dis.png");
+}
+
+@keyframes arrowMove {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: transparent;
+}
+
+#wrap > .content-container {
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+    position: absolute;
+}
+
+#wrap > .content-container .content-wrapper {
+    position: relative;
+    white-space: nowrap;
+    width: auto;
+    height: 800px;
+    transition: left 0.3s;
+    transition-timing-function: ease-in;
+}
+
+#wrap > .content-container .content-wrapper > div {
+    position: relative;
+    display: inline-block;
+    white-space: unset;
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+}
+
+#wrap > .content-container .content-wrapper .sub-container .sub-wrapper {
+    position: relative;
+    white-space: nowrap;
+    width: auto;
+    height: 800px;
+    transition: left 0.3s;
+    transition-timing-function: ease-in;
+}
+
+#wrap > .content-container .content-wrapper .sub-container .sub-wrapper > div {
+    position: relative;
+    display: inline-block;
+    white-space: unset;
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+}
+
+#wrap > .content-container.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .video-direction {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    transform: translateY(100px);
+    transition: transform 0.5s ease-out, opacity 0.5s;
+    opacity: 0;
+}
+
+#wrap .video-direction.on > div.direction {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+#wrap .video-direction .direction_top_menu {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 40px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_top_menu.png");
+    z-index: 100;
+}
+
+#wrap .video-direction .direction_left_menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 30;
+}
+
+#wrap .video-direction .direction_left_menu.show {
+    display: block;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox {
+    width: 354px;
+    height: 100%;
+    background-color: #394ec0;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox .close {
+    padding: 43px 25px 0 0;
+    text-align: right;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox .close .btn_close {
+    width: 30px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_menu_close.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul {
+    padding: 40px 0 0 30px;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li {
+    margin-bottom: 38px;
+    padding-left: 80px;
+    height: 42px;
+    line-height: 42px;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+    font-size: 28px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(1) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_lesson.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(2) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_endclass.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(3) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_logout.png");
+}
+
+#wrap .video-direction .concept_name {
+    position: absolute;
+    left: 80px;
+    top: 19px;
+    font-size: 28px;
+    color: #fff;
+    font-family: "Maplestory-Bold";
+    z-index: 10;
+}
+
+#wrap .video-direction .video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 800px;
+}
+
+#wrap .video-direction .progress_dot {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 67px;
+    padding: 25px 10px 0  0;
+    text-align: center;
+    z-index: 10;
+}
+
+#wrap .video-direction .progress_dot span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#wrap .video-direction .progress_dot span.on {
+    background-color: #f5e942;
+}
+
+#wrap .video-direction .text {
+    font-family: "maplestory-bold";
+    white-space: normal;
+    /* 210520 2�� ���� �߰� */
+}
+
+#wrap .video-direction .text .t1 {
+    font-size: 35px;
+    color: #fff;
+    height: 39px;
+}
+
+#wrap .video-direction .text .t2 {
+    margin-top: 6px;
+    font-size: 81px;
+    color: #f5e942;
+    word-break: keep-all;
+    /* 210520 2�� ���� �߰� */
+}
+
+#wrap .video-direction.hide > div.direction {
+    visibility: hidden;
+}
+
+#wrap .video-direction.loaded > video {
+    opacity: 1;
+}
+
+#wrap .video-direction .course .title, #wrap .video-direction .course .concept {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    padding-top: 17px;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #999;
+}
+
+#wrap .video-direction .course .concept span.tit {
+    display: block;
+    width: 100%;
+    float: none;
+    color: royalblue;
+}
+
+#wrap .video-direction .course .title {
+    top: 110px;
+    left: 30%;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#wrap .video-direction .course .c1 {
+    left: 55%;
+    top: 110px;
+    border-color: royalblue;
+}
+
+#wrap .video-direction .course .c2 {
+    left: 75%;
+    top: 40%;
+    border-color: royalblue;
+}
+
+#wrap .video-direction .course .c3 {
+    left: 60%;
+    top: 70%;
+    border-color: coral;
+}
+
+#wrap .video-direction .course .black {
+    color: #000;
+}
+
+#wrap .video-direction .course .type2 {
+    padding: 20px 40px 30px;
+}
+
+#wrap .video-direction .course .type2 .small-title {
+    left: 40px;
+    top: -25px;
+    color: #ffff;
+}
+
+#wrap .video-direction .course.independent .type2 .small-title {
+    top: -10px;
+    color: #999;
+}
+
+#wrap .video-direction > div.text {
+    position: absolute;
+    left: 82px;
+    top: 200px;
+}
+
+#wrap .video-direction > div.text .t2 {
+    color: #92daff;
+}
+
+#wrap .video-direction > div.lesson {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-size: 40px;
+    color: #fff;
+}
+
+#wrap .t_strategy .strategyContent {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy {
+    display: flex;
+    /* 수진cp님이 함 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 67px;
+    padding: 0 0 0 10px;
+    background-color: rgba(0, 0, 0, 0.18);
+    z-index: 20;
+    padding-left: 75px;
+    /*@include masubmitusers;
+         @include q_timer;*/
+    /*@include masubmitusers;*/
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy.no_bg {
+    background: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .btn_topmenu {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 49px;
+    margin-top: 9px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_top_menu.png") no-repeat center;
+    z-index: 100;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 265px;
+    height: 345px;
+    z-index: 90;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu.show {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu .innerbox {
+    height: 100%;
+    border-radius: 0 30px 30px 30px;
+    background-color: #3cbdab;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.16);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu .innerbox .close {
+    text-align: right;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu .innerbox .close .btn_close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_menu_close.png") no-repeat center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu .innerbox ul {
+    padding: 78px 0 0 0;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu .innerbox ul li {
+    height: 81px;
+    line-height: 81px;
+    text-align: center;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+    font-size: 28px;
+    background: url("/content/mathalive_lib/images/bg_left_menu_line.png") no-repeat center top;
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .left_menu .innerbox ul li:first-child {
+    background: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .back {
+    position: absolute;
+    left: 20px;
+    top: 85px;
+    width: 53px;
+    height: 53px;
+    border: none;
+    background: url("/content/mathalive_lib/images/btn_top_back.png");
+    z-index: 1;
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .btn_viewMark {
+    float: right;
+    margin: 5px 20px 0;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/btn_viewMark_dis.png");
+    background-repeat: no-repeat;
+    width: 77px;
+    height: 76px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .btn_viewMark.on {
+    background-image: url("/content/mathalive_lib/images/btn_viewMark.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .btn_viewMark:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/btn_viewMark_dis.png") url("/content/mathalive_lib/images/btn_viewMark.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .btn_viewSummary {
+    float: right;
+    margin: 5px 0 0 -10px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/btn_viewMark_dis.png");
+    background-repeat: no-repeat;
+    width: 77px;
+    height: 76px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .btn_viewSummary.on {
+    background-image: url("/content/mathalive_lib/images/btn_viewMark.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .btn_viewSummary:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/btn_viewMark_dis.png") url("/content/mathalive_lib/images/btn_viewMark.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    padding-left: 4px;
+    z-index: 10;
+    background: url("/content/mathalive_lib/images/bg_header_page_line.png") no-repeat 0 0;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page.fixWidth {
+    width: 514px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .inner {
+    padding-left: 20px;
+    /*overflow-x:auto;*/
+    -webkit-mask: url("/content/mathalive_lib/images/header_page_mask.png") no-repeat 0 0;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .inner .swiper-container {
+    /*width: 510px;*/
+    position: relative;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .inner .swiper-container .swiper-slide {
+    max-width: 70px;
+    height: 100%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .inner .swiper-container .swiper-scrollbar {
+    opacity: 1;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 49px;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-family: "Maplestory-Bold";
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.result {
+    width: 167px;
+    margin-right: 10px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num span {
+    display: block;
+    width: 100%;
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+    color: #fff;
+    font-size: 29px;
+    border-radius: 10px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num span.no {
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.on.result {
+    background: url("/content/mathalive_lib/images/bg_page_result_on.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.on span {
+    padding-right: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.on.h0 {
+    background: url("/content/mathalive_lib/images/bg_page_on_h0.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.on.h1 {
+    background: url("/content/mathalive_lib/images/bg_page_on_h1.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.on.h2 {
+    background: url("/content/mathalive_lib/images/bg_page_on_h2.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.h0 {
+    background: url("/content/mathalive_lib/images/bg_page_none_h0.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.h1 {
+    background: url("/content/mathalive_lib/images/bg_page_none_h1.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.h2 {
+    background: url("/content/mathalive_lib/images/bg_page_none_h2.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra {
+    width: 85px;
+    height: 41px;
+    line-height: 41px;
+    padding-left: 41px;
+    margin-left: 18px;
+    font-size: 15px;
+    color: #323232;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra:before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    width: 12px;
+    height: 4px;
+    margin-top: -2px;
+    background-color: #797979;
+    border-radius: 4px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra.on.h0 {
+    background: url("/content/mathalive_lib/images/bg_page_sm_on_h0.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra.on.h1 {
+    background: url("/content/mathalive_lib/images/bg_page_sm_on_h1.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra.on.h2 {
+    background: url("/content/mathalive_lib/images/bg_page_sm_on_h2.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra.h0 {
+    background: url("/content/mathalive_lib/images/bg_page_sm_none_h0.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra.h1 {
+    background: url("/content/mathalive_lib/images/bg_page_sm_none_h1.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page .num.extra.h2 {
+    background: url("/content/mathalive_lib/images/bg_page_sm_none_h2.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page.extra .num {
+    width: 54px;
+    height: 59px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page.extra .num span {
+    height: 40px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page.extra .num.extra {
+    margin-left: 8px;
+    padding-left: 0;
+    line-height: 61px;
+    background: none !important;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page.extra .num.extra::before {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page.teacher .num.extra {
+    width: 85px;
+    height: 41px;
+    background: url("/content/mathalive_lib/images/bg_teacher_heart_sm_off_none.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .page.teacher .num.extra.on {
+    background: url("/content/mathalive_lib/images/bg_teacher_heart_sm_none.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title {
+    position: absolute;
+    left: 20px;
+    margin: 9px 0 0 0;
+    min-width: 280px;
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 2px solid;
+    border-radius: 10px;
+    font-family: "maplestory-bold";
+    color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title .team {
+    position: relative;
+    display: inline-block;
+    width: 66px;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    font-size: 29px;
+    vertical-align: middle;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title .team:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 27px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title .title {
+    display: inline-block;
+    width: calc(100% - 66px);
+    height: 27px;
+    line-height: 27px;
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title.a {
+    background-color: #ed544b;
+    border-bottom-color: #d33229;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title.a .team:after {
+    background-color: #e13f38;
+    border-right: 1px solid #f17c75;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title.b {
+    background-color: #70c433;
+    border-bottom-color: #54a419;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .team_title.b .team:after {
+    background-color: #59af25;
+    border-right: 1px solid #91d262;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .number {
+    float: left;
+    width: 70px;
+    padding-left: 5px;
+    padding-top: 9px;
+    margin-right: 10px;
+    background: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .number span {
+    display: inline-block;
+    width: 70px;
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.16);
+    font-size: 30px;
+    color: #fff;
+    font-family: "maplestory-bold";
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .number span::before {
+    display: none !important;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score {
+    /*height:49px;
+            padding-top: 9px;*/
+    height: 65px;
+    /**/
+    padding-top: 9px;
+    width: 95%;
+    /**/
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .btn_topmenu {
+    float: left;
+    position: static;
+    left: 15px;
+    top: 8px;
+    width: 50px;
+    height: 49px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_top_menu.png") no-repeat center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num {
+    position: relative;
+    display: inline-block;
+    height: 49px;
+    line-height: 49px;
+    padding-left: 20px;
+    padding-right: 27px;
+    font-size: 24px;
+    color: #fff;
+    font-family: "maplestory-bold";
+    box-sizing: border-box;
+    background: url("/content/mathalive_lib/images/bg_header_page_line.png") no-repeat right center;
+    background-size: 0px 20px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num.now {
+    color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num:last-child {
+    background: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num span {
+    display: inline-block;
+    height: 49px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num span:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    top: -1px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num.first span:before {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp01.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num.second span:before {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp02.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num.wrong span:before {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp03.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num.unsubmission span:before {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp04.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score .num.on span {
+    padding-left: 18px;
+    padding-right: 18px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container {
+    position: absolute;
+    height: 57px;
+    width: 600px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .swiper-scrollbar {
+    opacity: 0;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num {
+    width: 68px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num span::before {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num span.txt {
+    width: 70px;
+    padding-left: 0;
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num span.ico {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 20px;
+    top: -1px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.past {
+    height: 47px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.first {
+    padding-left: 5px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.first span.ico {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp01.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.second span.ico {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp02.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.wrong span.ico {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp03.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.unsubmission span.ico {
+    background-image: url("/content/mathalive_lib/images/ico_result_score_tp04.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.on span:after {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.notyet {
+    width: 80px;
+    background: none;
+    box-shadow: none;
+    color: #8f969d;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.notyet .txt {
+    width: 100%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.notyet .ico {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student .swiper-container .num.now {
+    background: rgba(0, 0, 0, 0.1) url("/content/mathalive_lib/images/bg_header_center_line.png") no-repeat 68px center;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student.strategy div {
+    width: 70px;
+    background-image: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student.strategy div span.ico {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .result_score.student.strategy div.past {
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .worksheet {
+    position: absolute;
+    float: left;
+    width: 173px;
+    height: 44px;
+    left: 165px;
+    top: 11px;
+    line-height: 44px;
+    border-radius: 40px;
+    padding-left: 47px;
+    font-size: 20px;
+    font-family: "maplestory-bold";
+    color: #fff;
+    background: rgba(0, 0, 0, 0.15) url("/content/mathalive_lib/images/ico_hdr_worksheet02.png") no-repeat 6px center;
+    box-sizing: border-box;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .worksheet.module {
+    left: 80px;
+    width: 222px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .worksheet.module.student {
+    left: 310px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .pagination {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 134px;
+    height: 67px;
+    padding: 25px 0 0  0;
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .pagination span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 10px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .pagination span.on {
+    background-color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy.summary {
+    background: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy.summary .number {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy.summary .pagination {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress {
+    padding-top: 9px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.strategy {
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    width: 555px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.strategy .btn {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li {
+    vertical-align: middle;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li .tit1 {
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab:before {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab .btn {
+    display: block;
+    position: relative;
+    height: 30px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab .btn button {
+    position: absolute;
+    width: 26px;
+    height: 30px;
+    top: -1px;
+    border: 0;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab .btn button.a {
+    left: 37px;
+    background: url("/content/mathalive_lib/images/header_progress_ab.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab .btn button.a.on {
+    background-image: url("/content/mathalive_lib/images/header_progress_module_ab_on.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab .btn button.a.disabled {
+    background-color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab .btn button.b {
+    right: 37px;
+    background: url("/content/mathalive_lib/images/header_progress_ab.png") no-repeat right center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab .btn button.b.on {
+    background-image: url("/content/mathalive_lib/images/header_progress_module_ab_on.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab.a_on .btn button.a {
+    background-image: url("/content/mathalive_lib/images/header_progress_module_ab_on.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab.a_on .tit1 {
+    color: #ec84ac;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab.b_on .btn button.b {
+    background-image: url("/content/mathalive_lib/images/header_progress_module_ab_on.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab.b_on .tit1 {
+    color: #58ab1b;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.module ul li.ab + li.ab:after {
+    width: 59%;
+    left: -29%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.strategy.module {
+    left: 60px;
+    width: 505px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.strategy._module.student {
+    left: 720px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.strategy.student {
+    position: absolute;
+    left: 160px;
+    top: 0px;
+    width: 560px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.strategy.student::before {
+    content: "";
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress.strategy.student ul li {
+    width: 20%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li {
+    position: relative;
+    display: inline-block;
+    width: 12%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    list-style: none;
+    font-family: "maplestory-light";
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li > span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 5px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 30px;
+    border-radius: 40px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 2px auto;
+    background: rgba(0, 0, 0, 0.15) url("/content/mathalive_lib/images/header_progress_check.png") no-repeat center;
+    position: relative;
+    z-index: 10;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li:after {
+    content: "";
+    position: absolute;
+    width: 73%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.15);
+    top: 15px;
+    left: -36%;
+    z-index: 1;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a_on + li.a_on:after, #wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a_on + li.b_on:after, #wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a_on + li.on:after {
+    background-color: #ec84ac;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b_on + li.a_on:after, #wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b_on + li.b_on:after, #wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b_on + li.on:after {
+    background-color: #ec84ac;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li:first-child:after {
+    content: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li .tit2 {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.on:before {
+    background: #ec84ac url("/content/mathalive_lib/images/header_progress_check_on.png") no-repeat center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.on.a:after {
+    background-color: #ec84ac;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.on span {
+    color: #ec84ac;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.pass1::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_pass1.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.pass2::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_pass2.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.fail1::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_fail1.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.fail2::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_fail2.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li + li.ab:after {
+    width: 68%;
+    left: -38%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab:before {
+    width: 52px;
+    background: url("/content/mathalive_lib/images/header_progress_ab.png") no-repeat center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab:after {
+    width: 58%;
+    left: -35%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab + li:after {
+    width: 68%;
+    left: -30%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab + li.ab:after {
+    width: 58%;
+    left: -29%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab .tit2:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab .tit2 .a {
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab .tit2 .b {
+    float: right;
+    width: 50%;
+    color: #5082dc;
+    text-align: left;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab.on:before {
+    margin-bottom: 2px;
+    background: url("/content/mathalive_lib/images/header_progress_ab_on.png") no-repeat center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab.on .tit1 {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab.on .tit2 {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab.result .tit1 {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.ab.result .tit2 {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a.result .tit1 {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a.result .tit2 {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a.on + li:after {
+    background-color: #ec84ac;
+    width: 76%;
+    left: -38%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a.on + li.ab:after {
+    width: 68%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a.on + li.b:after {
+    width: 76%;
+    left: -37%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.a + li.b:after {
+    width: 76%;
+    left: -38%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.result .tit1 {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.result .tit2 {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on {
+    top: 0;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on:before {
+    background: url("/content/mathalive_lib/images/header_progress_b_on.png") no-repeat center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on .tit1 {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on .tit2 {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on .tit2 .a {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on .tit2 .b {
+    color: #5082dc;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on + li:after {
+    width: 76%;
+    left: -38%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on + li.ab:after {
+    width: 68%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.b.on + li.b:after {
+    background-color: #84a9ec;
+    width: 76%;
+    left: -37%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.step3_a::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_txt_a.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.step3_a.on::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_txt_a_on.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.step3_a.on:after {
+    background-color: #ec84ac;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.step3_b::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_txt_b.png");
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.step3_b.on::before {
+    background-image: url("/content/mathalive_lib/images/header_progress_txt_b_on.png");
+    background-color: #85d24d;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.step3_b.on:after {
+    background-color: #ec84ac;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.step3_b.on span {
+    color: #58ab1b;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.only {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-family: "maplestory-bold";
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.only.result .tit1 {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.only.result .tit2 {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.only.on + li:after {
+    background-color: #ec84ac;
+    width: 76%;
+    left: -38%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.only.on + li.ab:after {
+    width: 68%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.only.on + li.b:after {
+    width: 76%;
+    left: -37%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .progress ul li.only + li.b:after {
+    width: 76%;
+    left: -38%;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .submitusers {
+    position: relative;
+    margin: 18px 0 0 0;
+    z-index: 2;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .pager {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 130px;
+    height: 67px;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .pager span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-top: 28px;
+    margin-left: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .pager span.on {
+    width: 36px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#wrap .t_strategy .strategyContent .topHeader_strategy .pager span:first-child {
+    margin-left: 0;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup.open {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .t_strategy .strategyContent .alert_popup.closing {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup.closed {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box {
+    width: 310px;
+    height: 282px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .ico_alert {
+    width: 110px;
+    height: 110px;
+    background: url("/content/mathalive_lib/images/ico_alert.png");
+    display: inline-block;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .text {
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Maplestory-Light";
+    margin-top: 20px;
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .text.long {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .text.middle {
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .btns {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .btns button {
+    width: 120px;
+    height: 38px;
+    border-radius: 19px;
+    border: none;
+    outline: none;
+    font-family: "Maplestory-Light";
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .btns button.btn_cancel {
+    background-color: #a6a6a6;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .btns button.btn_ok {
+    margin-left: 10px;
+    background-color: #eb6f7b;
+}
+
+#wrap .t_strategy .strategyContent .alert_popup .pop_box .btns button span {
+    font-family: "Maplestory-Light";
+    font-size: 16px;
+    color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap {
+    height: 100%;
+    margin: 0;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap.bg01 {
+    background: #ffe9e6;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem {
+    height: 100%;
+    background: url("/content/mathalive_lib/images/bg_pattern_01.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy {
+    background: #faf0c6;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .top_header {
+    background-color: rgba(255, 184, 32, 0.8);
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .top_header .select_list {
+    background-color: rgba(187, 118, 18, 0.3);
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .top_header .select_list button.on {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .top_header .select_list button.list_01 {
+    background-image: url("/content/mathalive_lib/images/ico_list_style03.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .top_header .select_list button.list_02 {
+    background-image: url("/content/mathalive_lib/images/ico_list_style04.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .top_header .worksheet {
+    display: block;
+    position: absolute;
+    left: 80px;
+    top: 11px;
+    width: 232px;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 47px;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "maplestory-bold";
+    box-sizing: border-box;
+    background: rgba(187, 118, 18, 0.3) url("/content/mathalive_lib/images/ico_hdr_worksheet.png") no-repeat 6px center;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .content .thumbset {
+    width: 880px;
+    background-color: transparent;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .content .thumbset .thumb_cnt {
+    border: 4px solid #968974;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .content.view12 {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem.topic_strategy .content.view12 .thumbset {
+    width: 552px;
+    margin: 0 5px 14px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header {
+    position: relative;
+    height: 67px;
+    background-color: #d0c8b5;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .worksheet {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .btn_menu {
+    width: 40px;
+    height: 31px;
+    margin: 18px 0 0 20px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_top_menu.png");
+    z-index: 20;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 265px;
+    height: 345px;
+    z-index: 10;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu.show {
+    display: block;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu .innerbox {
+    height: 100%;
+    border-radius: 0 30px 30px 30px;
+    background-color: #3cbdab;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.16);
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu .innerbox .close {
+    text-align: right;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu .innerbox .close .btn_close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_menu_close.png") no-repeat center;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu .innerbox ul {
+    padding: 78px 0 0 0;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu .innerbox ul li {
+    height: 81px;
+    line-height: 81px;
+    text-align: center;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+    font-size: 28px;
+    background: url("/content/mathalive_lib/images/bg_left_menu_line.png") no-repeat center top;
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .left_menu .innerbox ul li:first-child {
+    background: none;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .select_list {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 146px;
+    height: 51px;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: #b1aa9a;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .select_list button {
+    width: 65px;
+    height: 39px;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 7px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .select_list button.on {
+    background-color: #e0ddd7;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .select_list button.list_01 {
+    float: left;
+    background-image: url("/content/mathalive_lib/images/ico_list_style01.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .top_header .select_list button.list_02 {
+    float: right;
+    background-image: url("/content/mathalive_lib/images/ico_list_style02.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content {
+    overflow-y: auto;
+    height: calc(100% - 67px);
+    /* 210527 수정 */
+    padding-top: 28px;
+    /* content */
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset {
+    width: 855px;
+    height: 312px;
+    padding: 5px;
+    margin: 0 auto 20px;
+    background-color: #756659;
+    border-radius: 35px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt {
+    position: relative;
+    width: 420px;
+    height: 303px;
+    background-color: #ac8f60;
+    border-radius: 32px;
+    overflow: hidden;
+    font-family: "mapleStory-bold";
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt.left {
+    float: left;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt.right {
+    float: right;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title {
+    height: 40px;
+    color: #fff;
+    background-color: #574134;
+    transform: scale(1);
+    /* 다시 렌더링 해줌 */
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title .num {
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #2e221b;
+    font-size: 24px;
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title .num.plus:after {
+    content: "+";
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.step {
+    float: left;
+    font-family: "maplestory-light";
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.step li {
+    position: relative;
+    float: left;
+    min-width: 70px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: 23px center;
+    box-sizing: border-box;
+    background-image: url("/content/mathalive_lib/images/ico_thumb_cnt_check.png");
+    opacity: .5;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.step li.on {
+    opacity: 1;
+    background-image: url("/content/mathalive_lib/images/ico_thumb_cnt_check_on.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.step li.on:before {
+    background-color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.step li:before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 8px;
+    display: inline-block;
+    width: 7px;
+    height: 1px;
+    background-color: #8a7a71;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.step li:first-child {
+    padding-left: 40px;
+    background-position-x: 15px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.step li:first-child:before {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result {
+    float: left;
+    padding: 0 0 0 10px;
+    font-family: "maplestory-light";
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li {
+    position: relative;
+    float: left;
+    min-width: 70px;
+    height: 40px;
+    line-height: 44px;
+    font-size: 18px;
+    padding-left: 40px;
+    margin-left: 0;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 15px 15px;
+    box-sizing: border-box;
+    opacity: .5;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li.on {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li:first-child {
+    margin-left: 0;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: -1px;
+    width: 1px;
+    height: 14px;
+    background: #705d52;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li:before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 0px;
+    width: 1px;
+    height: 14px;
+    background: #3c2d24;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li:last-child:before, #wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li:last-child:after {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li.type01 {
+    background-image: url("/content/mathalive_lib/images/ico_thumb_cnt_01.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li.type02 {
+    background-image: url("/content/mathalive_lib/images/ico_thumb_cnt_02.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li.type03 {
+    background-image: url("/content/mathalive_lib/images/ico_thumb_cnt_03.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .title ul.result li.type04 {
+    background-image: url("/content/mathalive_lib/images/ico_thumb_cnt_04.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt img {
+    width: 100%;
+    cursor: pointer;
+    /* 210629 수정 */
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .ico_star {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 138px;
+    height: 38px;
+    padding: 8px 0 0 13px;
+    border-radius: 30px;
+    background: #fff url("/content/mathalive_lib/images/bg_star_rate.png") no-repeat 13px 10px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .ico_star span {
+    display: inline-block;
+    width: 23px;
+    height: 21px;
+    background: url("/content/mathalive_lib/images/ico_rate_star.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .btn_retry {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    width: 57px;
+    height: 57px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_thumb_retry.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .btn_check {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    width: 57px;
+    height: 57px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_thumb_check_off.png");
+    z-index: 20;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt .btn_check.on {
+    background-image: url("/content/mathalive_lib/images/ico_thumb_check_on.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt.light {
+    background-color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt.light ul li:before {
+    background: #ea691b;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt.light ul li:after {
+    background: #fea670;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt.light .title {
+    background-color: #e5722d;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content .thumbset .thumb_cnt.light .title .num {
+    background-color: #d75304;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 {
+    /*margin: 28px 0 0px 0; 210611삭제*/
+    padding-left: 80px;
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset {
+    float: left;
+    width: 542px;
+    height: 204px;
+    padding: 5px;
+    margin: 0 7px 14px;
+    border-radius: 23px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt {
+    width: 262px;
+    height: 194px;
+    border-radius: 17px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt.light02 {
+    background-color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt.light03 {
+    background-color: #ffeab5;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title {
+    height: 30px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title .num {
+    width: 46px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title .num.plus:after {
+    font-size: 18px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title ul.step li {
+    height: 30px;
+    line-height: 30px;
+    min-width: 60px;
+    font-size: 12px;
+    padding-left: 33px;
+    background-position-x: 15px;
+    background-size: 14px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title ul.step li:before {
+    left: 5px;
+    top: 14px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title ul.step li:first-child {
+    padding-left: 32px;
+    background-position-x: 13px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title ul.result {
+    padding: 0;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title ul.result li {
+    min-width: 40px;
+    height: 30px;
+    line-height: 32px;
+    font-size: 14px;
+    padding-left: 28px;
+    padding-right: 10px;
+    margin-left: 0px;
+    background-size: 14px auto;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title ul.result li:after, #wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .title ul.result li:before {
+    top: 9px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt img {
+    width: 100%;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .ico_star {
+    width: 86px;
+    height: 24px;
+    background: #fff url("/content/mathalive_lib/images/bg_star_rate.png") no-repeat 8px 5px;
+    background-size: 68px 14px;
+    text-align: left;
+    padding: 5px 0 0 10px;
+    border-radius: 20px;
+    left: 12px;
+    bottom: 12px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .ico_star span {
+    width: 15px;
+    height: 14px;
+    margin-left: -2px;
+    background-size: 15px auto;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .btn_retry {
+    width: 36px;
+    height: 36px;
+    background-size: cover;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_problem .content.view12 .thumbset .thumb_cnt .btn_check {
+    width: 36px;
+    height: 36px;
+    background-size: cover;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup.open {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup.closing {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup.closed {
+    display: none;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box {
+    width: 310px;
+    height: 282px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .ico_alert {
+    width: 110px;
+    height: 110px;
+    background: url("/content/mathalive_lib/images/ico_alert.png");
+    display: inline-block;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .text {
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Maplestory-Light";
+    margin-top: 20px;
+    text-align: center;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .text.long {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .text.middle {
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .btns {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .btns button {
+    width: 120px;
+    height: 38px;
+    border-radius: 19px;
+    border: none;
+    outline: none;
+    font-family: "Maplestory-Light";
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .btns button.btn_cancel {
+    background-color: #a6a6a6;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .btns button.btn_ok {
+    margin-left: 10px;
+    background-color: #eb6f7b;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .alert_popup .pop_box .btns button span {
+    font-family: "Maplestory-Light";
+    font-size: 16px;
+    color: #fff;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result {
+    height: 100%;
+    background: #453328;
+    color: #fff;
+    font-family: "maplestory-bold";
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result h1 {
+    text-align: center;
+    font-size: 29px;
+    padding: 45px 0 30px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .status {
+    height: 44px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .status .inner {
+    float: right;
+    width: 244px;
+    height: 44px;
+    margin-right: 87px;
+    border-radius: 45px;
+    background-color: #2e221b;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .status .inner .question {
+    float: left;
+    width: 132px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 45px;
+    text-align: center;
+    font-size: 20px;
+    color: #6a4a36;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .status .inner .student {
+    float: right;
+    width: 112px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 45px;
+    text-align: center;
+    font-size: 20px;
+    color: #6a4a36;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .status .inner .on {
+    color: #fff;
+    background-color: #6a4a36;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .percent {
+    padding: 21px 0 30px 356px;
+    font-size: 17px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .percent span {
+    font-family: "maplestory-light";
+    margin-left: 106px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .percent span:first-child {
+    margin-left: 0;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set {
+    height: 577px;
+    overflow-y: auto;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set::-webkit-scrollbar {
+    width: 9px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set .average {
+    position: absolute;
+    width: 710px;
+    height: 577px;
+    margin-left: 367px;
+    font-family: "maplestory-light";
+    background: url("/content/mathalive_lib/images/bg_result_dotline.png");
+    z-index: 10;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set .average .bar {
+    position: relative;
+    width: 4px;
+    height: 100%;
+    background: url("/content/mathalive_lib/images/bg_result_average_dotline.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set .average .bar > span {
+    position: absolute;
+    left: -41px;
+    top: -30px;
+    width: 85px;
+    height: 25px;
+    padding-top: 4px;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+    background: url("/content/mathalive_lib/images/bg_result_average_title.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul {
+    position: relative;
+    z-index: 1;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li {
+    font-size: 21px;
+    padding: 12px 0 8px 137px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li:nth-child(odd) {
+    background-color: #413026;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number {
+    float: left;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .left {
+    float: left;
+    width: 132px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 0 0 16px;
+    background-color: #2e221b;
+    border-radius: 20px 0 0 20px;
+    box-sizing: border-box;
+    font-family: "maplestory-light";
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .left .medal {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    margin: -5px 10px 0 -15px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .left .medal.n01 {
+    background-image: url("/content/mathalive_lib/images/ico_medal01.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .left .medal.n02 {
+    background-image: url("/content/mathalive_lib/images/ico_medal02.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .left .medal.n03 {
+    background-image: url("/content/mathalive_lib/images/ico_medal03.png");
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .left .star {
+    float: right;
+    display: inline-block;
+    width: 70px;
+    margin-right: 7px;
+    text-align: right;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .left .star span {
+    display: inline-block;
+    width: 15px;
+    height: 14px;
+    background: url("/content/mathalive_lib/images/ico_thumb_star.png");
+    background-size: cover;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .number .text {
+    float: left;
+    width: 69px;
+    height: 36px;
+    line-height: 36px;
+    margin-left: 2px;
+    text-align: center;
+    border-radius: 0 20px 20px 0;
+    background-color: #2e221b;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .bar_wrap {
+    float: left;
+    margin-left: 27px;
+    padding-top: 14px;
+    width: 706px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .bar_wrap .bar {
+    height: 8px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .top, #wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .btm {
+    margin-bottom: 4px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .top:after, #wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .btm:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .on .text {
+    color: #ff7f32;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul li .on .bar {
+    background-color: #ff7f32;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul.student .left {
+    padding-left: 20px !important;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul.student .number {
+    font-size: 16px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .t_result .graph_set ul.student .text {
+    font-size: 20px;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .quizlist {
+    margin: 90px auto 0;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap > div > iframe {
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .btn_solution {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    width: 140px;
+    height: 52px;
+    border: 0;
+    z-index: 10;
+    background: url("/content/mathalive_lib/images/btn_solution.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .btn_problem {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    width: 140px;
+    height: 52px;
+    border: 0;
+    z-index: 10;
+    background: url("/content/mathalive_lib/images/btn_problem.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .contentWrap .btn_lookback {
+    position: absolute;
+    top: 140px;
+    right: 80px;
+    width: 140px;
+    height: 52px;
+    border: 0;
+    z-index: 10;
+    background: url("/content/mathalive_lib/images/btn_lookback.png") no-repeat;
+}
+
+#wrap .t_strategy .strategyContent .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 100px;
+    padding: 0 80px;
+}
+
+#wrap .t_strategy .strategyContent .footer .rate_star {
+    position: absolute;
+    left: 80px;
+    bottom: 52px;
+    width: 150px;
+    height: 42px;
+    padding: 11px 19px;
+    background: #fff url("/content/mathalive_lib/images/bg_star_rate.png") no-repeat 20px 12px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+#wrap .t_strategy .strategyContent .footer .rate_star span {
+    display: inline-block;
+    width: 23px;
+    height: 21px;
+    margin-right: -1px;
+    background: url("/content/mathalive_lib/images/ico_rate_star.png");
+}
+
+#wrap .t_strategy .strategyContent .footer .control_page {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    width: 200px;
+    height: 74px;
+    border-radius: 40px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+#wrap .t_strategy .strategyContent .footer .control_page button {
+    position: absolute;
+    top: 16px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+}
+
+#wrap .t_strategy .strategyContent .footer .control_page button.btn_left {
+    left: 21px;
+    background-image: url("/content/mathalive_lib/images/ico_control_page_arr_left.png");
+}
+
+#wrap .t_strategy .strategyContent .footer .control_page button.btn_menu {
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("/content/mathalive_lib/images/ico_control_page_menu.png");
+}
+
+#wrap .t_strategy .strategyContent .footer .control_page button.btn_right {
+    right: 21px;
+    background-image: url("/content/mathalive_lib/images/ico_control_page_arr_right.png");
+}
+
+#wrap .t_strategy .btn_retry {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    width: 57px;
+    height: 57px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_thumb_retry.png");
+}
+
+#wrap .t_strategy .btn_check {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    width: 57px;
+    height: 57px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_thumb_check_off.png");
+    z-index: 20;
+}
+
+#wrap .t_strategy .btn_check.on {
+    background-image: url("/content/mathalive_lib/images/ico_thumb_check_on.png");
+}
+
+#wrap .t_strategy .btn_progress {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    width: 57px;
+    height: 57px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/btn_stop_quiz.png");
+    z-index: 20;
+    text-align: center;
+}
+
+#wrap .t_strategy .btn_progress span {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    top: 10px;
+    font-family: "Maplestory-Bold";
+}
+
+#wrap .t_strategy .btn_progress:disabled span {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#wrap .t_strategy .check_strategy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+}
+
+#wrap .t_strategy .check_strategy.show {
+    display: block;
+}
+
+#wrap .t_strategy .check_strategy .stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 950px;
+    height: 588px;
+    padding: 0;
+    margin: -283px 0 0 -491px;
+    background-color: #fff;
+    border-radius: 33px;
+    z-index: 100;
+    box-sizing: border-box;
+    font-family: 'MapleStory-Bold';
+}
+
+#wrap .t_strategy .check_strategy .stage .header {
+    height: 80px;
+    line-height: 75px;
+    padding: 0 0 0 30px;
+    background-color: #f7690b;
+    border-radius: 30px 30px 0 0;
+    overflow: hidden;
+    font-size: 24px;
+    font-family: "maplestory_light";
+    color: #fff;
+}
+
+#wrap .t_strategy .check_strategy .stage .header .btn_closed {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_closed.png") no-repeat center;
+}
+
+#wrap .t_strategy .check_strategy .stage .list_box {
+    /*min-height: 139px;*/
+    height: 574px;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+#wrap .t_strategy .check_strategy .stage .list_box .innerbox {
+    height: 573px;
+    padding: 25px 0 0;
+}
+
+#wrap .t_strategy .check_strategy .stage .list_box .innerbox .inner {
+    width: 96%;
+    margin: 0 auto;
+}
+
+#wrap .t_strategy .check_strategy .stage .list_box .innerbox .inner:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .check_strategy .stage .list_box .innerbox .inner li {
+    float: left;
+    width: 20%;
+    padding: 0 0 20px 0;
+    list-style: none;
+    text-align: center;
+}
+
+#wrap .t_strategy .check_strategy .stage .list_box .innerbox .inner li img {
+    width: 74px;
+    height: 74px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+#wrap .t_strategy .check_strategy .stage .list_box .innerbox .inner li .name {
+    display: block;
+    margin-top: 10px;
+    height: 50px;
+    font-size: 22px;
+    text-align: center;
+    white-space: break-spaces;
+    word-break: keep-all;
+    font-family: "MapleStory-Light";
+    color: #5d5d5d;
+}
+
+#wrap .t_strategy .lookback {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+}
+
+#wrap .t_strategy .lookback .stage {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    width: 1120px;
+    height: 640px;
+    padding: 0;
+    margin: -320px 0 0 -560px;
+    background-color: #fff;
+    border-radius: 30px;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+#wrap .t_strategy .lookback .stage .header {
+    height: 80px;
+    background-color: #5286ff;
+    margin-bottom: 3px;
+}
+
+#wrap .t_strategy .lookback .stage .header .logo {
+    display: inline-block;
+    width: 143px;
+    height: 26px;
+    margin: 27px 0 0 36px;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/tit_lookback.png") no-repeat;
+}
+
+#wrap .t_strategy .lookback .stage .header .btn_close {
+    position: absolute;
+    right: 17px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/btn_lookback_close.png") no-repeat;
+}
+
+#wrap .t_strategy .lookback .stage .content {
+    overflow-y: auto;
+    height: calc(100% - 80px);
+}
+
+#wrap .t_strategy .lookback .stage .content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#wrap .t_strategy .lookback .stage .content::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 10px;
+}
+
+#wrap .t_strategy .lookback .stage .content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#wrap .t_strategy .lookback .stage .content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#wrap .t_strategy .lookback .stage .content table {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    border-collapse: collapse;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .title {
+    width: 199px;
+    height: 100%;
+    min-height: 174px;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'MapleStory-light';
+    font-style: italic;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-bottom: 20px;
+    vertical-align: top;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .title .img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 52px auto 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt {
+    padding: 15px 20px;
+    white-space: break-spaces;
+    width: calc(100% - 200px);
+    font-size: 26px;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt img {
+    display: block;
+    margin: 35px 0;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .highlight {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .highlight:after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 10px;
+    right: -3px;
+    display: block;
+    height: 21px;
+    transform: skew(-15deg, 0);
+    z-index: 0;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .highlight.start:before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: -3px;
+    width: 18px;
+    height: 21px;
+    background-repeat: no-repeat;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .highlight.purple:after {
+    background-color: rgba(203, 68, 253, 0.25);
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .highlight.purple.start:before {
+    background-image: url("/content/mathalive_lib/images/ico_highlight_purple.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .highlight.yellow:after {
+    background-color: rgba(255, 180, 0, 0.35);
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .highlight.yellow.start:before {
+    background-image: url("/content/mathalive_lib/images/ico_highlight_yellow.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .legend {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 140px;
+    height: 75px;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .legend .given {
+    height: 33px;
+    background: url("/content/mathalive_lib/images/ico_highlight_given.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .legend .ntf {
+    margin-top: 9px;
+    height: 33px;
+    background: url("/content/mathalive_lib/images/ico_highlight_ntf.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step .cnt .arrow_strategy {
+    margin-top: 10px;
+    padding-left: 138px;
+    font-family: "maplestory-bold";
+    color: #132059;
+    font-style: italic;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/ico_strategy.png") no-repeat 30px center;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s01 .title {
+    background-color: #b1b9d7;
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s01 .title .img {
+    margin-top: 35px;
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/ico_lookback_bulb.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s02 .title {
+    background-color: #8997c4;
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/bg_lookback_arrow_btm_01.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s02 .title .img {
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/ico_lookback_planner.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s03 .title {
+    background-color: #6274b0;
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/bg_lookback_arrow_btm_02.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s03 .title .img {
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/ico_lookback_doit.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s04 .title {
+    background-color: #3b519c;
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/bg_lookback_arrow_btm_03.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr.step.s04 .title .img {
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/ico_lookback_answer.png");
+}
+
+#wrap .t_strategy .lookback .stage .content tr:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .lookback .stage .content tr:nth-child(odd) {
+    background-color: #f7f8fb;
+}
+
+#wrap .t_strategy .content_page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 290px 80px 145px;
+    font-family: 'NotoSansB-Regular';
+    font-size: 34px;
+}
+
+#wrap .t_strategy .content_page .sample_img {
+    width: 925px;
+    height: 363px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#wrap .t_strategy .content_page .btn_wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 840px;
+    margin: 20px auto 0;
+}
+
+#wrap .t_strategy .content_page .btn {
+    width: 400px;
+    height: 100px;
+}
+
+#wrap .t_strategy .content_page .btn_sound {
+    width: 50px;
+    min-height: 50px;
+    margin-right: 20px;
+    background: url("/content/mathalive_lib/images/ico_sound.png") no-repeat;
+    border: 0;
+}
+
+#wrap .t_strategy .content_page .problem_explain {
+    position: relative;
+    font-size: 34px;
+    margin-bottom: 30px;
+    word-break: break-word;
+    line-height: 42px;
+    font-family: 'NotoSansB-Regular';
+    padding-top: 5px;
+    padding-left: 70px;
+}
+
+#wrap .t_strategy .content_page .problem_explain:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn {
+    padding-right: 170px;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .btn_problem {
+    position: absolute;
+    right: 60px;
+    top: 0;
+}
+
+#wrap .t_strategy .content_page .problem_explain p {
+    float: left;
+    width: 100%;
+    line-height: 1.3;
+}
+
+#wrap .t_strategy .content_page .problem_explain .btn_sound {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .btn_solution {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .highlight {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .highlight:after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 10px;
+    right: -3px;
+    display: block;
+    height: 21px;
+    transform: skew(-15deg, 0);
+    z-index: 0;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .highlight.start:before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: -3px;
+    width: 18px;
+    height: 21px;
+    background-repeat: no-repeat;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .highlight.purple:after {
+    background-color: rgba(203, 68, 253, 0.25);
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .highlight.purple.start:before {
+    background-image: url("/content/mathalive_lib/images/ico_highlight_purple.png");
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .highlight.yellow:after {
+    background-color: rgba(255, 180, 0, 0.35);
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .highlight.yellow.start:before {
+    background-image: url("/content/mathalive_lib/images/ico_highlight_yellow.png");
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .legend {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 140px;
+    height: 75px;
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .legend .given {
+    height: 33px;
+    background: url("/content/mathalive_lib/images/ico_highlight_given.png");
+}
+
+#wrap .t_strategy .content_page .problem_explain.right_btn .legend .ntf {
+    margin-top: 9px;
+    height: 33px;
+    background: url("/content/mathalive_lib/images/ico_highlight_ntf.png");
+}
+
+#wrap .t_strategy .content_page .problem_box {
+    position: absolute;
+    top: 290px;
+    height: 365px;
+    width: 1120px;
+    background-color: #ffd43b;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#wrap .t_strategy .content_page .problem_box.enlightenment {
+    padding-left: 425px;
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/img_enlightenment.png");
+    background-repeat: no-repeat;
+    background-position: 50px center;
+    text-align: left;
+}
+
+#wrap .t_strategy .content_page .problem_box .btn_close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/btn_close.png") no-repeat center;
+}
+
+#wrap .t_strategy .content_page .problem_box .text {
+    position: relative;
+    width: 630px;
+    height: 238px;
+    line-height: 1.3;
+    margin: 0;
+    padding: 66px 75px 0 0;
+    font-size: 26px;
+    word-break: break-word;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/line_problem_box.png") no-repeat center bottom;
+}
+
+#wrap .t_strategy .content_page .btns {
+    margin-top: 55px;
+}
+
+#wrap .t_strategy .content_page .btns button {
+    background-repeat: no-repeat;
+}
+
+#wrap .t_strategy .content_page button.thinkabout {
+    width: 230px;
+    height: 52px;
+    background-color: transparent;
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/btn_thinkabout.png");
+    border: 0;
+}
+
+#wrap .t_strategy .content_page button.check {
+    width: 140px;
+    height: 52px;
+    margin-left: 17px;
+    background-color: transparent;
+    background-image: url("/content/mathalive_lib/MA/strategy_r/common/btn_check.png");
+    border: 0;
+}
+
+#wrap .t_strategy .content_page .problem_box button.check1 {
+    width: 140px;
+    height: 52px;
+    background-color: transparent;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/btn_check.png") no-repeat;
+    border: 0;
+    margin: auto;
+}
+
+#wrap .t_strategy .content_page .msg_text {
+    width: 100%;
+    height: 126px;
+    text-align: center;
+}
+
+#wrap .t_strategy .content_page .msg_text span {
+    position: relative;
+    display: inline-block;
+    margin-top: 34px;
+    margin-right: 60px;
+    color: #132059;
+    font-size: 42px;
+    font-family: "Maplestory-Bold";
+}
+
+#wrap .t_strategy .content_page .msg_text span .ani {
+    position: absolute;
+    top: -20px;
+    margin: 0;
+}
+
+#wrap .t_strategy .content_page .msg_text span .ani.left {
+    left: -75px;
+    width: 75px;
+    height: 67px;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/ani_left.gif") no-repeat;
+}
+
+#wrap .t_strategy .content_page .msg_text span .ani.right {
+    right: -85px;
+    width: 85px;
+    height: 76px;
+    background: url("/content/mathalive_lib/MA/strategy_r/common/ani_right.gif") no-repeat;
+}
+
+#wrap .t_strategy .content_page .strategy_menu {
+    padding: 50px 20px 15px 50px;
+}
+
+#wrap .t_strategy .content_page .strategy_menu:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .content_page .strategy_menu li {
+    float: left;
+    width: 350px;
+    height: 60px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-family: "Maplestory-Light";
+    cursor: pointer;
+}
+
+#wrap .t_strategy .content_page .strategy_menu li .num {
+    float: left;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 64px;
+    background-color: #fff;
+    color: #b1b0b0;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Maplestory-Bold";
+    border-radius: 10px;
+}
+
+#wrap .t_strategy .content_page .strategy_menu li .txt {
+    float: left;
+    display: flex;
+    height: 60px;
+    padding-left: 20px;
+    align-items: center;
+    text-align: left;
+}
+
+#wrap .t_strategy .content_page .strategy_menu li.on .num {
+    position: relative;
+    left: -4px;
+    top: -4px;
+    border: 4px solid #fff;
+    color: #fff;
+    background-color: #f7690b;
+    box-shadow: 0 3px 7px #fff;
+}
+
+#wrap .t_strategy .content_page .strategy_menu li.pop .num {
+    color: #f7690b;
+}
+
+#wrap .t_strategy .submituserlist_bg {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+}
+
+#wrap .t_strategy .submituserlist {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 982px;
+    height: 567px;
+    padding: 0;
+    margin: -283px 0 0 -491px;
+    background-color: #fff;
+    border-radius: 33px;
+    z-index: 100;
+    box-sizing: border-box;
+    font-family: 'MapleStory-Bold';
+}
+
+#wrap .t_strategy .submituserlist .header {
+    height: 59px;
+    background-color: #6c44b1;
+    border-radius: 30px 30px 0 0;
+}
+
+#wrap .t_strategy .submituserlist .header .quiz_tit {
+    float: left;
+    width: 96px;
+    height: 59px;
+    line-height: 59px;
+    background-color: #fdc644;
+    color: #001a72;
+    font-size: 29px;
+    text-align: center;
+    border-radius: 30px 0 0 0;
+}
+
+#wrap .t_strategy .submituserlist .header .submitter {
+    display: none;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set {
+    float: left;
+    padding: 0;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li {
+    position: relative;
+    float: left;
+    width: 126px;
+    height: 59px;
+    line-height: 62px;
+    padding: 0 0 0 75px;
+    font-size: 20px;
+    font-family: "maplestory-light";
+    color: rgba(255, 255, 255, 0.4);
+    background: url("/content/mathalive_lib/images/submituserlist_header_slice.png") no-repeat 0 center;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li:first-child {
+    background-image: none;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li:after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    margin-top: -12px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    opacity: .4;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.type01:after {
+    background-image: url("/content/mathalive_lib/images/ico_submituser_type01.png");
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.type02:after {
+    background-image: url("/content/mathalive_lib/images/ico_submituser_type02.png");
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.type03:after {
+    background-image: url("/content/mathalive_lib/images/ico_submituser_type03.png");
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.type04:after {
+    background-image: url("/content/mathalive_lib/images/ico_submituser_type04.png");
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.on {
+    background-image: none;
+    color: #fff;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.on:after {
+    opacity: 1;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.on + li {
+    background-image: none;
+}
+
+#wrap .t_strategy .submituserlist .header .score_set ul li.arrow {
+    background-color: #4f2794;
+}
+
+#wrap .t_strategy .submituserlist.nonum .quiz_tit {
+    display: none;
+}
+
+#wrap .t_strategy .submituserlist.nonum .header {
+    background-color: #ff7e75;
+}
+
+#wrap .t_strategy .submituserlist.nonum .header .score_set ul li:first-child {
+    border-top-left-radius: 30px;
+}
+
+#wrap .t_strategy .submituserlist.nonum .header .score_set ul li.arrow {
+    background-color: #f06157;
+}
+
+#wrap .t_strategy .submituserlist.nonum .header .score_set ul li.arrow:before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -12px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 8px solid #fff;
+}
+
+#wrap .t_strategy .submituserlist.assessment .quiz_tit, #wrap .t_strategy .submituserlist.assessment .score_set {
+    display: none;
+}
+
+#wrap .t_strategy .submituserlist.assessment .header {
+    background-color: #ffb81f;
+}
+
+#wrap .t_strategy .submituserlist.assessment .submitter {
+    display: block;
+    padding: 20px 0 0 30px;
+    font-size: 20px;
+    color: #fff;
+}
+
+#wrap .t_strategy .submituserlist.assessment .submitter span {
+    color: #ffe1b3;
+    margin-left: 15px;
+    font-family: "maplestory-light";
+}
+
+#wrap .t_strategy .submituserlist.assessment .submitter span strong {
+    color: #fff;
+}
+
+#wrap .t_strategy .submituserlist .btn_close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50px;
+    background: url("/content/mathalive_lib/images/ico_video_menu_close.png") no-repeat center;
+    background-size: 18px;
+    cursor: pointer;
+}
+
+#wrap .t_strategy .submituserlist .submit {
+    margin: 0 100px;
+}
+
+#wrap .t_strategy .submituserlist .submit button {
+    width: 50%;
+    height: 45px;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    background-color: #c8c8c8;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#wrap .t_strategy .submituserlist .submit button:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+}
+
+#wrap .t_strategy .submituserlist .submit button:nth-child(2) {
+    border-radius: 0 10px 10px 0;
+}
+
+#wrap .t_strategy .submituserlist .submit.set3 button {
+    width: 33.3%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-left: 2px solid #8c8c8c;
+}
+
+#wrap .t_strategy .submituserlist .submit.set3 button:first-child {
+    border-left: 0;
+}
+
+#wrap .t_strategy .submituserlist .submit.set3 button:nth-child(2) {
+    border-radius: 0;
+}
+
+#wrap .t_strategy .submituserlist .submit.set3 button:nth-child(3) {
+    border-radius: 0 10px 10px 0;
+}
+
+#wrap .t_strategy .submituserlist .submit.set3 button.heart0 {
+    background-image: url("/content/mathalive_lib/images/ico_heart0.png");
+}
+
+#wrap .t_strategy .submituserlist .submit.set3 button.heart1 {
+    background-image: url("/content/mathalive_lib/images/ico_heart1.png");
+}
+
+#wrap .t_strategy .submituserlist .submit.set4 button {
+    width: 25%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-left: 2px solid #8c8c8c;
+}
+
+#wrap .t_strategy .submituserlist .submit.set4 button:first-child {
+    border-left: 0;
+}
+
+#wrap .t_strategy .submituserlist .submit.set4 button:nth-child(2) {
+    border-radius: 0;
+}
+
+#wrap .t_strategy .submituserlist .submit.set4 button:nth-child(4) {
+    border-radius: 0 10px 10px 0;
+}
+
+#wrap .t_strategy .submituserlist .submit.set4 button.heart0 {
+    background-image: url("/content/mathalive_lib/images/ico_heart0.png");
+}
+
+#wrap .t_strategy .submituserlist .submit.set4 button.heart1 {
+    background-image: url("/content/mathalive_lib/images/ico_heart1.png");
+}
+
+#wrap .t_strategy .submituserlist .submit.set4 button.heart2 {
+    background-image: url("/content/mathalive_lib/images/ico_heart2.png");
+}
+
+#wrap .t_strategy .submituserlist .submit .on {
+    background-color: #75c906;
+}
+
+#wrap .t_strategy .submituserlist .user_num {
+    width: 125px;
+    height: 34px;
+    margin: 0 100px;
+    line-height: 34px;
+    padding-left: 70px;
+    margin-top: 20px;
+    background-color: #75c906;
+    border-radius: 34px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 24px;
+    background: #75c906 url("/content/mathalive_lib/images/ico_user.png") no-repeat 26px center;
+    background-size: auto 22px;
+}
+
+#wrap .t_strategy .submituserlist .list_box {
+    /*min-height: 139px;*/
+    height: 574px;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+#wrap .t_strategy .submituserlist .list_box .innerbox {
+    height: 573px;
+    padding: 25px 0 0;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container {
+    height: 483px;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container .swiper-slide {
+    height: auto;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container .swiper-scrollbar {
+    width: 8px;
+    height: 100%;
+    background-color: transparent;
+    top: 0;
+    right: 30px;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: #ebebeb;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container .inner {
+    width: 96%;
+    /*margin:0 auto;*/
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container .inner:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li {
+    float: left;
+    width: 20%;
+    padding: 30px 0 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 2021 08 06 성준 추가 */
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li:nth-child(1), #wrap .t_strategy .submituserlist .list_box .swiper-container li:nth-child(2), #wrap .t_strategy .submituserlist .list_box .swiper-container li:nth-child(3), #wrap .t_strategy .submituserlist .list_box .swiper-container li:nth-child(4), #wrap .t_strategy .submituserlist .list_box .swiper-container li:nth-child(5) {
+    padding-top: 0;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li .defaultImg_m,
+#wrap .t_strategy .submituserlist .list_box .swiper-container li .defaultImg_f {
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li .defaultImg_m div,
+#wrap .t_strategy .submituserlist .list_box .swiper-container li .defaultImg_f div {
+    font-size: 30px;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li .defaultImg_m {
+    background-color: #2cd1c3;
+    border: 4px solid #d8d9db;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li .defaultImg_f {
+    background-color: #ffa1a7;
+    border: 4px solid #d8d9db;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li img {
+    width: 78px;
+    height: 78px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 4px solid #d8d9db;
+}
+
+#wrap .t_strategy .submituserlist .list_box .swiper-container li .name {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 22px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: "MapleStory-Light";
+    color: #5d5d5d;
+}
+
+#wrap .t_strategy .submituserlist_bg.show,
+#wrap .t_strategy .submituserlist.show {
+    display: block;
+}
+
+#wrap .t_strategy .alert_popup {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .alert_popup.open {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .t_strategy .alert_popup.closing {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .alert_popup.closed {
+    display: none;
+}
+
+#wrap .t_strategy .alert_popup .pop_box {
+    width: 310px;
+    height: 282px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .ico_alert {
+    width: 110px;
+    height: 110px;
+    background: url("/content/mathalive_lib/images/ico_alert.png");
+    display: inline-block;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .text {
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Maplestory-Light";
+    margin-top: 20px;
+    text-align: center;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .text.long {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .text.middle {
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns button {
+    width: 120px;
+    height: 38px;
+    border-radius: 19px;
+    border: none;
+    outline: none;
+    font-family: "Maplestory-Light";
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns button.btn_cancel {
+    background-color: #a6a6a6;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns button.btn_ok {
+    margin-left: 10px;
+    background-color: #eb6f7b;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns button span {
+    font-family: "Maplestory-Light";
+    font-size: 16px;
+    color: #fff;
+}
+
+#wrap .t_strategy .alert_popup {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .alert_popup.open {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .t_strategy .alert_popup.closing {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_strategy .alert_popup.closed {
+    display: none;
+}
+
+#wrap .t_strategy .alert_popup .pop_box {
+    width: 310px;
+    height: 282px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: -5px 0 20px 0px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .ico_alert {
+    width: 110px;
+    height: 110px;
+    background: url("/content/mathalive_lib/images/ico_alert.png");
+    display: inline-block;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .text {
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Maplestory-Light";
+    margin-top: 20px;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns button {
+    width: 120px;
+    height: 38px;
+    border-radius: 19px;
+    border: none;
+    outline: none;
+    font-family: "Maplestory-Light";
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns button.btn_ok {
+    background-color: #eb6f7b;
+}
+
+#wrap .t_strategy .alert_popup .pop_box .btns button span {
+    font-family: "Maplestory-Light";
+    font-size: 16px;
+    color: #fff;
+}
+
+#wrap .t_strategy .progressWrap {
+    /* 210518 수정 */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 104px;
+}
+
+#wrap .t_strategy .progressWrap .btn_progress {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/btn_stop_quiz.png");
+    background-repeat: no-repeat;
+    width: 105px;
+    height: 104px;
+    pointer-events: unset;
+    cursor: pointer;
+    text-align: center;
+}
+
+#wrap .t_strategy .progressWrap .btn_progress:disabled {
+    background-image: url("/content/mathalive_lib/images/btn_stop_quiz_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_strategy .progressWrap .btn_progress.down {
+    background-image: url("/content/mathalive_lib/images/btn_stop_quiz.png");
+}
+
+#wrap .t_strategy .progressWrap .btn_progress:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/btn_stop_quiz.png") url("/content/mathalive_lib/images/btn_stop_quiz.png") url("/content/mathalive_lib/images/btn_stop_quiz_dis.png");
+}
+
+#wrap .t_strategy .progressWrap .btn_progress span {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    top: 10px;
+    left: -3px;
+    font-family: "Maplestory-Bold";
+}
+
+#wrap .t_strategy .progressWrap .btn_progress:disabled span {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#wrap .t_strategy .progressWrap .msg {
+    position: absolute;
+    opacity: 0;
+    left: 100px;
+    text-align: center;
+}
+
+#wrap .t_strategy .progressWrap .msg span {
+    position: absolute;
+    width: 30px;
+    height: 44px;
+    background: url("/content/mathalive_lib/images/msg_rst_twinkle.png") no-repeat center;
+    background-size: contain;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(1) {
+    left: 35px;
+    top: 23px;
+    width: 10px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(2) {
+    left: 43px;
+    top: 8px;
+    width: 10px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(3) {
+    left: 128px;
+    top: 7px;
+    width: 10px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .25s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(4) {
+    left: 132px;
+    top: 35px;
+    width: 10px;
+    height: 15px;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(5) {
+    left: 140px;
+    top: 20px;
+    width: 10px;
+    height: 20px;
+    background-size: contain;
+    animation: star01 .37s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(6) {
+    left: 116px;
+    top: 7px;
+    width: 9px;
+    height: 15px;
+    animation: star01 .26s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(7) {
+    left: 116px;
+    top: 48px;
+    width: 9px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .28s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap .msg span:nth-child(8) {
+    left: 373px;
+    top: 68px;
+    width: 25px;
+    height: 36px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .t_strategy .progressWrap.end {
+    /* 제출 종료 후 */
+}
+
+#wrap .t_strategy .progressWrap.end .btn_progress {
+    /*width:290px;
+				height:104px; 
+				210521 삭제*/
+    background: url("/content/mathalive_lib/images/btn_re_quiz.png") no-repeat right top;
+}
+
+#wrap .t_strategy .progressWrap.end .msg {
+    left: auto;
+    right: 100px;
+    /* 210521 위치 수정 */
+    top: 20px;
+    width: 190px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    font-family: "maplestory-bold";
+    color: #fff;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.25);
+    transition: .5s all;
+    opacity: 1;
+}
+
+#wrap .t_strategy .progressWrap.end .msg.hide {
+    opacity: 0;
+}
+
+@keyframes star01 {
+    from {
+        transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#wrap .btn-back {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 28px 0 0 10px;
+    background: url("/content/mathalive_lib/MA/strategy_r/teacher/images/ico_back.png");
+    background-size: cover;
+    border: 0;
+}
+
+#wrap .fel_topad {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 15px;
+    right: 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    /*
+	.revise {
+		position: absolute;
+		top: -50px;
+		left: 3px;
+		display: inline-block;
+		width: 79px;
+		height: 74px;
+		line-height: 55px;
+		padding-left: 8px;
+		font-size: 20px;
+		font-family: "maplestory-bold";
+		text-align: left;
+		color: #ea7145;
+		background: resolve('mathalive_lib/images/bg_bubble.png') no-repeat;
+
+		&:after {
+			content: "!";
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			font-size: 50px;
+			transform: translate(-90%, -65%);
+			opacity: 0;
+			transition: all 1s;
+		}
+
+		&.on {
+			&:after {
+				top: 50%;
+				opacity: 0.4;
+			}
+		}
+	}*/
+}
+
+#wrap .fel_topad:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 27px;
+    height: 31px;
+    background: url("/content/mathalive_lib/images/fel_arr_up.png") no-repeat center;
+    transform: translate(-50%, -25%) rotate(180deg);
+    animation-name: arrowMove;
+    animation-direction: alternate;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: .1s;
+}
+
+#wrap .fel_topad:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 27px;
+    height: 31px;
+    background: url("/content/mathalive_lib/images/fel_arr_up.png") no-repeat center;
+    transform: translate(-50%, -70%) rotate(180deg);
+    animation-name: arrowMove;
+    animation-direction: alternate;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#wrap .fel_topad .revise {
+    position: absolute;
+    top: 12px;
+    left: -96px;
+    display: inline-block;
+    width: 96px;
+    height: 74px;
+    line-height: 55px;
+    padding-left: 8px;
+    font-size: 20px;
+    font-family: "maplestory-bold";
+    text-align: left;
+    color: #ea7145;
+    background: url("/content/mathalive_lib/images/img_revise.png") no-repeat;
+}
+
+#wrap .fel_topad .revise.on:after {
+    top: 50%;
+    opacity: 0.4;
+}
+
+#wrap .fel_stop {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 65px;
+    right: 5px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/ico_stop.png");
+    background-repeat: no-repeat;
+    width: 77px;
+    height: 77px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .fel_stop.on {
+    background-image: url("/content/mathalive_lib/images/ico_stop.png");
+}
+
+#wrap .fel_stop:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/ico_stop.png") url("/content/mathalive_lib/images/ico_stop.png");
+}
+
+@charset "UTF-8";
+html, body {
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+    border: 0px;
+    backface-visibility: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: none;
+    font-size: 12px;
+    overflow: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    text-rendering: optimizeSpeed;
+}
+
+body, h1, h2, h3, h4, input, button {
+    /*font-family:Helvetica,Arial,"����",Dotum,sans-serif;*/
+    font-size: 12px;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, p {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+img, fieldset, iframe {
+    border: 0 none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: none;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+div, p {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+#common_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#ding_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#dingend_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#wrap {
+    width: 1280px;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+.swiper-scrollbar.white {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.white .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar.black {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.black .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/*
+.common_back{
+	background-size: 100% 100%;
+	@include btn_down_dis(
+		resolve('mathalive_lib/images/btn_back.png'), 
+		resolve('mathalive_lib/images/btn_back_down.png'),
+		'',
+		width('mathalive_lib/images/btn_back.png'),
+		height('mathalive_lib/images/btn_back.png')
+	);
+	&.down{
+		transform: scale(1.1, 1.1);
+	}
+}
+*/
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #47F6E9;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#preload_hidden {
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#preload_hidden .helvetica {
+    font-family: HelveticaRounded;
+}
+
+#preload_hidden .helveticastd {
+    font-family: HelveticaRoundedLTStd;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.none {
+    display: none;
+}
+

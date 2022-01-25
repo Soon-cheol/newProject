@@ -1,0 +1,317 @@
+@import "../../share/Timer.scss";
+@import "../../share/maheader_old.scss";
+@import "../../share/masubmituserlist.scss";
+@import "../../share/maquizlist.scss";
+
+@mixin t_check{
+    .t_check {
+        .checkContent {
+            @include page;
+            @include maheader;
+            background: #fff;
+
+            .topHeader{
+                padding: 0 95px;
+                height: 80px;
+                .back{
+                    position: absolute;
+                    left:20px;
+                    top:85px;
+                    width:53px;
+                    height:53px;
+                    border:none;
+                    background:resolve('mathalive_lib/images/btn_top_back.png');
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                .btn_viewMark {
+                    float:right;
+                    margin: 5px 20px 0;
+                    @include btn_on(
+                        resolve('mathalive_lib/images/btn_viewMark_dis.png'),
+                        resolve('mathalive_lib/images/btn_viewMark.png'),
+                        width('mathalive_lib/images/btn_viewMark.png'),
+                        height('mathalive_lib/images/btn_viewMark.png'),
+                    );
+                }
+                .btn_viewSummary {
+                    float:right;
+                    margin: 5px 0 0 -10px;
+                    @include btn_on(
+                        resolve('mathalive_lib/images/btn_viewMark_dis.png'),
+                        resolve('mathalive_lib/images/btn_viewMark.png'),
+                        width('mathalive_lib/images/btn_viewMark.png'),
+                        height('mathalive_lib/images/btn_viewMark.png'),
+                    );
+                }
+                .result{
+                    float:right;
+                    width:380px;
+                    height: 46px;
+                    margin-top: 18px;
+                    margin-right: 13px;
+                    background-color: #ebebeb;
+                    border-radius: 10px;
+                    span{
+                        position: relative;
+                        display: inline-block;
+                        width:90px;
+                        height:30px;
+                        line-height: 28px;
+                        margin-top: 10px;
+                        padding-left: 54px;
+                        background-repeat: no-repeat;
+                        background-position: 18px center;
+                        font-size: 19px;
+                        box-sizing: border-box;
+                        &:before{
+                            content:"";
+                            position: absolute;
+                            left:0;
+                            top:7px;
+                            width:2px;
+                            height:15px;
+                            background-color: #a5a4a5;
+                        }
+                        &.none{
+                            background-image:resolve('mathalive_lib/images/ico_heart_none.png') ;
+                        }
+                        &.h0{
+                            background-image:resolve('mathalive_lib/images/ico_heart0.png') ;
+                        }
+                        &.h1{
+                            background-image:resolve('mathalive_lib/images/ico_heart1.png') ;
+                        }
+                        &.h2{
+                            &:before{
+                                display: none;
+                            }
+                            margin-left: 15px;
+                            padding-left: 57px;
+                            background-image:resolve('mathalive_lib/images/ico_heart2.png') ;
+                        }
+                    }
+                }
+                .page{
+                    float: left;
+                    padding-top:10px;
+                    .num{
+                        position: relative;
+                        display:inline-block;
+                        width:52px;
+                        height:55px;
+                        margin-left:5px;
+                        vertical-align: middle;
+                        background:resolve('mathalive_lib/images/bg_page_none.png');
+                        cursor: pointer;
+                        span{
+                            position: absolute;
+                            bottom:0;
+                            left:0;
+                            width:100%;
+                            height: 44px;
+                            text-align: center;
+                            color: #fff;
+                            font-size: 25px;
+                            &.no{
+                                width:38px;
+                                height: 38px;
+                                font-size: 21px;
+                            }
+                        }
+                        &.on{
+                            background:resolve('mathalive_lib/images/bg_page_on.png');
+                            &.h0{
+                                background:resolve('mathalive_lib/images/bg_page_on_h0.png');
+                            }
+                            &.h1{
+                                background:resolve('mathalive_lib/images/bg_page_on_h1.png');
+                            }
+                            &.h2{
+                                background:resolve('mathalive_lib/images/bg_page_on_h2.png');
+                            }
+                        }
+                        &.h0{
+                            background:resolve('mathalive_lib/images/bg_page_none_h0.png');
+                        }
+                        &.h1{
+                            background:resolve('mathalive_lib/images/bg_page_none_h1.png');
+                        }
+                        &.h2{
+                            background:resolve('mathalive_lib/images/bg_page_none_h2.png');
+                        }
+                        &.extra{
+                            width: 85px;
+                            height: 41px;
+                            line-height: 41px;
+                            padding-left:41px;
+                            margin-left:18px;
+                            font-size: 15px;
+                            color: #323232;
+                            &:before{
+                                content:"";
+                                position: absolute;
+                                left:-15px;
+                                top:50%;
+                                width:12px;
+                                height:4px;
+                                margin-top:-2px;
+                                background-color: #797979;
+                                border-radius: 4px;
+                            }
+                            &.on{
+                                &.h0{
+                                    background:resolve('mathalive_lib/images/bg_page_sm_on_h0.png') no-repeat;
+                                }
+                                &.h1{
+                                    background:resolve('mathalive_lib/images/bg_page_sm_on_h1.png') no-repeat;
+                                }
+                                &.h2{
+                                    background:resolve('mathalive_lib/images/bg_page_sm_on_h2.png') no-repeat;
+                                }
+                            }
+                            &.h0{
+                                background:resolve('mathalive_lib/images/bg_page_sm_none_h0.png') no-repeat;
+                            }
+                            &.h1{
+                                background:resolve('mathalive_lib/images/bg_page_sm_none_h1.png') no-repeat;
+                            }
+                            &.h2{
+                                background:resolve('mathalive_lib/images/bg_page_sm_none_h2.png') no-repeat;
+                            }
+                        }
+                    }
+                    &.extra{
+                        .num{
+                            width:54px;
+                            height:59px;
+                            span{
+                                height: 40px;
+                            }
+                            &.extra{
+                                margin-left: 8px;
+                                padding-left:0;
+                                line-height: 61px;
+                                background:none !important;
+                                &::before{
+                                    display:none;
+                                }
+                            }
+                        }
+                    }
+                    &.teacher{
+                        .num{
+                            width: 51px;
+                            height: 51px;
+                            background:resolve('mathalive_lib/images/bg_teacher_heart_off_none.png') no-repeat;
+                            &.on{
+                                background:resolve('mathalive_lib/images/bg_teacher_heart_none.png') no-repeat;
+                            }
+                            &.extra{
+                                width: 85px;
+                                height: 41px;
+                                background:resolve('mathalive_lib/images/bg_teacher_heart_sm_off_none.png') no-repeat;
+                                &.on{
+                                    background:resolve('mathalive_lib/images/bg_teacher_heart_sm_none.png') no-repeat;
+                                }
+                            }
+                        }
+                    }
+                }
+                @include masubmitusers;
+                .submitusers{
+                    position: relative;
+                    margin: 18px 0 0 0;
+                    z-index: 2;
+                }
+            }
+            .contentWrap {
+                height: 585px;
+                margin: 0;
+                @include maquizlist;
+                &> div {
+                    height: 100%;
+                    &> iframe{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                    }
+                    .moreBox{
+                        display: none;
+                        position: absolute;
+                        left:50%;
+                        bottom:65px;
+                        width:970px;
+                        height: auto;
+                        margin-left: -485px;
+                        background:rgba(215,215,215,.9);
+                        &.show{display:block;}
+                        .btn_close{
+                            position: absolute;
+                            right:20px;
+                            top:10px;
+                            width:30px;
+                            height:30px;
+                            border:0;
+                            background:resolve('mathalive_lib/images/ico_close_morebox.png') no-repeat center;
+                            cursor: pointer;
+                        }
+                        &.hide{
+                            bottom:-130px;
+                            .btn_updown{
+                                &:before{
+                                    transform:rotate(180deg);
+                                }
+                            }
+                        }
+                        .more_content{
+                            &> iframe{
+                                width:100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .btn_bulb{
+            @include btn_on (
+                resolve('mathalive_lib/images/ico_bulb_off.png'),
+                resolve('mathalive_lib/images/ico_bulb_on.png'),
+                width('mathalive_lib/images/ico_bulb_off.png'),
+                height('mathalive_lib/images/ico_bulb_off.png'),
+            );
+            position: absolute;
+            bottom:75px;
+            left:90px;
+            border:none;
+            z-index: 20;
+        }
+        
+        @include masubmituserlist;
+        .btn_next {
+            @include btn_down_dis (
+                resolve('mathalive_lib/images/btn_next.png'),
+                '',
+                '',
+                width('mathalive_lib/images/btn_next.png'),
+                height('mathalive_lib/images/btn_next.png'),
+            );
+            position: absolute; 
+            top: 339px; right: 15px;
+            z-index: 2;
+        }
+        .btn_prev {
+            @include btn_down_dis (
+                resolve('mathalive_lib/images/btn_prev.png'),
+                '',
+                '',
+                width('mathalive_lib/images/btn_prev.png'),
+                height('mathalive_lib/images/btn_prev.png'),
+            );
+            position: absolute; 
+            top: 359px; left: 15px;
+            z-index: 2;
+        }
+    }
+}

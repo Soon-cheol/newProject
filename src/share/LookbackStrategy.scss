@@ -1,0 +1,295 @@
+
+.lookback {
+    position: absolute;
+    display: none;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 99;
+    #understand {
+        transform: scale(0.82);
+        width: 122%;
+        position: relative;
+        left: -11%;
+        .lookback_title {
+            font-size: 30px;
+            width: calc(100% - 200px);
+        }
+        .problem_explain {
+            position: absolute;
+            width: 140px;
+            height: 75px;
+            top: 0;
+            right: 0;
+            .legend {
+                display: block;
+            }
+        }
+    }
+    .stage{
+        position: absolute;
+        left:50%;
+        top:50%;
+        width:1120px;
+        height:640px;
+        padding:0;
+        margin:-320px 0 0 -560px;
+        background-color: #fff;
+        z-index: 100;
+        box-sizing: border-box;
+        border-radius: 32px;
+        .header{
+            height:80px;
+            background-color: #5286ff;
+            margin-bottom: 3px;
+            border-radius: 30px 30px 0 0;
+            .logo{
+                display: inline-block;
+                width:143px;
+                height:26px;
+                margin: 27px 0 0 36px;
+                background: resolve('common/tit_lookback.png') no-repeat;
+            }
+            .btn_close{
+                position: absolute;
+                right:17px;
+                top:15px;
+                width:50px;
+                height: 50px;
+                border:0;
+                background: resolve('common/btn_lookback_close.png') no-repeat;
+            }
+        }
+        .content {
+            overflow-y: auto;
+            overflow-x: hidden;
+            height:calc(100% - 83px);
+            border-radius: 0 0 32px 30px;
+            &::-webkit-scrollbar {width: 8px;}
+            &::-webkit-scrollbar-track {background:none;border-radius: 10px;}
+            &::-webkit-scrollbar-thumb {background: rgba(0,0,0,.1);border-radius: 10px;}
+            &::-webkit-scrollbar-thumb:hover {background: rgba(0,0,0,.2);}
+            table{
+                width:100%;
+                position: relative;
+                background-color: #fff;
+                border-collapse: collapse;
+            }
+            tr{
+                &.step{
+                    >.title{
+                        width:199px;
+                        height: 100%;
+                        min-height: 174px;
+                        text-align: center;
+                        font-size: 22px;
+                        font-family: 'MapleStory-light';
+                        font-style: italic;
+                        color: #fff;
+                        background-repeat: no-repeat;
+                        background-position: center top;
+                        padding-bottom: 20px;
+                        vertical-align: top;
+                        .img{
+                            display: block;
+                            width:60px;
+                            height:60px;
+                            margin: 52px auto 0;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                    }
+                    .cnt{
+                        padding:15px 20px;
+                        white-space: normal;
+                        width:calc(100% - 200px);
+                        font-size: 24px;
+                        word-break: break-word;
+                        /*
+                        img{
+                            display: block;
+                            width: 100% !important;
+                            height: auto !important;
+                            margin-bottom: 10px;
+                        }
+                        */
+                        &.new {
+                            #understand {
+                                transform: none;
+                                width: auto;
+                                left: 0;
+                            }
+                        }
+                        .highlight {
+                            position: relative;
+                            display: inline-block;
+                            margin-left: 10px;
+                            &:after{
+                                content:"";
+                                position: absolute;
+                                left:-7px;
+                                top:14px;
+                                right:-3px;
+                                display: block;
+                                height:25px;
+                                transform: skew(-15deg,0);
+                                z-index: 0;
+                            }
+                            &.start:before{
+                                content: "";
+                                position: absolute;
+                                left:-4px;
+                                top:-6px;
+                                width:18px;
+                                height:21px;
+                                background-repeat: no-repeat;
+                            }
+                            &.purple:after{
+                                background-color: rgba(203,68,253,.25);
+                            }
+                            &.purple.start:before{
+                                background-image: resolve('mathalive_lib/images/ico_highlight_purple.png');
+                            }
+                            &.yellow:after{
+                                background-color: rgba(255,180,0,.35);
+                            }
+                            &.yellow.start:before{
+                                background-image: resolve('mathalive_lib/images/ico_highlight_yellow.png');
+                            }
+                        }
+                        .legend {
+                            position: absolute;
+                            right:15px;
+                            top:0;
+                            width:140px;
+                            height:75px;
+                            .given{
+                                height:33px;
+                                background:resolve('mathalive_lib/images/ico_highlight_given.png');
+                            }
+                            .ntf{
+                                margin-top: 9px;
+                                height:33px;
+                                background:resolve('mathalive_lib/images/ico_highlight_ntf.png');
+                            }
+                        }
+                        .arrow_strategy{
+                            margin-top: 10px;
+                            padding-left: 138px;
+                            font-family: "maplestory-bold";
+                            color: #132059;
+                            font-style: italic;
+                            background:resolve('common/ico_strategy.png') no-repeat 30px center;
+                        }
+                        .icon_step {
+                            height: 21px;
+                            padding: 0 10px;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #ec84ac;
+                            font-size: 14px;
+                            color: #ffffff;
+                            border-radius: 3px;
+                            margin-bottom: 10px;
+                        }
+                        .lookback_step {
+                            display: flex;
+                            flex-direction: column;
+                            padding-bottom: 25px;
+                            .answer img {
+                                display: block;
+                                width: 100% !important;
+                                height: 545px !important;
+                                position: relative !important;
+                                margin-top: -50px;
+                                margin-left: -50px;
+                            }
+                            .solution {
+                                margin-top: 10px;
+                                padding-right: 100px;
+                                & > div {
+                                    top: 0 !important;
+                                    margin: 0 !important;
+                                    width: 100% !important;
+                                    position: static !important;
+                                }
+                                & > img {
+                                    position: unset !important;
+                                }
+                            }
+                            &.new {
+                                .answer img {
+                                    width: auto !important;
+                                    height: auto !important;
+                                    margin: 0 !important;
+                                }
+                            }
+                        }
+                    }
+                    &.s01{
+                        .title{
+                            background-color: #b1b9d7;
+                            .img{
+                                margin-top: 35px;
+                                background-image: resolve('common/ico_lookback_bulb.png');
+                            }
+                        }
+                    }
+                    &.s02{
+                        .title{
+                            background-color: #8997c4;
+                            background-image: resolve('common/bg_lookback_arrow_btm_01.png');
+                            .img{
+                                background-image: resolve('common/ico_lookback_planner.png');
+                            }
+                        }
+                    }
+                    &.s03{
+                        .title{
+                            background-color: #6274b0;
+                            background-image: resolve('common/bg_lookback_arrow_btm_02.png');
+                            .img{
+                                background-image: resolve('common/ico_lookback_doit.png');
+                            }
+                        }
+                    }
+                    &.s04{
+                        .title{
+                            background-color: #3b519c;
+                            background-image: resolve('common/bg_lookback_arrow_btm_03.png');
+                            .img{
+                                background-image: resolve('common/ico_lookback_answer.png');
+                            }
+                        }
+                    }
+                }
+                &:after{
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+            tr{
+                background-color: #f7f8fb;
+                td.cnt {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        width: 100%;
+                        height: 10px;
+                        background-color: #fff;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                &:first-child td.cnt::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

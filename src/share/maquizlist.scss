@@ -1,0 +1,145 @@
+@mixin maquizlist {
+    .quizlist {
+        width: 1090px;
+        height: 561px;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: relative;
+        overflow-y: hidden;
+        border: 2px solid #c1c0c0;
+        border-radius: 20px;
+        .swiper-container{
+            width: 100%;
+            height: 100%;
+            
+            .swiper-slide{
+                height: auto;
+            }    
+            .swiper-scrollbar{
+                width: 7px;
+                background-color: transparent;
+                right: 1px;
+                .swiper-scrollbar-drag {
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+            }
+            .listWrap {
+                width: 1050px;
+                height: auto;
+                border-bottom: none;
+                
+                margin: 0 auto;
+
+                &>ul {
+                    padding: 10px 60px 10px;
+                    &>li {
+                        float: left;
+                        width: 30%;
+                        margin-left: 5%;
+                        margin-bottom: 15px;
+                        &:nth-child(3n+1) { margin-left: 0; }
+                        .top {
+                            padding-left: 3px;
+                            position: relative;
+                            margin-bottom: 4px;
+                            .qNum {
+                                width: width('mathalive_lib/images/q_num.png');
+                                height: height('mathalive_lib/images/q_num.png');
+                                background: resolve('mathalive_lib/images/q_num.png');
+                                display: inline-block;
+                                font-size: 26px;
+                                color: #fff;
+                                line-height: 52px;
+                                text-align : center;
+                                &.on { background: resolve('mathalive_lib/images/q_num_on.png'); }
+                            }   
+                            .textTitle {
+                                font-size: 20px;
+                                line-height: 52px;
+                            }
+                            .return_cnt_box {
+                                position: absolute;
+                                bottom: 3px; right: 0px;
+                                width: width('mathalive_lib/images/return_cnt_box.png');
+                                height: height('mathalive_lib/images/return_cnt_box.png');
+                                background: resolve('mathalive_lib/images/return_cnt_box.png');
+                                padding-left: 30px;
+                                cursor: pointer;
+                                div {
+                                    text-align: center;
+                                    line-height: height('mathalive_lib/images/return_cnt_box.png');
+                                    font-size: 21px;
+                                    color: #ffff;
+                                    word-spacing: -4px;
+                                    .numOfS { color: #2e4c0c; }
+                                }
+                            }
+                        }
+                        .content {
+                            height: 155px;
+                            border: 2px solid #818080;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            cursor: pointer;
+                            position: relative;
+                            img {
+                                width: 100%;
+                            }
+                            .markingState {
+                                display: none;
+                                background: #ebebeb;
+                                height: 43px;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                ul {
+                                    padding: 0 10px;
+                                    li {
+                                        display: inline-block;
+                                        width: 25%;
+                                        font-size: 20px;
+                                        position: relative;
+                                        line-height: 43px;
+                                        padding-left: 44px;
+                                        text-align: left;
+                                        &::before {
+                                            content: '';
+                                            width: 3px;
+                                            height: 13px;
+                                            background: #a5a4a5;
+                                            position: absolute;
+                                            top: 0; bottom: 0; left: 0;
+                                            margin: auto 0;
+                                        }
+                                        &:nth-child(1) {
+                                            background: resolve('mathalive_lib/images/mark01.png') no-repeat;
+                                            background-position: 12px 11px;
+                                            &::before { display: none; }
+                                        }
+                                        &:nth-child(2) {
+                                            background: resolve('mathalive_lib/images/mark02.png') no-repeat;
+                                            background-position: 12px 11px;
+                                        }
+                                        &:nth-child(3) {
+                                            background: resolve('mathalive_lib/images/mark03.png') no-repeat;
+                                            background-position: 12px 11px;
+                                        }
+                                        &:nth-child(4) {
+                                            background: resolve('mathalive_lib/images/mark04.png') no-repeat;
+                                            background-position: 12px 11px;
+                                        }
+                                    }
+                                }
+                                &.on{
+                                    display: block; 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

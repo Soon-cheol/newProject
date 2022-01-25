@@ -1,0 +1,65 @@
+@mixin livecloude {
+    .liveget_cloud{
+        position: absolute;
+        height:92px;
+        left:103px;
+        bottom:70px;
+        z-index: 20;
+        font-family: "maplestory-bold";
+        &.show{
+            display: block;
+        }
+        .single{
+            width:146px;
+            height:100%;
+            padding: 21px 0 0 20px;
+            background:resolve('mathalive_lib/images/bg_liveget_cloud.png');
+            .text{
+                padding-left: 42px;
+                font-size: 30px;
+                background-repeat: no-repeat;
+                background-position: 0;
+                background-size: 34px 30px;
+                &.green{
+                    background-image: resolve('mathalive_lib/images/ico_livegauge_heart_green.png');
+                }
+                &.red{
+                    background-image: resolve('mathalive_lib/images/ico_livegauge_heart.png');
+                }
+            }
+        }
+        .double{
+            width:157px;
+            height:100%;
+            background:resolve('mathalive_lib/images/bg_liveget_cloud02.png');
+            .text{
+                width:73px;
+                height:72px;
+                text-align: center;
+                padding: 43px 0 0 0;
+                font-size: 24px;
+                background-repeat: no-repeat;
+                background-position: center 9px;
+                background-size: 34px 30px;
+                &.red{
+                    float: left;
+                    background-image: resolve('mathalive_lib/images/ico_livegauge_heart.png');
+                }
+                &.green{
+                    float: right;
+                    margin-right: 7px;
+                    background-image: resolve('mathalive_lib/images/ico_livegauge_heart_green.png');
+                }
+            }
+        }
+        .green{
+            color:#75c906;
+        }
+        .red{
+            color:#d53232;
+        }
+        .hide {
+            display: none;
+        }
+    }
+}

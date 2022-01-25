@@ -1,0 +1,336 @@
+@import "./ProgressCircle.scss";
+@mixin q_timer {
+  @keyframes swingLR {
+    from {
+      transform: translateX(-2%);
+    }
+
+    to {
+      transform: translateX(2%);
+    }
+  }
+  .alert_notice {
+    display: none;
+    position: absolute;
+    left: 20px;
+    bottom: -32px;
+    min-width: 276px;
+    height: 58px;
+    padding-left: 60px;
+    line-height: 58px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.45)
+      resolve("mathalive_lib/images/ico_alert_notice.png") no-repeat 13px center;
+    color: #fff;
+    font-family: "maplestory-light";
+    font-size: 20px;
+    &.show {
+      display: block;
+    }
+    strong {
+      font-family: "maplestory-bold";
+      border-bottom: 1px solid #fff;
+    }
+  }
+  .q_timer {
+    position: relative;
+    width: 150px;
+    height: 155px;
+    &.swing {
+      animation: swingLR alternate infinite linear 0.08s;
+    }
+    .watch {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      left: 10px;
+      top: 10px;
+      background: resolve("mathalive_lib/images/bg_timer.png") no-repeat center;
+      background-size: 100%;
+      z-index: 1;
+    }
+    & > svg {
+      position: absolute;
+      left: 60px;
+      top: 59px;
+      z-index: 1;
+      overflow: inherit;
+      .circle {
+        z-index: 2;
+      }
+    }
+    .m_text {
+      position: absolute;
+      width: 142px;
+      padding-top: 48px;
+      text-align: center;
+      font-size: 38px;
+      color: #000;
+      font-family: "Maplestory-Bold";
+      line-height: 1.2;
+      z-index: 1;
+    }
+    &.assess {
+      .watch {
+        z-index: 0 !important;
+      }
+    }
+    .m_holl {
+      position: absolute;
+      left: 1.5rem;
+      top: 2.29rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 100%;
+      background: white;
+      z-index: 1;
+    }
+    .live_guage {
+      position: absolute;
+      width: 205px;
+      height: 77px;
+      left: 75px;
+      top: 25px;
+      background-color: #5400bc;
+      border-radius: 0 23px 23px 0;
+      &.individual {
+        top: 43px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 0 25px 25px 0;
+        .bar_wrap {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        .ico_heart {
+          top: 5px;
+          left: 50px;
+        }
+      }
+      .ico_heart {
+        position: absolute;
+        left: 45px;
+        top: 30px;
+        width: 48px;
+        height: 40px;
+        background: resolve("mathalive_lib/images/ico_livegauge_heart.png");
+        z-index: 1;
+      }
+      .bar_wrap {
+        position: absolute;
+        width: 123px;
+        height: 28px;
+        left: 70px;
+        top: 36px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+        .bar {
+          position: relative;
+          background: transparent;
+          z-index: 0;
+          height: 100%;
+          text-align: center;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 199, 68, 1) 0%,
+            rgba(255, 150, 0, 1) 100%
+          );
+          border-radius: 20px;
+        }
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 20px;
+          color: #2e2e2e;
+          font-family: "maplestory-bold";
+          transform: translate(-50%, -50%);
+          &.overmax {
+            color: #ff6c00;
+            font-size: 24px;
+            &:before {
+              content: attr(data-value);
+              position: absolute;
+              -webkit-text-stroke: 0.2em #fff;
+              left: 0;
+              z-index: -1;
+            }
+          }
+        }
+      }
+      .team_name {
+        position: absolute;
+        right: 13px;
+        top: 10px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 11px;
+        text-align: center;
+        color: #fff;
+        border-radius: 20px;
+        font-family: "maplestory-bold";
+        font-size: 16px;
+        &.red {
+          &:before {
+            content: "Red";
+          }
+          background: linear-gradient(
+            90deg,
+            rgba(248, 64, 58, 1) 0%,
+            rgba(249, 65, 58, 1) 100%
+          );
+        }
+        &.yellow {
+          &:before {
+            content: "Yellow";
+          }
+          background: linear-gradient(
+            90deg,
+            rgba(251, 176, 4, 1) 0%,
+            rgba(255, 178, 1, 1) 100%
+          );
+        }
+        &.green {
+          &:before {
+            content: "Green";
+          }
+          background: linear-gradient(
+            90deg,
+            rgba(116, 196, 10, 1) 0%,
+            rgba(116, 197, 10, 1) 100%
+          );
+        }
+
+        &.lucky {
+          &:before {
+            content: "Lucky";
+          }
+          background: #4d62d1;
+        }
+      }
+    }
+    .circle {
+      position: absolute;
+      left: 32px;
+      top: 30px;
+      width: 76px;
+      height: 76px;
+      z-index: 1;
+    }
+    .minute {
+      position: absolute;
+      left: -5px;
+      bottom: 57px;
+      width: 100%;
+      font-size: 10px;
+      color: #d43030;
+      font-family: "maplestory-light";
+      text-align: center;
+      z-index: 1;
+    }
+    @include CircleGraph();
+  }
+  /* 
+	&>div{
+		position:absolute;
+		left:16px;right:17px;
+		top:24px;bottom:17px;
+		border-radius:50%;
+		padding-top: 18px;
+		text-align: center;
+		font-size:16px;
+		font-weight: bold;
+		color:#fff;
+	}
+	*/
+}
+
+@mixin q_countdown2 {
+  .countdown2 {
+    display: flex;
+    &.hide {
+      display: none;
+    }
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: 10;
+
+    vertical-align: middle;
+    background-color: rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .countdown {
+      width: auto;
+      height: auto;
+      border-radius: 50%;
+      background-color: #5d2f8d;
+      transform: scale(1, 1);
+      opacity: 1;
+      &.hide {
+        transition: transform 0.3s, opacity 0.3s;
+        transform: scale(0.2, 0.2);
+        opacity: 0.1;
+      }
+      canvas {
+        vertical-align: middle;
+      }
+      & > div {
+        border-radius: 50%;
+        position: absolute;
+        left: -160px;
+        width: 100%;
+        top: -160px;
+        height: 100%;
+        & > div {
+          position: absolute;
+          left: 0px;
+          width: 100%;
+          top: 0px;
+          height: 100%;
+          text-align: center;
+          font-size: 120px;
+          line-height: 206px;
+          font-weight: bold;
+          color: #fff;
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        }
+      }
+      .start {
+        & > div {
+          width: 300px;
+          height: 300px;
+          line-height: 280px;
+          margin: 0 auto;
+          background: linear-gradient(
+            0deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(9, 9, 121, 1) 35%,
+            rgba(0, 212, 255, 1) 100%
+          );
+          border-radius: 300px;
+          text-align-last: center;
+          font-size: 100px;
+          font-weight: bold;
+          border: 10px solid #ffff;
+          box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+          color: #fff;
+          text-transform: uppercase;
+        }
+        .num {
+          font-size: 180px;
+        }
+        &.none {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include CircleGraph();
+}

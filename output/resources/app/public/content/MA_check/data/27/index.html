@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<title>Math Alive Content</title>
+    <link href="/content/mathalive_lib/font.css" rel="stylesheet" />
+    <link href="/content/mathalive_lib/common_v1.css" rel="stylesheet" />
+    <link href="./content.css" rel="stylesheet" />
+    <script src="/content/mathalive_lib/mathcontent_v1.js"></script>
+    <script src="/content/mathalive_lib/libdragdrop.min.js"></script>
+    <script>
+        MobileDragDrop.polyfill({
+            dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+        });
+    </script>
+</head>
+<body>
+	<div class="content_page">
+        <p class="problem_explain right_btn">
+            <button class="btn_sound"></button>
+            <audio></audio>
+            Mia takes apart 9 counters into two parts. If the number of counters in one part is 2, how many counters must be in the other part?
+        </p>
+        <div class="choiceWrap">
+            <div class="btn_wrap">
+                <button class="btn tp01" id="choice1" value="1" data-type="choice">1</button>
+                <button class="btn tp02 right" id="choice2" value="2" data-type="choice">2</button>
+                <button class="btn tp03 wrong" id="choice3" value="3" data-type="choice">3</button>
+                <button class="btn tp04" id="choice4" value="4" data-type="choice">4</button>
+                <button class="btn tp05" id="choice5" value="5" data-type="choice">5</button>
+                <button class="btn tp06" id="choice6" value="6" data-type="choice">6</button>
+                <button class="btn tp07" id="choice7" value="7" data-type="choice">7</button>
+                <button class="btn tp08" id="choice8" value="8" data-type="choice">8</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./content.js"></script>
+</html>

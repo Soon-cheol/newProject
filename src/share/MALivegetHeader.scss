@@ -1,0 +1,201 @@
+@mixin maliveheader{
+    .maheader {
+        position:absolute;
+        top:0;
+        font-family: NotoSansB-Regular;
+        width:100%;
+        height:67px;
+        padding:18px 45px 7px;
+        /*background: rgba(0,0,0,.3);*/
+        background-color: #ff9e2b; /* Math Journal */
+        box-sizing: border-box;
+        z-index: 50;
+        &.type01 {
+            background-color: #ff9e2b;
+        }
+        &.type02 {
+            background-color: #f1a9b7;
+        }
+        &.type03{
+            background-color: #72abd7;
+        }
+        &.type04 {
+            background-color: #022441;
+        }
+        &.type05 {
+            background-color: #c3eaba;
+        }
+        .btn_menu{
+            float: left;
+            width:40px;
+            height:31px;
+            border:0;
+            background:resolve('mathalive_lib/images/ico_menu.png');
+        }
+        .user{
+            float: left;
+            margin:-10px 0 0 26px;
+            img{
+                width:46px;
+                height:46px;
+                border-radius: 100%;
+                border:2px solid #fff;
+                vertical-align: middle;
+                box-shadow: 2px 0 10px rgba(0,0,0,.2);
+            }
+            .name{
+                font-family: "maplestory-bold";
+                color:#fff;
+                font-size: 22px;
+                margin-left: 10px;
+                vertical-align: middle;
+            }
+            .defaultImg_m,
+            .defaultImg_f {
+                width:46px;
+                height:46px;
+                border-radius: 100%;
+                vertical-align: middle;
+                display: inline-block;
+                div {
+                    font-size: 20px;
+                    font-family: "Maplestory-Bold";
+                    color: #fff;    
+                    width: 46px;
+                    height: 46px;
+                    line-height: 46px;    
+                    text-align: center;  
+                }
+            }
+            .defaultImg_m {
+                background-color: #2cd1c3;
+            }
+            .defaultImg_f {
+                background-color: #ffa1a7;
+            }
+        }
+        .left_menu{
+            &.show{
+                display:block;
+            }
+            display:none;
+            position: fixed;
+            left:0;
+            top:0;
+            width:265px;
+            height:345px;
+            z-index: 90;
+            .innerbox{
+                height:100%;
+                border-radius: 0 30px 30px 30px;
+                background-color: #3cbdab;
+                box-shadow: 0 3px 7px rgba(0,0,0,.16);
+                .close{
+                    text-align: right;
+                    .btn_close{
+                        position: absolute;
+                        right:15px;
+                        top:8px;
+                        width:50px;
+                        height:50px;
+                        border:0;
+                        background: resolve('mathalive_lib/images/ico_video_menu_close.png') no-repeat center;
+                    }
+                }
+                ul{
+                    padding: 78px 0 0 0;
+                    li{
+                        height: 81px;
+                        line-height: 81px;
+                        text-align: center;
+                        font-family: "Maplestory-Bold";
+                        color:#fff;
+                        font-size: 28px;
+                        background:resolve('mathalive_lib/images/bg_left_menu_line.png') no-repeat center top;
+                        cursor: pointer;
+                        &:first-child{
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .live_guage{
+            position: absolute;
+            right:20px;
+            top:0;
+            width:260px;
+            height:68px;
+            &.twinkle:after{
+                content:"";
+                display:block;
+                position: absolute;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+                background: resolve('mathalive_lib/images/bg_liveguage_twinkle.gif') no-repeat;
+            }
+            .heart{
+                position: absolute;
+                left:16px;
+                top:7px;
+                width:62px;
+                height:56px;
+                background: resolve('mathalive_lib/images/ico_greenheart.png');
+                z-index: 1;
+            }
+            .bar_wrap{
+                position: absolute;
+                left:59px;
+                top:22px;
+                width:145px;
+                height:26px;
+                padding:2px 3px 2px 0;
+                border-radius: 0 15px 15px 0;
+                background: #fff;
+                .bar{
+                    max-width: 100%;
+                    height:100%;
+                    border-radius: 0 10px 10px 0;
+                    background:linear-gradient(90deg, rgba(173,218,64,1) 0%, rgba(71,219,26,1) 100%);
+                }
+                .num{
+                    position: absolute;
+                    right:-50px;
+                    top:50%;
+                    font-size: 20px;
+                    color:#fff;
+                    font-family: "maplestory-bold";
+                    transform: translateY(-50%);
+                    &.overmax{
+                        color:#ffb400;
+                        font-size: 24px;
+                        &:before{
+                            content:attr(data-value);
+                            position: absolute;
+                            -webkit-text-stroke: 0.2em #fff;
+                            left:0;
+                            z-index:-1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .typeName {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: "maplestory-bold";
+            font-size: 30px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

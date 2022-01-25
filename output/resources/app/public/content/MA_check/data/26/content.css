@@ -1,0 +1,16 @@
+@charset "utf-8";
+body {background: #ffe9e6;}
+
+.btn_wrap{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width:346px;
+    max-width: calc(100%/3 - 80px/3);
+    height:100px;
+}
+.btn+.btn{
+    margin-left: 40px;
+}
+

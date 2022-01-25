@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title> New Document </title>
+	<meta name="Generator" content="EditPlus">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<script type="text/javascript" src="./obj.js"></script>
+</head>
+
+
+
+<body>
+
+	<textarea id="area" style="width: 100%; height: 500px" resize="no"></textarea>
+	<script>
+		var obj_e = {};
+		obj_e.TYPE_TEXT = "text";
+		obj_e.TYPE_YESORNO = "yesorno";
+		obj_e.TYPE_INT = "int";
+		obj_e.TYPE_FLOAT = "float";
+		obj_e.TYPE_SECOND = "second";
+		obj_e.TYPE_LIST = "list";
+		obj_e.TYPE_ARRAY = "array";
+		obj_e.TYPE_IMAGE = "image";
+		obj_e.TYPE_SOUND = "sound";
+		obj_e.TYPE_MOVIE = "movie";
+		obj_e.TYPE_OBJECT = "object";
+		obj_e.TYPE_RANGE = "range";
+		obj_e.TYPE_RANGE_SE = "range_se";
+		obj_e.TYPE_SELECT = "select";
+		obj_e.TYPE_MULTI_LANG = "multi_lang";
+		obj_e.TYPE_FOLDER = 'folder';
+		obj_e.TYPE_DW_SEQ = 'drawing_seq';
+
+		var ma_warmup = {
+			_type: obj_e.TYPE_OBJECT,
+
+			_excelSheets: "warmup",
+			_startRow: 2,
+			seconds: { _type: obj_e.TYPE_INT, _excel: "A", _default: 15 },
+
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+
+				_excelSheets: "quiz",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					page: { _type: obj_e.TYPE_INT, _excel: "B" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "C" },
+					type: { _type: obj_e.TYPE_TEXT, _excel: "D" },
+					choices: { _type: obj_e.TYPE_INT, _excel: "E" },
+					answer: { _type: obj_e.TYPE_INT, _excel: "F" },
+				}
+			}
+		}
+
+		var ma_concept_summary = {
+			_type: obj_e.TYPE_OBJECT,
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "quizs",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					path: { _type: obj_e.TYPE_FOLDER, _excel: "C" },
+				}
+			}
+		}
+
+		var ma_learningObjs = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "quizs",
+			_startRow: 2,
+			seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+			url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+			path: { _type: obj_e.TYPE_FOLDER, _excel: "C" },
+		}
+
+		var ma_activity = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			videoView: { _type: obj_e.TYPE_YESORNO, _excel: "A" },
+			pageMove: { _type: obj_e.TYPE_YESORNO, _excel: "B" },
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "quizs",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					teacher: { _type: obj_e.TYPE_YESORNO, _excel: "C" },
+					teacherSeq: { _type: obj_e.TYPE_INT, _excel: "D" },
+					activepage: { _type: obj_e.TYPE_ARRAY, _excel: "E" },
+					path: { _type: obj_e.TYPE_FOLDER, _excel: "F" },
+					sendshare: { _type: obj_e.TYPE_ARRAY, _excel: "G" },
+					conceptool: { _type: obj_e.TYPE_ARRAY, _excel: "H" },
+					concepkey: { _type: obj_e.TYPE_ARRAY, _excel: "I" }
+				}
+			}
+		}
+		var ma_mathtalk = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			iswarmup: { _type: obj_e.TYPE_YESORNO, _excel: "A",_default:false },
+			subtitle: { _type: obj_e.TYPE_TEXT, _excel: "B"},
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "quizs",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					teacher: { _type: obj_e.TYPE_YESORNO, _excel: "C" },
+					path: { _type: obj_e.TYPE_FOLDER, _excel: "D" },
+				}
+			}
+		}
+		var ma_conceptTool = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			iswarmup: { _type: obj_e.TYPE_YESORNO, _excel: "A",_default:false },
+			subtitle: { _type: obj_e.TYPE_TEXT, _excel: "B"},
+			tools: {
+				_type: obj_e.TYPE_LIST,
+
+				_excelSheets: "tools",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					conceptKey: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					thumbnail: { _type: obj_e.TYPE_IMAGE, _excel: "C" },
+				}
+			}
+		}
+
+		var ma_summary = {
+			_type: obj_e.TYPE_OBJECT,
+
+			_excelSheets: "summary",
+			_startRow: 2,
+			url: { _type: obj_e.TYPE_TEXT, _excel: "A" },
+
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+
+				_excelSheets: "quiz",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					desc: { _type: obj_e.TYPE_TEXT, _excel: "C" },
+					thumb: { _type: obj_e.TYPE_TEXT, _excel: "D" }, // TYPE_IMAGE
+				}
+			}
+		}
+
+		var ma_check = {
+			_type: obj_e.TYPE_OBJECT,
+
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+
+				_excelSheets: "quiz",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					desc: { _type: obj_e.TYPE_TEXT, _excel: "C" },
+					thumb: { _type: obj_e.TYPE_TEXT, _excel: "D" }, // TYPE_IMAGE
+					type: { _type: obj_e.TYPE_TEXT, _excel: "E" },
+					answer: { _type: obj_e.TYPE_ARRAY, _excel: "F" },
+				}
+			}
+		}
+		var ma_iPractice = {
+			_type: obj_e.TYPE_OBJECT,
+
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+
+				_excelSheets: "quiz",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					desc: { _type: obj_e.TYPE_TEXT, _excel: "C" },
+					thumb: { _type: obj_e.TYPE_TEXT, _excel: "D" }, // TYPE_IMAGE
+					type: { _type: obj_e.TYPE_TEXT, _excel: "E" },
+					answer: { _type: obj_e.TYPE_ARRAY, _excel: "F" },
+				}
+			}
+		}
+
+		var ma_ePractice = {
+			_type: obj_e.TYPE_OBJECT,
+
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+
+				_excelSheets: "quiz",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					desc: { _type: obj_e.TYPE_TEXT, _excel: "C" },
+					type: { _type: obj_e.TYPE_TEXT, _excel: "D" },
+					isExtra: { _type: obj_e.TYPE_YESORNO, _excel: "E" },
+					answer: { _type: obj_e.TYPE_ARRAY, _excel: "F" },
+				}
+			}
+		}
+
+		var ma_strategies = {
+			_type: obj_e.TYPE_OBJECT,
+			items: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "item",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					quizSeq: { _type: obj_e.TYPE_INT, _excel: "B" },
+				}
+			}
+		}
+
+		var ma_tPortfolio = {
+			_type: obj_e.TYPE_OBJECT,
+
+			_excelSheets: "topicportfolio",
+			_startRow: 2,
+			id: { _type: obj_e.TYPE_INT, _excel: "A" },
+			url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+
+				_excelSheets: "quiz",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					type: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					url: { _type: obj_e.TYPE_TEXT, _excel: "C" },
+					step: { _type: obj_e.TYPE_TEXT, _excel: "D" },
+					spage: { _type: obj_e.TYPE_ARRAY, _excel: "E" },
+				}
+			}
+		}
+
+		var ma_ModuleReview = {
+			_type: obj_e.TYPE_OBJECT,
+			_startRow: 2,
+			quizs: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "quiz",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					type: { _type: obj_e.TYPE_TEXT, _excel: "A" },
+					q_text: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					q_audio: { _type: obj_e.TYPE_SOUND, _excel: "C", _default: "" },
+					q_image_s: { _type: obj_e.TYPE_IMAGE, _excel: "D", _default: "" },
+					q_image_b: { _type: obj_e.TYPE_IMAGE, _excel: "E", _default: "" },
+					ss_text: { _type: obj_e.TYPE_TEXT, _excel: "F", _default: "" },
+					ss_image: { _type: obj_e.TYPE_IMAGE, _excel: "G", _default: "" },
+				}
+			}
+		}
+
+		var ma_nIPEP = {
+			_type: obj_e.TYPE_OBJECT,
+			items: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "item",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					quizSeq: { _type: obj_e.TYPE_INT, _excel: "B" },
+				}
+			}
+		}
+		
+		var ma_nWarmupQuiz = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			iswarmup: { _type: obj_e.TYPE_YESORNO, _excel: "A", _default:false},
+			subtitle: { _type: obj_e.TYPE_TEXT, _excel: "B"},
+			items: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "item",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					quizSeq: { _type: obj_e.TYPE_INT, _excel: "B" },
+				}
+			}
+		}
+
+		var ma_i_spy = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			seconds: { _type: obj_e.TYPE_INT, _excel: "A"},
+			url: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+			iswarmup: { _type: obj_e.TYPE_YESORNO, _excel: "C",_default:false },
+			subtitle: { _type: obj_e.TYPE_TEXT, _excel: "D"},
+			path: { _type: obj_e.TYPE_FOLDER, _excel: "E"},
+		}
+
+		var ma_hit_mole = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			seconds: { _type: obj_e.TYPE_INT, _excel: "A", _default: 100 },
+			choices: { _type: obj_e.TYPE_INT, _excel: "B" },
+			iswarmup: { _type: obj_e.TYPE_YESORNO, _excel: "C",_default:false },
+			subtitle: { _type: obj_e.TYPE_TEXT, _excel: "D"},
+			quiz: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "quizs",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					question: { _type: obj_e.TYPE_IMAGE, _excel: "B" },
+					choice1: { _type: obj_e.TYPE_TEXT, _excel: "C" },
+					choice2: { _type: obj_e.TYPE_TEXT, _excel: "D" },
+					choice3: { _type: obj_e.TYPE_TEXT, _excel: "E" },
+					choice4: { _type: obj_e.TYPE_TEXT, _excel: "F" },
+					choice5: { _type: obj_e.TYPE_TEXT, _excel: "G" },
+					answer: { _type: obj_e.TYPE_TEXT, _excel: "H" },
+				}
+			}
+		}
+
+		var ma_memory_game = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			seconds: { _type: obj_e.TYPE_INT, _excel: "A", _default: 30 },
+			choices: { _type: obj_e.TYPE_INT, _excel: "B" },
+			answer: { _type: obj_e.TYPE_ARRAY, _excel: "C" },
+			iswarmup: { _type: obj_e.TYPE_YESORNO, _excel: "D",_default:false },
+			subtitle: { _type: obj_e.TYPE_TEXT, _excel: "E"},
+			card: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "cards",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					image: { _type: obj_e.TYPE_IMAGE, _excel: "A" },
+				}
+			}
+		}
+
+		var ma_threemin_practice = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			pagetitle: { _type: obj_e.TYPE_TEXT, _excel: "A" },
+			tools: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "tools",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					title: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+					question: { _type: obj_e.TYPE_IMAGE, _excel: "C" },
+					grade: { _type: obj_e.TYPE_TEXT, _excel: "D" },
+					conceptKey: { _type: obj_e.TYPE_TEXT, _excel: "E" }
+				}
+			}
+		}
+
+		var ma_al_as = {
+			_type: obj_e.TYPE_OBJECT,
+
+			_excelSheets: "main",
+			_startRow: 1,
+			page: { _type: obj_e.TYPE_INT, _excel: "A", _default: 0 }
+		}
+
+		var ma_module_portfolio = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "grade",
+			_startRow: 2,
+			grade: { _type: obj_e.TYPE_INT, _excel: "A",_default:1 },
+			explain: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "explain",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					explain: { _type: obj_e.TYPE_IMAGE, _excel: "A" },
+					answer: { _type: obj_e.TYPE_IMAGE, _excel: "B" },
+					explainhelp: { _type: obj_e.TYPE_TEXT, _excel: "C" }
+				}
+			},
+			keywords: {
+				_type: obj_e.TYPE_LIST,
+				_excelSheets: "keywords",
+				_startRow: 2,
+				_item: {
+					_type: obj_e.TYPE_OBJECT,
+					seq: { _type: obj_e.TYPE_INT, _excel: "A" },
+					keyword: { _type: obj_e.TYPE_TEXT, _excel: "B" },
+				}
+			},
+		}
+
+		var ma_steam_portfolio = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			bgColor: { _type: obj_e.TYPE_TEXT, _excel: "A", _default:'pink' },
+			bgImage: { _type: obj_e.TYPE_IMAGE, _excel: "B" }
+		}
+
+		var ma_mathtalk2 = {
+			_type: obj_e.TYPE_OBJECT,
+			_excelSheets: "main",
+			_startRow: 2,
+			iswarmup: { _type: obj_e.TYPE_YESORNO, _excel: "A",_default:false },
+			subtitle: { _type: obj_e.TYPE_TEXT, _excel: "B"},
+			bgImage: { _type: obj_e.TYPE_IMAGE, _excel: "C" },
+		}
+
+		var area = document.getElementById('area');
+		alert('ma_module_portfolio');
+		area.value = JSON.stringify(ma_module_portfolio);
+
+// document.write(JSON.stringify(korea_speak_quiz ))
+//console.log(JSON.stringify(warmup_quiz));
+	</script>
+</body>
+
+</html>

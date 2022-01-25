@@ -1,0 +1,510 @@
+
+@import './CoverPopup.scss';
+@import './video_popup.scss';
+@import './penrecord_popup.scss';
+@import './masubmituserlist.scss';
+@mixin maresult {
+        .top_control {
+            margin: 0 auto;
+            width: 968px;
+            height: 93px;
+            position: relative;
+            @include masubmitusers;
+            .submitusers {
+                margin: 0;
+                position: absolute;
+                top: 24px; right: 0;
+            }  
+    
+            .btn_viewInfo {
+                @include btn_on(
+                    resolve('mathalive_lib/images/btn_info_closed.png'),
+                    resolve('mathalive_lib/images/btn_info_opened.png'),
+                    width('mathalive_lib/images/btn_info_opened.png'),
+                    height('mathalive_lib/images/btn_info_opened.png')
+                );
+                position: absolute;
+                top: 10px; right: 168px;
+            }
+        }  
+        .resultlist {
+            height: 700px;
+            .ready {
+                width: width('mathalive_lib/images/write_loading.png');
+                height: height('mathalive_lib/images/write_loading.png');
+                background: resolve('mathalive_lib/images/write_loading.png');
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                margin-top: 36px;
+            }
+            .list{
+                width: 998px;
+                margin: 0 auto;
+                position: relative;
+                overflow-y: hidden;
+                height: 600px;
+                .swiper-container{
+                    width: 100%;
+                    height: 100%;
+                    .swiper-slide{
+                        height: auto;
+                    }    
+                    .swiper-scrollbar{
+                        width: 7px;
+                        background-color: transparent;
+                        right: 1px;
+                        .swiper-scrollbar-drag {
+                            background-color: rgba(0, 0, 0, 0.2);
+                        }
+                    }
+                    .listWrap {
+                        width: 968px;
+                        ul {
+                            &:after{
+                                content:"";
+                                display: block;
+                                clear: both;
+                            }
+                            li {
+                                list-style: none;
+                                float: left;
+                                width:23.5%;
+                                margin-bottom:17px;
+                                margin-left:2%;
+                                &:nth-child(4n+1){
+                                    margin-left: 0;
+                                }
+                                .cntBox {
+                                    position: relative;
+                                    height: 184px;
+                                    border: 2px solid #818080;
+                                    border-radius: 12px;
+                                    overflow: hidden;
+                                    .no_result {
+                                        background: rgba(0,0,0,0.15) resolve('mathalive_lib/images/no_result.png') no-repeat;
+                                        background-position: center;
+                                        position: absolute;
+                                        top: 0; bottom: 0;
+                                        left: 0; right: 0;
+                                        z-index: 3;
+                                    }
+                                    img{
+                                        width:100%;
+                                        height: 100%;
+                                        position: absolute;
+                                    }
+                                    .bg{
+                                        z-index: 0;
+                                    }
+                                    .thumb{
+                                        z-index: 3;
+                                    }
+                                    video{
+                                        width:100%;
+                                        height: 100%;
+                                    }
+                                    .btn_view {
+                                        @include btn_down_dis(
+                                            resolve('mathalive_lib/images/btn_view.png'),
+                                            '',
+                                            '',
+                                            width('mathalive_lib/images/btn_view.png'),
+                                            height('mathalive_lib/images/btn_view.png')
+                                        );
+                                        position: absolute;
+                                        bottom: 9px; right: 14px;
+                                    }
+                                    .btn_play {
+                                        @include btn_down_dis(
+                                            resolve('mathalive_lib/images/btn_play.png'),
+                                            '',
+                                            '',
+                                            width('mathalive_lib/images/btn_play.png'),
+                                            height('mathalive_lib/images/btn_play.png')
+                                        );
+                                        position: absolute;
+                                        bottom: 9px; right: 11px;
+                                        z-index: 5;
+                                    }
+                                }
+                                .user_info {
+                                    margin-top: 5px;
+                                    height: 55px;
+                                    padding-left: 13px;
+                                    position: relative;
+                                    .btn_info {
+                                        @include btn_down_dis(
+                                            resolve('mathalive_lib/images/btn_info.png'),
+                                            '',
+                                            '',
+                                            width('mathalive_lib/images/btn_info.png'),
+                                            height('mathalive_lib/images/btn_info.png')
+                                        );
+                                        position: relative;
+                                        top: 1px;
+                                    }
+                                    .user {
+                                        position: absolute;
+                                        top: 0; bottom: 0;
+                                        left: 0; right: 0;
+                                        border-radius: 5px;
+                                        padding-left: 13px;
+                                        padding-top: 2.5px;
+                                        img {
+                                            width: 50px;
+                                            height: 50px;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            border: 3px solid #75c906;
+                                            border-radius: 50%;
+                                            overflow: hidden;
+                                            box-sizing: border-box;
+                                        }
+                                        .user_name {
+                                            font-size: 22px;
+                                            margin-left: 10px;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            text-overflow:ellipsis;
+                                            white-space:nowrap;
+                                            word-wrap:normal;
+                                            width:116px;
+                                            overflow:hidden;
+                                        }
+                                        .btn_close {
+                                            @include btn_down_dis(
+                                                resolve('mathalive_lib/images/btn_close.png'),
+                                                '',
+                                                '',
+                                                width('mathalive_lib/images/btn_close.png'),
+                                                height('mathalive_lib/images/btn_close.png')
+                                            );
+                                            position: absolute;
+                                            top: 0; bottom: 0;
+                                            right: 18px;
+                                            margin: auto 0;
+                                            display: none;
+                                        }    
+                                        &.open {
+                                            background: rgba(117,187,42,0.25);
+                                            .user_name { color: #5b9b08; }
+                                            .btn_close { display: block; }
+                                        }
+                                    }
+                                }
+                            }    
+                        }
+                    }
+                }
+            }
+            /*
+            &.thumbnail{
+                width: 968px;
+                margin: 0 auto;
+                ul {
+                    &:after{
+                        content:"";
+                        display: block;
+                        clear: both;
+                    }
+                    li {
+                        list-style: none;
+                        float: left;
+                        width:23.5%;
+                        margin-bottom:17px;
+                        margin-left:2%;
+                        &:nth-child(4n+1){
+                            margin-left: 0;
+                        }
+                        .cntBox {
+                            position: relative;
+                            height: 184px;
+                            border: 2px solid #818080;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            .no_result {
+                                background: rgba(0,0,0,0.15) resolve('mathalive_lib/images/no_result.png') no-repeat;
+                                background-position: center;
+                                position: absolute;
+                                top: 0; bottom: 0;
+                                left: 0; right: 0;
+                            }
+                            img{
+                                width:100%;
+                                height: 100%;
+                            }
+                            video{
+                                width:100%;
+                                height: 100%;
+                            }
+                            .btn_view {
+                                @include btn_down_dis(
+                                    resolve('mathalive_lib/images/btn_view.png'),
+                                    '',
+                                    '',
+                                    width('mathalive_lib/images/btn_view.png'),
+                                    height('mathalive_lib/images/btn_view.png')
+                                );
+                                position: absolute;
+                                bottom: 9px; right: 14px;
+                            }
+                            .btn_play {
+                                @include btn_down_dis(
+                                    resolve('mathalive_lib/images/btn_play.png'),
+                                    '',
+                                    '',
+                                    width('mathalive_lib/images/btn_play.png'),
+                                    height('mathalive_lib/images/btn_play.png')
+                                );
+                                position: absolute;
+                                bottom: 9px; right: 11px;
+                            }
+                        }
+                        .user_info {
+                            margin-top: 5px;
+                            height: 55px;
+                            padding-left: 13px;
+                            position: relative;
+                            .btn_info {
+                                @include btn_down_dis(
+                                    resolve('mathalive_lib/images/btn_info.png'),
+                                    '',
+                                    '',
+                                    width('mathalive_lib/images/btn_info.png'),
+                                    height('mathalive_lib/images/btn_info.png')
+                                );
+                                position: relative;
+                                top: 1px;
+                            }
+                            .user {
+                                position: absolute;
+                                top: 0; bottom: 0;
+                                left: 0; right: 0;
+                                border-radius: 5px;
+                                padding-left: 13px;
+                                padding-top: 2.5px;
+                                img {
+                                    width: 50px;
+                                    height: 50px;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    border: 3px solid #75c906;
+                                    border-radius: 50%;
+                                    overflow: hidden;
+                                    box-sizing: border-box;
+                                }
+                                .user_name {
+                                    font-size: 22px;
+                                    margin-left: 10px;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                }
+                                .btn_close {
+                                    @include btn_down_dis(
+                                        resolve('mathalive_lib/images/btn_close.png'),
+                                        '',
+                                        '',
+                                        width('mathalive_lib/images/btn_close.png'),
+                                        height('mathalive_lib/images/btn_close.png')
+                                    );
+                                    position: absolute;
+                                    top: 0; bottom: 0;
+                                    right: 18px;
+                                    margin: auto 0;
+                                    display: none;
+                                }    
+                                &.open {
+                                    background: rgba(117,187,42,0.25);
+                                    .user_name { color: #5b9b08; }
+                                    .btn_close { display: block; }
+                                }
+                            }
+                        }
+                    }    
+                }
+            }
+            */
+            .result_popup {
+                @include CoverPopup(100);
+                background-color: white;
+                width:100%;
+                height: 100%;
+                .top {
+                    width: 100%;
+                    height: 80px;
+                    border-bottom: 3px solid #75c906;
+                    position: relative;
+                    .user_info {
+                        position: absolute;
+                        left: 65px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        img {
+                            width: 58px;
+                            height: 58px;
+                            border: 3px solid #75c906;
+                            border-radius: 50%;
+                            box-sizing: border-box;
+                            background: #aaa;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        .name {
+                            font-size: 32px;
+                            margin-left: 20px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            font-weight: bold;
+                            color: #666666;
+                        }
+                    }
+                    .page_navi {
+                        position: absolute;
+                        top: 50%; left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 0;
+                        span {
+                            width: 14px;
+                            height: 14px;
+                            border-radius: 50%;
+                            background: #bebebe;
+                            margin: 0 8px;
+                            display: inline-block;
+                            cursor: pointer;
+                            &.on { background: #ee473c; }
+                        }
+                    }
+                    &>.btn_close {
+                        position: absolute;
+						top: 1px; right: 33px;
+                        z-index: 1;
+                        @include btn_down_dis(
+							resolve('mathalive_lib/images/btn_close_pop.png'),
+							resolve('mathalive_lib/images/btn_close_pop.png'),
+							resolve('mathalive_lib/images/btn_close_pop.png'),
+							width('mathalive_lib/images/btn_close_pop.png'),
+							height('mathalive_lib/images/btn_close_pop.png')
+						);
+                    }
+                }
+                .penrecord_area {
+                    width: 100%;
+                    height: 100%;  
+                    position: relative;   
+                    .swiper-container{
+                        @include page;
+                        @include t_penrecord_popup;
+                    }
+                    .btn_prev {
+                        z-index: 20;
+                        @include btn_down_dis(
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            width('mathalive_lib/images/btn_prev.png'),
+                            height('mathalive_lib/images/btn_prev.png')
+                        );
+                        position: absolute;
+                        left: 58px; top: 50%;    
+                        transform: translateY(-50%);
+                    }
+                    .btn_next {
+                        z-index: 20;
+                        @include btn_down_dis(
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            width('mathalive_lib/images/btn_next.png'),
+                            height('mathalive_lib/images/btn_next.png')
+                        );
+                        position: absolute;
+                        right: 58px; top: 50%;    
+                        transform: translateY(-50%);
+                    }
+                }
+                .video_area {
+                    width: 100%;
+                    height: calc(100% - 80px);  
+                    position: relative;   
+                    .swiper-container{
+                        @include page;
+                        @include t_video_popup;
+                    }
+             
+
+                    .btn_prev {
+                        z-index: 20;
+                        @include btn_down_dis(
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            width('mathalive_lib/images/btn_prev.png'),
+                            height('mathalive_lib/images/btn_prev.png')
+                        );
+                        position: absolute;
+                        left: 58px; top: 50%;    
+                        transform: translateY(-50%);
+                    }
+                    .btn_next {
+                        z-index: 20;
+                        @include btn_down_dis(
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            width('mathalive_lib/images/btn_next.png'),
+                            height('mathalive_lib/images/btn_next.png')
+                        );
+                        position: absolute;
+                        right: 58px; top: 50%;    
+                        transform: translateY(-50%);
+                    }
+                }
+                .image_area {
+                    width: 100%;
+                    height: calc(100% - 80px);  
+                    position: relative;       
+                    .swiper-container{
+                        @include page;       
+                        &>img {
+                            width: 924px;
+                            height: 523px;
+                            position: absolute;
+                            top: 0; bottom: 0;
+                            left: 0; right: 0;
+                            margin: auto;
+                            background: yellowgreen;                
+                        }
+                    }
+                    .btn_prev {
+                        z-index: 20;
+                        @include btn_down_dis(
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            resolve('mathalive_lib/images/btn_prev.png'),
+                            width('mathalive_lib/images/btn_prev.png'),
+                            height('mathalive_lib/images/btn_prev.png')
+                        );
+                        position: absolute;
+                        left: 58px; top: 50%;    
+                        transform: translateY(-50%);
+                    }
+                    .btn_next {
+                        z-index: 20;
+                        @include btn_down_dis(
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            resolve('mathalive_lib/images/btn_next.png'),
+                            width('mathalive_lib/images/btn_next.png'),
+                            height('mathalive_lib/images/btn_next.png')
+                        );
+                        position: absolute;
+                        right: 58px; top: 50%;    
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+        @include masubmituserlist;       
+    
+}

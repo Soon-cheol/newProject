@@ -1,0 +1,209 @@
+@mixin video-direction{
+	position: absolute;
+	left:0px; width:100%;
+	top:0px; height: 100%;
+	background-color: rgba(0, 0, 0, 0); 
+
+	&>div.direction{
+		position: absolute;
+		transform: translateY(100px);
+		transition: transform 0.5s ease-out, opacity 0.5s;
+		opacity: 0;
+	}
+	&.on>div.direction{
+		transform: translateY(0px);
+		opacity: 1;
+    }
+    .direction_top_menu {
+		position:fixed;
+		top:18px;
+		left:20px;
+		width:40px;
+		height:31px;
+		border:0;
+		background:resolve('mathalive_lib/images/ico_video_top_menu.png');
+		z-index: 100;
+	}
+    .direction_left_menu{
+		&.show{
+			display:block;
+		}
+		display:none;
+		position: absolute;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		background:rgba(0,0,0,.7);
+		z-index: 30;
+		.innerbox{
+			width:354px;
+			height:100%;
+			background-color: #394ec0;
+			.close{
+				padding:43px 25px 0 0;
+				text-align: right;
+				.btn_close{
+					width:30px;
+					height:31px;
+					border:0;
+					background: resolve('mathalive_lib/images/ico_video_menu_close.png');
+				}
+			}
+			ul{
+				padding: 40px 0 0 30px;
+				li{
+					margin-bottom: 38px;
+					padding-left: 80px;
+					height: 42px;
+					line-height: 42px;
+					font-family: "Maplestory-Bold";
+					color:#fff;
+					font-size: 28px;
+					background-repeat: no-repeat;
+					cursor: pointer;
+					&:nth-of-type(1){
+						background-image: resolve('mathalive_lib/images/ico_video_menu_lesson.png');
+					}
+					&:nth-of-type(2){
+						background-image: resolve('mathalive_lib/images/ico_video_menu_endclass.png');
+					}
+					&:nth-of-type(3){
+						background-image: resolve('mathalive_lib/images/ico_video_menu_logout.png');
+					}
+				}
+			}
+		}
+	}
+	.concept_name {
+		position:absolute;
+		left:80px;
+		top:19px;
+		font-size: 28px;
+		color:#fff;
+		font-family: "Maplestory-Bold";
+		z-index: 10;
+	}
+    .video{
+        video{
+            position: absolute;
+            top: 0; left: 0;
+            width: 1280px;
+            height: 800px;
+        }
+    }
+	.progress_dot {
+		position: absolute;
+		right: 0;
+		top:0;
+		height:67px;
+		padding: 25px 10px 0  0;
+		text-align: center;
+		z-index: 10;
+		span{
+			display: inline-block;
+			width:12px;
+			height:12px;
+			padding: 0;
+			margin:0 5px;
+			border-radius: 100%;
+			background-color: rgba(255,255,255,.5);
+			box-shadow: 0 3px 6px rgba(0,0,0,.2);
+			&.on{
+				background-color: #f5e942;
+			}
+		}
+	}
+	.text {
+		font-family: "maplestory-bold";
+		white-space: normal; /* 210520 2줄 위해 추가 */
+		.t1{
+			font-size: 35px;
+			color:#fff;
+			height: 39px;
+		}
+		.t2{
+			margin-top: 6px;
+			font-size: 81px;
+			color: #f5e942;
+			word-break: keep-all; /* 210520 2줄 위해 추가 */
+		}
+	}
+	&.hide{
+		&>div.direction{
+			visibility: hidden;
+		}
+	}
+
+	&.loaded{
+		&>video{
+			opacity: 1;		
+		}		
+	}
+	.course{
+        .title,.concept{
+            position: absolute;
+            width:200px;
+            height:100px;
+            padding-top: 17px;
+            border:2px solid #ccc;
+            background:#fff;
+            border-radius:50%;
+            box-sizing: border-box;
+            justify-content: center;
+			align-items: center;
+			text-align: center;
+            font-size: 1.6em;
+            font-weight: bold;
+            color:#999;
+        }
+        .concept{
+            span{
+                &.tit{
+                    display:block;
+                    width:100%;
+                    float:none;
+                    color: royalblue;
+                }
+            }
+        }
+        .title {
+            top: 110px;
+            left:30%;
+            color: #000;
+            background-color: rgba(255,255,255,0.5);
+        }
+        .c1{
+            left:55%;
+            top: 110px;
+            border-color: royalblue;
+        }
+        .c2{
+            left:75%;
+            top:40%;
+            border-color: royalblue
+        }
+        .c3 {
+            left:60%;
+            top:70%;
+            border-color: coral
+        }
+        .black {color:#000;}
+        .type2{
+            padding:20px 40px 30px;
+            .small-title {
+                left: 40px;
+                top:-25px;
+                color:#ffff;
+            }
+        }
+        &.independent{
+            .type2{
+                .small-title{
+                    top:-10px;
+                    color:#999;
+                }
+            }
+        }
+    }
+}

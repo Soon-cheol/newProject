@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<svg baseProfile="full" height="65" version="1.1" viewBox="0 0 71 65" width="71" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <image height="65" id="id0" opacity="0.501960784314" width="71" x="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABBCAYAAACD6bkCAAAFnklEQVR4nO2ce4hVRRzHP55N03XVlZyY8u1ImBmm0ZssM+gdSVZrWv0TJfRCKrGCIAwrIQyK+q+gB2pSVlZiglaUFRSGomkxtJTQ6GTobX3t2tofc657ds65e+8+7j1n9+4HLnvncX5872/nzJnHb84AehglxWTgPGAiMAYYCdRHPiOA2vADUAfUFDB3EsgBJ4Cm8PtR4AhwANgP7AV2AT9rYxt78rcM6K4BJcUw4CbgdmAWcGZ3bXaDv4BNwGfAJ9rYY90x1mXnKCnOBR4D7qGtFWSJHLAKWKmN3dMVA512jpJiPLAMWNiV61PgJPABsFQbqztzYck/TkkRAI8Cy4EhJVyyD9iNa+oHgeNe+XFc/1GMQbRvmacDQ4GzgQnAeOC0Euy0ACuAZdpYX0siJTlHSTEKWA3M6aBaE/AR8DmwRRtrSrHdXZQUQ4AZwJXALcDldPy7tgMN2thfitku6hwlxfnAp8C4AlX24P4jq7WxR4rZKzdKCgk8EH5GF6j2L7BAG7u+I1sdOkdJcTGu5x+VULwfWAK8o41tLSa60igpBgEPAc8AZyRUaQXu1ca+V8hGQecoKaYCW3HjEp93gYe1sYc6pTgFwi7hDWBeQnErsFAbuyrp2kTnKCnOAn4AxnpFLcAibeybXZebDkqK+4HXgYFeUQtwrTb2a/+amHOUFDXAF8A1XlEOmKeN3dQzciuPkmI2rpvwn7Z/A9O0sfuimUGCjSXEHXMMmNubHQOgjd0C3Ex8CDEKeMuv367lKCkmATuBwV69u7Sx7/egzlRRUjTgRs8+d2pj1+YTfst5mbhjVvYlxwBoY1cDryYUvRQ+5YCIc5QUM4DbvMq7gafKITADLAUavbyJwN35RLTlPJ1g4MFSh9q9jXDA+khC0eL8lwFwalT5J+3nKBu1sdeXVWEGUFJsAy7wsqdrY7fnW84C4pO358stLCMsT8ibD2231a1e4S5t7DdllZQdPsatKkaZAxAoKeqBK7zCtysgKhNoY5uBNV72TCVFbQBcRHwNd0NFlGWHjV66BpgWADO9AgvsqIik7LAZNwmNMiEAJnuZO7SxJyujKRtoY5uA37zsCQHxmXfRFbI+in+3jAyIb6VUZHkzgzR66foAGO5l/lMZLZnDeun6gPieU+rrwCnhO2dkknOqlRYvXR8Aw9JQkkGavPTggOTVwGrEH+cMS3KM78FqIeela5Kcc6ISSnoB9f23VBv+Hlxiy6lW/ClTXZJz+h0WkuQIf8RctQS4Dbt+EgiIBxX1E9Lfv3RAgAtJi9Lf54QExJcohqYhJIsEuAitKGnGEWeKABfTF+WcNIRkkQAXLBBlehpCskgAbPPyRofnF6qeAPgROOzl35iClqzRHGhjTwB+sOD8NNRkjKP5QeBar+DSMDi7qsk750Pic6wnKqwlcwQAYbC1H/e3QEkxpfKSUsOPTzoSnVut8AprgFfKKidb1Hnp5lPO0cbuBNZ5Fa5TUiwsu6yM4s/KHyfe97ympKjKUXM752hjfwde8OqMANYpKZIOiPRlcknrOcuBb728qcAGJUU1bR23xpwTDgobiG+sXwZsVlKISijLAokrgdrYvcANxHcBLwG+V1JcWG5hWaDgMqk29idgLu7IX5RJwFYlxXNKCv+cRJ+iwzVkbexm4Cri0V6DgGeBX5UUi8JDqH2Nw6WeDh6LO7o4q0CVHG4KshH4DvijtwVdKimuBrZEsr7qzLnyGuBJXIsp1lJacK3tIG3vnjgU/m2m/ZnyHPHwj0L8F9pOup1rcS3aZyDF18VrcefUo8HqpTsnj5JiHPAi7onWG95I0FU675w84ah5MXAfpb2hoLfRdefkUVLU4c5N3gHMxr0Spi/wZY/eFuH7LqbixkNTcNHxY3AbhcOJt7DhpH9rNuH6MnD92QHcO3nW/w9WlVRA4RmX0QAAAABJRU5ErkJggg==" y="0"/>
+    <mask color-interpolation="sRGB" height="65" id="id2" width="71">
+      <use filter="url(#id1)" xlink:href="#id0"/>
+    </mask>
+    <filter class="white-filter" id="id1">
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+    </filter>
+    <image height="56" id="id3" width="63" x="4" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA4CAYAAABKWiBnAAAC6UlEQVR4nO2bP2gTURzHP2le6T9opfr0aRWUNzQitoMITpbSRXERsbNYJwUHnUpdxEUQ0UVQnArdxcnNSXBwcelkOXEo7eGBigoqTROHl1fPmNhc07zX5vWzJLzc5b6fey+Xu3e/y9EEWslu4BQwBhwHhoE9wC6gu5nvTvEN+AEsAx+Ad8Ab4HUUJ0vNfHEu6wpayRwwAVwGzgO9zQRokrfAM2A2ipPFrCtnktdKTgK3gNGsG2oxq8Bz4HYUJ/ONrtSQvFZyGHgMjG8omjvKwCxwM4qTL+stvK68VnIKeIDf4Z2VZWAqipOX/1uorrxWMg/cA65ucjBXlIDpKE4e1VugpnxF/Ckw2aJgLrkTxcn9Wh/Uk38IXGppJLfMRHHypLrxH3mt5BXgrpNI7igBk1GcvEo3/iWvlTwGvAA6HQZzxUfgdBQnX22DsG9SB7gcUHSfreUMAjPAtG1Y63mt5EWMfDtTBs5EcbIAlZ7XSnYC12nPHq/mGnAD/gz7cUAShvyEVnIwipNPVv4CYYhbzgFzQivZB5wgLPkxYE4AJzH/gyW/eZxyVCvZK4ACYfW6pSCAw4QprwVm2ilE+SEB9BGm/IAA8oQp3y8w818hyudD7vlOgTnZD1G+LAhTHCo9H6r8Ts+v+E7hi5B7fkc+aPmfpGZxQ8LKb1YhwbbCDvsgh74AfhHwsP8OdPkO4gMBfAYGfAfxgcDcwDvoO4gPBLAEjPgO4gMBLBLo0T4HoJU8CxzwnMU59i9uAdjrM4gPrPx7TGFhSGd6pXRxQoGtV1nZSlbSZ3YLwBG2V7FhMxSrC5L2YaqoQ2ClVinaCHDIQxjXFGtd0Mxj7t/1Ow7jmmK9CswuTLVGj9s8TqktD2s7YJT23QH15WGtRK1Ae/4EVhupt89hrvr2s4HHUrYw68tbtJI9wBDtMwoal7dUdsJuzARIftMjuSO7fJrKo2U9mCptAXRgfhrp1+o2S8cGN/u/krlyhs9LvwFUd5WvKqY0LAAAAABJRU5ErkJggg==" y="4"/>
+    <mask color-interpolation="sRGB" height="56" id="id4" width="63">
+      <use filter="url(#id1)" xlink:href="#id3"/>
+    </mask>
+    <image height="36" id="id5" opacity="0.501960784314" width="34" x="20" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAkCAYAAADsHujfAAADoUlEQVR4nL2XXYiVRRjHf2ddzXXN2rQlwxMFQWIf0laWgiyBdVUmbhZSeZHghdAiFAURdCFFIRElfUgEsXQRiHixVmtEGlSS2HfQRhahEWms5Afamuuvi5mXM+ft3T1nPW8+MJw5M///M//3mZlnZioq/4NVgV6gD1gIXAH8BXwFDAE7gB/rGGqZZap6lzrsxHZMXadelHErJUdkE/BY8v9X4BvgCNABXAtcn/S/C6wCTpUZjSW5r96kXpfDzFMfVY8nuPVqaVPTpn4RHf+jbmiAX6GORPwhtVqWkLuTLxxokvN4wnmyDBEVdUt0eFhd1CRvtvpt5O1uK2GBTgFujvUDwN4meSPAvljvKUNIBZgd66cmyT0Wfy8sQ8hZ4HCsd0ySOysTVJaQH2K9SsgVzVgntZwy3N4AfBmwNDrvAg7GQT+iNg0C24AHgW5gA9BP42nqo7a2hiZa1Y+oey22IbUvwXarp2Pf7+olDXbMNerPib/F423HlwsGP1HQtlXtUZ9Vz8a2NwwJbjwRq9WfEh/b1c4iYH8COqpuVJfGAZepr+TEHDRkU9UD6pycv7XqZvU1dVeCVf1U7bIgxc+zdnKOqLcXCJ2iLlZ35gSdMWTLFHuD+ofFNqBemmHzU/JSAnyqQERaZqlr1P0Rv0+dlsO8lfj72xDhreqtakeKTUm96lgkDavVBkLSKD6jrsq13xEHVv1cvSWKz4utE9JmOLY1zOHaJkWMV7rUD5NoPNCIk1Wq6veRtKNFEVh/GmvYGXdOxMky6wUxGWUZb1mDZNTIvgQ2Eg5BgBXATmALsKiQERVNU1/NfcXr6oIWI7PQsDtSO6I+PN7UoM5V38+RfjFsyektClqufpzz3TuekGxLrla/zpH2qCtbFDNHfS7xuTuOVygkjc469c+EeFzdps5vUdCbic/7GwnJyhLDNhxNyIcMeePicxRyk7V89YIhkTZ1i5+u3mNISmcSQcPqferMSQq5XP0u+nhPndGskLT0+99X3Hb1tkn4mJv4GIwfek7vmpmG0zS9FpxWn1evboLfY+3u8mLW3sqiWx5Dm9p+wyKfOgHvnYgdM7lctSIkK2sM2zu1wSg0xV1pfdL8TO3M+st6hHcDTwPrk7Yx4APgN2AGcCOwIPaNEo6RT/Ipvqwy33ATy66NRTZsOBTruO3AE8C9JURlFDgKXEV4dBXZSWAzMJjvqKgnCCfu+bK3gYfyje3AALDyPIk4Cewq6vgXOgCoOPrOjqkAAAAASUVORK5CYII=" y="13"/>
+    <filter class="drop-shadow" height="200%" id="id6" width="200%" x="-50%" y="-50%">
+      <feOffset dx="0.05235721931185043" dy="2.999543085469174" in="SourceAlpha" result="drshOffset"/>
+      <feGaussianBlur color-interpolation-filters="sRGB" in="drshOffset" result="drshBlur" stdDeviation="2.5"/>
+      <feComponentTransfer in="drshBlur" result="drshBlurA">
+        <feFuncA intercept="0.0" slope="1.0" type="linear"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgb(0,0,0)" flood-opacity="0.21" result="drshFlood"/>
+      <feComposite in="drshFlood" in2="drshBlurA" operator="in" result="drshShadow"/>
+    </filter>
+    <g id="id7" style="mix-blend-mode: normal /*pass*/;">
+      <image class="psd-layer smartobject" height="65" width="71" x="0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABBCAYAAACD6bkCAAADl0lEQVR4nO3c3WscVRzG8U8mIlWSuIEiCq22UkRrRRSsdzpaYRBFFFGqqfRqbhURRL0tVFoQ/4C58LJi8QWrF6NQRkFBUCqF+nIhCi34WtFoWk1q68Vk03Szu0k3ceckO19YmJdzDs88/M7snNchK0ycpFtwEzZjA8bRaPldhstns4xguENx5zCJM/hr9vg0TuEkfsYJfIkvijz7fiWfZWi5BcRJOor78QjuxJXLLXMZ/IAP8B7eKfLs7+UU1rM5cZLeiKfxpPNREBKTOIBXijz7ppcCLtqcOEmvxR7s6iV/BZzDG3i+yLNvLybjkh8uTtIIT2Gv8p2x2pjBfuwp8uyfpWRYkjlxkq7Ha9jRu7ZgOIqdRZ59tVjCRc2Jk/RmvItrVkBYKPyJiSLPDnVLFHW7GSfpdhy2toyBUbwdJ+lEt0QdIydO0q34BFessLCQOItdRZ4daHezrTlxkl6NT7HxfxQWCjO4t8izj1pvLDAnTtJhvI97+iAsFH7FtiLPfpp/sd075zmDZQysx6utFy+InDhJr8MxrOuTqNB4rMizg82T1sh52eAaA/viJL20eTJnTpykt+KhKhQFxGY80TyZHzkv9l9LkDzTPBiCOEmvwnFcUpWiwLilyLOjzciZUBszn8c5X60erFBIiOyAoThJG8qPoE5dlYPIvxiLcLvamFaGsS3CbVUrCZRNEbZUrSJQNkUGo+XdC+ORaodSQqYRYaxqFYHSiIQ55hQC47U5nWlEys7mmoWsiywyAjHAjNbGdGa4NqczjdqcztSR04WR2pwu1OZ0IVLOsatpQ4TpqkWESl2tuhDh96pFhEqE36oWESqRcqJzTRsi9DRHdxCI8HXVIkIlwpGqRYRKhM8wVbWQAJmOijw7gwWTBWucbn4EHuyabEBpmvMmlrX8Zi0SQZFnf+D1irWExqn5bav9lckIk+k5c4o8O4a3KhQTHK2t8mfV7545LjCnyLPv8FJFWkJjsl1/zl583G8lAXJ2gTmzH4U78Uv/9YRF257AIs9O4D7lCtuBpWM3aZFnn+Nh5ZK/gaRrH3KRZ4dxF37sj5ygmFq0g73IsyPYbvAapzNLGn0o8uy4coHaCwZonKuXHQk2Yp/yH2017EjQKx8uZy+L65XLb3ZbnTsULEbv5jSJk3QED+BR3K3cEmYtUKxotZjd72Ir7sANytnxG5TTeccsjLAx1VfNKeX+PJTLqE8q9+Q59B9SDLNQxC47AwAAAABJRU5ErkJggg==" y="0">
+        <title>벡터 고급 개체 복사 5</title>
+      </image>
+      <g class="psd-effects psd-layer smartobject">
+        <title>벡터 고급 개체 복사 4</title>
+        <use class="layer-effect original" opacity="1.0" xlink:href="#id0"/>
+        <rect class="layer-effect color-overlay" fill="rgb(255,255,255)" height="65" mask="url(#id2)" width="71" x="0" y="0"/>
+      </g>
+      <g class="psd-effects psd-layer smartobject">
+        <title>벡터 고급 개체 복사 3</title>
+        <use class="layer-effect original" opacity="1.0" xlink:href="#id3"/>
+        <rect class="layer-effect color-overlay" fill="rgb(132,162,255)" height="56" mask="url(#id4)" width="63" x="4" y="4"/>
+      </g>
+      <g class="psd-effects psd-layer pixel">
+        <title>레이어 1</title>
+        <use class="layer-effect dropshadow" filter="url(#id6)" xlink:href="#id5"/>
+        <use class="layer-effect original" opacity="1.0" xlink:href="#id5"/>
+      </g>
+    </g>
+    <mask color-interpolation="sRGB" height="65" id="id8" width="71">
+      <use filter="url(#id1)" xlink:href="#id7"/>
+    </mask>
+  </defs>
+  <g class="psd-effects psd-layer group">
+    <title>도장버튼</title>
+    <use class="layer-effect original" opacity="1.0" xlink:href="#id7"/>
+    <rect class="layer-effect color-overlay" fill="rgb(0,0,0)" fill-opacity="0.3" height="65" mask="url(#id8)" width="71" x="0" y="0"/>
+  </g>
+</svg>

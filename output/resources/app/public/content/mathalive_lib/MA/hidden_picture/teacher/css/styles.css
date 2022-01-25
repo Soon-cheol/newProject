@@ -1,0 +1,4065 @@
+@charset "UTF-8";
+@font-face {
+    font-family: NotoSans-Black;
+    src: url(/content/mathalive_lib/font/NotoSansCJKkr-Black-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans;
+    src: url(/content/mathalive_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: Maplestory-Bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/Maplestory-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: Maplestory-Light;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/Maplestory-Light.woff) format("woff");
+}
+
+/* 
+  21-06-24 최순철 수학셀 김민정CP님이 요청
+  Xelf 저작 결과물에 폰트 네임이 KR 이 붙어서 나오게 되어 있어서 추가
+*/
+@font-face {
+    font-family: NotoSansKR-Light;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Medium;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Medium.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansKR-Bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+/* 
+  21-07-02 최순철 기오정CP님과 변경
+*/
+@font-face {
+    font-family: NotoSansB_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSans-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSansB-Regular;
+    src: url(/content/mathalive_lib/font/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans-Regular;
+    src: url(/content/mathalive_lib/font/NotoSansKR-Regular.woff) format("woff");
+}
+
+@charset "UTF-8";
+#common_navi_left {
+    left: 0;
+    position: absolute;
+    display: table;
+    width: auto;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+    transition: left 0.5s, right 0.5s;
+    /* transition-property: left right; */
+    z-index: 20;
+}
+
+#common_navi_left > div {
+    width: auto;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+#common_navi_left > div > div {
+    position: relative;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#common_navi_left.off {
+    left: -66px;
+}
+
+#common_navi_left.off button.left {
+    pointer-events: none;
+}
+
+#common_navi_left.off button.right {
+    pointer-events: none;
+}
+
+#common_navi_left button.left {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 0;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_left_L.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_left button.left:disabled {
+    background-image: url("/content/mathalive_lib/images/page_left_L_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_left button.left.down {
+    background-image: url("/content/mathalive_lib/images/page_left_L.png");
+}
+
+#common_navi_left button.left:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_left_L.png") url("/content/mathalive_lib/images/page_left_L.png") url("/content/mathalive_lib/images/page_left_L_dis.png");
+}
+
+#common_navi_left button.right {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    pointer-events: auto;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_right_L.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_left button.right:disabled {
+    background-image: url("/content/mathalive_lib/images/page_right_L_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_left button.right.down {
+    background-image: url("/content/mathalive_lib/images/page_right_L.png");
+}
+
+#common_navi_left button.right:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_right_L.png") url("/content/mathalive_lib/images/page_right_L.png") url("/content/mathalive_lib/images/page_right_L_dis.png");
+}
+
+#common_navi_right {
+    right: 0;
+    position: absolute;
+    display: table;
+    width: auto;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+    transition: left 0.5s, right 0.5s;
+    /* transition-property: left right; */
+    z-index: 20;
+}
+
+#common_navi_right > div {
+    width: auto;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+#common_navi_right > div > div {
+    position: relative;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#common_navi_right.off {
+    right: -66px;
+}
+
+#common_navi_right.off button.left {
+    pointer-events: none;
+}
+
+#common_navi_right.off button.right {
+    pointer-events: none;
+}
+
+#common_navi_right button.left {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 0;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_left_R.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_right button.left:disabled {
+    background-image: url("/content/mathalive_lib/images/page_left_R_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_right button.left.down {
+    background-image: url("/content/mathalive_lib/images/page_left_R.png");
+}
+
+#common_navi_right button.left:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_left_R.png") url("/content/mathalive_lib/images/page_left_R.png") url("/content/mathalive_lib/images/page_left_R_dis.png");
+}
+
+#common_navi_right button.right {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    pointer-events: auto;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/page_right_R.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 94px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#common_navi_right button.right:disabled {
+    background-image: url("/content/mathalive_lib/images/page_right_R_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#common_navi_right button.right.down {
+    background-image: url("/content/mathalive_lib/images/page_right_R.png");
+}
+
+#common_navi_right button.right:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/page_right_R.png") url("/content/mathalive_lib/images/page_right_R.png") url("/content/mathalive_lib/images/page_right_R_dis.png");
+}
+
+@keyframes arrowMove {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: transparent;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#wrap > .content-container {
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+    position: absolute;
+}
+
+#wrap > .content-container .content-wrapper {
+    position: relative;
+    white-space: nowrap;
+    width: auto;
+    height: 800px;
+    transition: left 0.3s;
+    transition-timing-function: ease-in;
+}
+
+#wrap > .content-container .content-wrapper > div {
+    position: relative;
+    display: inline-block;
+    white-space: unset;
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+}
+
+#wrap > .content-container .content-wrapper .sub-container .sub-wrapper {
+    position: relative;
+    white-space: nowrap;
+    width: auto;
+    height: 800px;
+    transition: left 0.3s;
+    transition-timing-function: ease-in;
+}
+
+#wrap > .content-container .content-wrapper .sub-container .sub-wrapper > div {
+    position: relative;
+    display: inline-block;
+    white-space: unset;
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+}
+
+#wrap > .content-container.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .concept_name {
+    position: absolute;
+    left: 80px;
+    top: 43px;
+    font-size: 28px;
+    color: #fff;
+    font-family: "Maplestory-Bold";
+    z-index: 10;
+}
+
+#wrap .video-direction {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    transform: translateY(100px);
+    transition: transform 0.5s ease-out, opacity 0.5s;
+    opacity: 0;
+}
+
+#wrap .video-direction.on > div.direction {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+#wrap .video-direction .direction_top_menu {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 40px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_top_menu.png");
+    z-index: 100;
+}
+
+#wrap .video-direction .direction_left_menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 30;
+}
+
+#wrap .video-direction .direction_left_menu.show {
+    display: block;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox {
+    width: 354px;
+    height: 100%;
+    background-color: #394ec0;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox .close {
+    padding: 43px 25px 0 0;
+    text-align: right;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox .close .btn_close {
+    width: 30px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_video_menu_close.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul {
+    padding: 40px 0 0 30px;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li {
+    margin-bottom: 38px;
+    padding-left: 80px;
+    height: 42px;
+    line-height: 42px;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+    font-size: 28px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(1) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_lesson.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(2) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_endclass.png");
+}
+
+#wrap .video-direction .direction_left_menu .innerbox ul li:nth-of-type(3) {
+    background-image: url("/content/mathalive_lib/images/ico_video_menu_logout.png");
+}
+
+#wrap .video-direction .concept_name {
+    position: absolute;
+    left: 80px;
+    top: 19px;
+    font-size: 28px;
+    color: #fff;
+    font-family: "Maplestory-Bold";
+    z-index: 10;
+}
+
+#wrap .video-direction .video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 800px;
+}
+
+#wrap .video-direction .progress_dot {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 67px;
+    padding: 25px 10px 0  0;
+    text-align: center;
+    z-index: 10;
+}
+
+#wrap .video-direction .progress_dot span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#wrap .video-direction .progress_dot span.on {
+    background-color: #f5e942;
+}
+
+#wrap .video-direction .text {
+    font-family: "maplestory-bold";
+    white-space: normal;
+    /* 210520 2�� ���� �߰� */
+}
+
+#wrap .video-direction .text .t1 {
+    font-size: 35px;
+    color: #fff;
+    height: 39px;
+}
+
+#wrap .video-direction .text .t2 {
+    margin-top: 6px;
+    font-size: 81px;
+    color: #f5e942;
+    word-break: keep-all;
+    /* 210520 2�� ���� �߰� */
+}
+
+#wrap .video-direction.hide > div.direction {
+    visibility: hidden;
+}
+
+#wrap .video-direction.loaded > video {
+    opacity: 1;
+}
+
+#wrap .video-direction .course .title, #wrap .video-direction .course .concept {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    padding-top: 17px;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #999;
+}
+
+#wrap .video-direction .course .concept span.tit {
+    display: block;
+    width: 100%;
+    float: none;
+    color: royalblue;
+}
+
+#wrap .video-direction .course .title {
+    top: 110px;
+    left: 30%;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#wrap .video-direction .course .c1 {
+    left: 55%;
+    top: 110px;
+    border-color: royalblue;
+}
+
+#wrap .video-direction .course .c2 {
+    left: 75%;
+    top: 40%;
+    border-color: royalblue;
+}
+
+#wrap .video-direction .course .c3 {
+    left: 60%;
+    top: 70%;
+    border-color: coral;
+}
+
+#wrap .video-direction .course .black {
+    color: #000;
+}
+
+#wrap .video-direction .course .type2 {
+    padding: 20px 40px 30px;
+}
+
+#wrap .video-direction .course .type2 .small-title {
+    left: 40px;
+    top: -25px;
+    color: #ffff;
+}
+
+#wrap .video-direction .course.independent .type2 .small-title {
+    top: -10px;
+    color: #999;
+}
+
+#wrap .video-direction > div.text {
+    position: absolute;
+    left: 82px;
+    top: 173px;
+}
+
+#wrap .video-direction > div.text .t2 {
+    color: #f5e942;
+}
+
+#wrap .video-direction > div.lesson {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-size: 40px;
+    color: #fff;
+}
+
+#wrap .video-direction.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .btn-back {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 28px 0 0 10px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/teacher/images/ico_back.png");
+    background-size: cover;
+    border: 0;
+}
+
+#wrap .progressWrap {
+    /* 210518 수정 */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 104px;
+}
+
+#wrap .progressWrap .btn_progress {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/btn_stop_quiz.png");
+    background-repeat: no-repeat;
+    width: 105px;
+    height: 104px;
+    pointer-events: unset;
+    cursor: pointer;
+    text-align: center;
+}
+
+#wrap .progressWrap .btn_progress:disabled {
+    background-image: url("/content/mathalive_lib/images/btn_stop_quiz_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .progressWrap .btn_progress.down {
+    background-image: url("/content/mathalive_lib/images/btn_stop_quiz.png");
+}
+
+#wrap .progressWrap .btn_progress:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/btn_stop_quiz.png") url("/content/mathalive_lib/images/btn_stop_quiz.png") url("/content/mathalive_lib/images/btn_stop_quiz_dis.png");
+}
+
+#wrap .progressWrap .btn_progress span {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    top: 10px;
+    left: -3px;
+    font-family: "Maplestory-Bold";
+}
+
+#wrap .progressWrap .btn_progress:disabled span {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#wrap .progressWrap .msg {
+    position: absolute;
+    opacity: 0;
+    left: 100px;
+    text-align: center;
+}
+
+#wrap .progressWrap .msg span {
+    position: absolute;
+    width: 30px;
+    height: 44px;
+    background: url("/content/mathalive_lib/images/msg_rst_twinkle.png") no-repeat center;
+    background-size: contain;
+}
+
+#wrap .progressWrap .msg span:nth-child(1) {
+    left: 35px;
+    top: 23px;
+    width: 10px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .progressWrap .msg span:nth-child(2) {
+    left: 43px;
+    top: 8px;
+    width: 10px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .progressWrap .msg span:nth-child(3) {
+    left: 128px;
+    top: 7px;
+    width: 10px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .25s alternate infinite;
+}
+
+#wrap .progressWrap .msg span:nth-child(4) {
+    left: 132px;
+    top: 35px;
+    width: 10px;
+    height: 15px;
+    animation: star01 .23s alternate infinite;
+}
+
+#wrap .progressWrap .msg span:nth-child(5) {
+    left: 140px;
+    top: 20px;
+    width: 10px;
+    height: 20px;
+    background-size: contain;
+    animation: star01 .37s alternate infinite;
+}
+
+#wrap .progressWrap .msg span:nth-child(6) {
+    left: 116px;
+    top: 7px;
+    width: 9px;
+    height: 15px;
+    animation: star01 .26s alternate infinite;
+}
+
+#wrap .progressWrap .msg span:nth-child(7) {
+    left: 116px;
+    top: 48px;
+    width: 9px;
+    height: 15px;
+    background-size: contain;
+    animation: star01 .28s alternate infinite;
+}
+
+#wrap .progressWrap .msg span:nth-child(8) {
+    left: 373px;
+    top: 68px;
+    width: 25px;
+    height: 36px;
+    background-size: contain;
+    animation: star01 .2s alternate infinite;
+}
+
+#wrap .progressWrap.end {
+    /* 제출 종료 후 */
+}
+
+#wrap .progressWrap.end .btn_progress {
+    /*width:290px;
+				height:104px; 
+				210521 삭제*/
+    background: url("/content/mathalive_lib/images/btn_re_quiz.png") no-repeat right top;
+}
+
+#wrap .progressWrap.end .msg {
+    left: auto;
+    right: 100px;
+    /* 210521 위치 수정 */
+    top: 20px;
+    width: 190px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    font-family: "maplestory-bold";
+    color: #fff;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.25);
+    transition: .5s all;
+    opacity: 1;
+}
+
+#wrap .progressWrap.end .msg.hide {
+    opacity: 0;
+}
+
+@keyframes star01 {
+    from {
+        transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#wrap .btn_ranking {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/btn_ranking.png");
+    background-repeat: no-repeat;
+    width: 105px;
+    height: 104px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .btn_ranking:disabled {
+    background-image: url("/content/mathalive_lib/images/btn_ranking_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .btn_ranking.down {
+    background-image: url("/content/mathalive_lib/images/btn_ranking.png");
+}
+
+#wrap .btn_ranking:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/btn_ranking.png") url("/content/mathalive_lib/images/btn_ranking.png") url("/content/mathalive_lib/images/btn_ranking_dis.png");
+}
+
+#wrap .btn_ranking {
+    position: absolute;
+    right: 0;
+    bottom: 90px;
+}
+
+#wrap .fel_topad {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 15px;
+    right: 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    /*
+	.revise {
+		position: absolute;
+		top: -50px;
+		left: 3px;
+		display: inline-block;
+		width: 79px;
+		height: 74px;
+		line-height: 55px;
+		padding-left: 8px;
+		font-size: 20px;
+		font-family: "maplestory-bold";
+		text-align: left;
+		color: #ea7145;
+		background: resolve('mathalive_lib/images/bg_bubble.png') no-repeat;
+
+		&:after {
+			content: "!";
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			font-size: 50px;
+			transform: translate(-90%, -65%);
+			opacity: 0;
+			transition: all 1s;
+		}
+
+		&.on {
+			&:after {
+				top: 50%;
+				opacity: 0.4;
+			}
+		}
+	}*/
+}
+
+#wrap .fel_topad:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 27px;
+    height: 31px;
+    background: url("/content/mathalive_lib/images/fel_arr_up.png") no-repeat center;
+    transform: translate(-50%, -25%) rotate(180deg);
+    animation-name: arrowMove;
+    animation-direction: alternate;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: .1s;
+}
+
+#wrap .fel_topad:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 27px;
+    height: 31px;
+    background: url("/content/mathalive_lib/images/fel_arr_up.png") no-repeat center;
+    transform: translate(-50%, -70%) rotate(180deg);
+    animation-name: arrowMove;
+    animation-direction: alternate;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#wrap .fel_topad .revise {
+    position: absolute;
+    top: 12px;
+    left: -96px;
+    display: inline-block;
+    width: 96px;
+    height: 74px;
+    line-height: 55px;
+    padding-left: 8px;
+    font-size: 20px;
+    font-family: "maplestory-bold";
+    text-align: left;
+    color: #ea7145;
+    background: url("/content/mathalive_lib/images/img_revise.png") no-repeat;
+}
+
+#wrap .fel_topad .revise.on:after {
+    top: 50%;
+    opacity: 0.4;
+}
+
+#wrap .intro_hiddenpicture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #18836b;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+}
+
+#wrap .intro_hiddenpicture.open .inner .intro_img {
+    pointer-events: unset;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .intro_hiddenpicture.open .inner .glass {
+    transform: rotate(360deg);
+}
+
+#wrap .intro_hiddenpicture.open .inner .glass .img {
+    opacity: 1;
+    transform: rotate(-360deg);
+}
+
+#wrap .intro_hiddenpicture .inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 464px;
+    height: 244px;
+    margin: -122px 0 0 -232px;
+}
+
+#wrap .intro_hiddenpicture .inner .intro_img {
+    position: relative;
+    width: 410px;
+    height: 233px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/intro_ispy.png");
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .intro_hiddenpicture .inner .glass {
+    position: absolute;
+    right: 45px;
+    top: 67px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(0deg);
+    transition: transform 1s linear;
+    z-index: 11;
+}
+
+#wrap .intro_hiddenpicture .inner .glass .img {
+    position: absolute;
+    right: -34px;
+    top: 2px;
+    width: 111px;
+    height: 130px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/intro_hiddenpicture_glass.png");
+    transform: rotate(0deg);
+    opacity: 0;
+    transition: opacity .5s,transform 1s linear;
+}
+
+@charset "UTF-8";
+body {
+    margin: 0;
+    font-family: "NotoSansB-Regular";
+    background-color: #3f362e;
+    image-rendering: -webkit-optimize-contrast;
+    text-rendering: optimizeSpeed;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes swingLR {
+    from {
+        transform: translateX(-2%);
+    }
+    to {
+        transform: translateX(2%);
+    }
+}
+
+.alert_notice {
+    display: none;
+    position: absolute;
+    left: 20px;
+    bottom: -32px;
+    min-width: 276px;
+    height: 58px;
+    padding-left: 60px;
+    line-height: 58px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.45) url("/content/mathalive_lib/images/ico_alert_notice.png") no-repeat 13px center;
+    color: #fff;
+    font-family: "maplestory-light";
+    font-size: 20px;
+}
+
+.alert_notice.show {
+    display: block;
+}
+
+.alert_notice strong {
+    font-family: "maplestory-bold";
+    border-bottom: 1px solid #fff;
+}
+
+.q_timer {
+    position: relative;
+    width: 150px;
+    height: 155px;
+}
+
+.q_timer.swing {
+    animation: swingLR alternate infinite linear 0.08s;
+}
+
+.q_timer .watch {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 10px;
+    top: 10px;
+    background: url("/content/mathalive_lib/images/bg_timer.png") no-repeat center;
+    background-size: 100%;
+    z-index: 1;
+}
+
+.q_timer > svg {
+    position: absolute;
+    left: 60px;
+    top: 59px;
+    z-index: 1;
+    overflow: inherit;
+}
+
+.q_timer > svg .circle {
+    z-index: 2;
+}
+
+.q_timer .m_text {
+    position: absolute;
+    width: 142px;
+    padding-top: 48px;
+    text-align: center;
+    font-size: 38px;
+    color: #000;
+    font-family: "Maplestory-Bold";
+    line-height: 1.2;
+    z-index: 1;
+}
+
+.q_timer.assess .watch {
+    z-index: 0 !important;
+}
+
+.q_timer .m_holl {
+    position: absolute;
+    left: 1.5rem;
+    top: 2.29rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background: white;
+    z-index: 1;
+}
+
+.q_timer .live_guage {
+    position: absolute;
+    width: 205px;
+    height: 77px;
+    left: 75px;
+    top: 25px;
+    background-color: #5400bc;
+    border-radius: 0 23px 23px 0;
+}
+
+.q_timer .live_guage.individual {
+    top: 43px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 25px 25px 0;
+}
+
+.q_timer .live_guage.individual .bar_wrap {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.q_timer .live_guage.individual .ico_heart {
+    top: 5px;
+    left: 50px;
+}
+
+.q_timer .live_guage .ico_heart {
+    position: absolute;
+    left: 45px;
+    top: 30px;
+    width: 48px;
+    height: 40px;
+    background: url("/content/mathalive_lib/images/ico_livegauge_heart.png");
+    z-index: 1;
+}
+
+.q_timer .live_guage .bar_wrap {
+    position: absolute;
+    width: 123px;
+    height: 28px;
+    left: 70px;
+    top: 36px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.q_timer .live_guage .bar_wrap .bar {
+    position: relative;
+    background: transparent;
+    z-index: 0;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, #ffc744 0%, #ff9600 100%);
+    border-radius: 20px;
+}
+
+.q_timer .live_guage .bar_wrap .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 20px;
+    color: #2e2e2e;
+    font-family: "maplestory-bold";
+    transform: translate(-50%, -50%);
+}
+
+.q_timer .live_guage .bar_wrap .text.overmax {
+    color: #ff6c00;
+    font-size: 24px;
+}
+
+.q_timer .live_guage .bar_wrap .text.overmax:before {
+    content: attr(data-value);
+    position: absolute;
+    -webkit-text-stroke: 0.2em #fff;
+    left: 0;
+    z-index: -1;
+}
+
+.q_timer .live_guage .team_name {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 11px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    font-family: "maplestory-bold";
+    font-size: 16px;
+}
+
+.q_timer .live_guage .team_name.red {
+    background: linear-gradient(90deg, #f8403a 0%, #f9413a 100%);
+}
+
+.q_timer .live_guage .team_name.red:before {
+    content: "Red";
+}
+
+.q_timer .live_guage .team_name.yellow {
+    background: linear-gradient(90deg, #fbb004 0%, #ffb201 100%);
+}
+
+.q_timer .live_guage .team_name.yellow:before {
+    content: "Yellow";
+}
+
+.q_timer .live_guage .team_name.green {
+    background: linear-gradient(90deg, #74c40a 0%, #74c50a 100%);
+}
+
+.q_timer .live_guage .team_name.green:before {
+    content: "Green";
+}
+
+.q_timer .live_guage .team_name.lucky {
+    background: #4d62d1;
+}
+
+.q_timer .live_guage .team_name.lucky:before {
+    content: "Lucky";
+}
+
+.q_timer .circle {
+    position: absolute;
+    left: 32px;
+    top: 30px;
+    width: 76px;
+    height: 76px;
+    z-index: 1;
+}
+
+.q_timer .minute {
+    position: absolute;
+    left: -5px;
+    bottom: 57px;
+    width: 100%;
+    font-size: 10px;
+    color: #d43030;
+    font-family: "maplestory-light";
+    text-align: center;
+    z-index: 1;
+}
+
+.q_timer .progress-circle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #e3ecf4;
+    z-index: 1;
+}
+
+.q_timer .progress-circle:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: colorload 2s;
+    transition: 1s all;
+}
+
+.q_timer .progress-circle span {
+    font-size: 1.5rem;
+    color: #8b8b8b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    text-align: center;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+}
+
+.q_timer .progress-circle span:after {
+    content: "%";
+    font-weight: 600;
+    color: #8b8b8b;
+}
+
+.q_timer .progress-circle.progress-0:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(90deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-1:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(93.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-2:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(97.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-3:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(100.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-4:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(104.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-5:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(108deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-6:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(111.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-7:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(115.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-8:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(118.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-9:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(122.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-10:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(126deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-11:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(129.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-12:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(133.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-13:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(136.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-14:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(140.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-15:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(144deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-16:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(147.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-17:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(151.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-18:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(154.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-19:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(162deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-20:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(165.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-21:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(169.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-22:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(172.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-23:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(176.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-24:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(180deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-25:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(183.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-26:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(187.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-27:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(190.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-28:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(194.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-29:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(198deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-30:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(201.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-31:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(205.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-32:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(208.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-33:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(212.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-34:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(216deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-35:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(223.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-40:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(226.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-36:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(230.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-37:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(234deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-38:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(237.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-39:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(241.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-41:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(244.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-42:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(248.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-43:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(252deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-44:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(255.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-45:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-46:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-47:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-48:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-49:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(266.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-50:after {
+    background-image: linear-gradient(-90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-51:after {
+    background-image: linear-gradient(-86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-52:after {
+    background-image: linear-gradient(-82.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-53:after {
+    background-image: linear-gradient(-79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-54:after {
+    background-image: linear-gradient(-75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-55:after {
+    background-image: linear-gradient(-72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-56:after {
+    background-image: linear-gradient(-68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-57:after {
+    background-image: linear-gradient(-64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-58:after {
+    background-image: linear-gradient(-61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-59:after {
+    background-image: linear-gradient(-57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-60:after {
+    background-image: linear-gradient(-54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-61:after {
+    background-image: linear-gradient(-50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-62:after {
+    background-image: linear-gradient(-46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-63:after {
+    background-image: linear-gradient(-43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-64:after {
+    background-image: linear-gradient(-39.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-65:after {
+    background-image: linear-gradient(-36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-66:after {
+    background-image: linear-gradient(-32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-67:after {
+    background-image: linear-gradient(-28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-68:after {
+    background-image: linear-gradient(-25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-69:after {
+    background-image: linear-gradient(-21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-70:after {
+    background-image: linear-gradient(-18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-71:after {
+    background-image: linear-gradient(-14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-72:after {
+    background-image: linear-gradient(-10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-73:after {
+    background-image: linear-gradient(-7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-74:after {
+    background-image: linear-gradient(-3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-75:after {
+    background-image: linear-gradient(0deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-76:after {
+    background-image: linear-gradient(3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-77:after {
+    background-image: linear-gradient(7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-78:after {
+    background-image: linear-gradient(10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-79:after {
+    background-image: linear-gradient(14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-80:after {
+    background-image: linear-gradient(18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-81:after {
+    background-image: linear-gradient(21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-82:after {
+    background-image: linear-gradient(25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-83:after {
+    background-image: linear-gradient(28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-84:after {
+    background-image: linear-gradient(32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-85:after {
+    background-image: linear-gradient(36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-86:after {
+    background-image: linear-gradient(39.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-87:after {
+    background-image: linear-gradient(43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-88:after {
+    background-image: linear-gradient(46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-89:after {
+    background-image: linear-gradient(50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-90:after {
+    background-image: linear-gradient(54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-91:after {
+    background-image: linear-gradient(57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-92:after {
+    background-image: linear-gradient(61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-93:after {
+    background-image: linear-gradient(64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-94:after {
+    background-image: linear-gradient(68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-95:after {
+    background-image: linear-gradient(72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-96:after {
+    background-image: linear-gradient(75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-97:after {
+    background-image: linear-gradient(79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-98:after {
+    background-image: linear-gradient(82.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-99:after {
+    background-image: linear-gradient(86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.q_timer .progress-circle.progress-100:after {
+    background-image: linear-gradient(90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+/* 
+	&>div{
+		position:absolute;
+		left:16px;right:17px;
+		top:24px;bottom:17px;
+		border-radius:50%;
+		padding-top: 18px;
+		text-align: center;
+		font-size:16px;
+		font-weight: bold;
+		color:#fff;
+	}
+	*/
+.timer {
+    position: absolute;
+    left: 60px;
+    top: 20px;
+    z-index: 10;
+    /* 
+	&>div{
+		position:absolute;
+		left:16px;right:17px;
+		top:24px;bottom:17px;
+		border-radius:50%;
+		padding-top: 18px;
+		text-align: center;
+		font-size:16px;
+		font-weight: bold;
+		color:#fff;
+	}
+	*/
+}
+
+@keyframes swingLR {
+    from {
+        transform: translateX(-2%);
+    }
+    to {
+        transform: translateX(2%);
+    }
+}
+
+.timer .alert_notice {
+    display: none;
+    position: absolute;
+    left: 20px;
+    bottom: -32px;
+    min-width: 276px;
+    height: 58px;
+    padding-left: 60px;
+    line-height: 58px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.45) url("/content/mathalive_lib/images/ico_alert_notice.png") no-repeat 13px center;
+    color: #fff;
+    font-family: "maplestory-light";
+    font-size: 20px;
+}
+
+.timer .alert_notice.show {
+    display: block;
+}
+
+.timer .alert_notice strong {
+    font-family: "maplestory-bold";
+    border-bottom: 1px solid #fff;
+}
+
+.timer .q_timer {
+    position: relative;
+    width: 150px;
+    height: 155px;
+}
+
+.timer .q_timer.swing {
+    animation: swingLR alternate infinite linear 0.08s;
+}
+
+.timer .q_timer .watch {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 10px;
+    top: 10px;
+    background: url("/content/mathalive_lib/images/bg_timer.png") no-repeat center;
+    background-size: 100%;
+    z-index: 1;
+}
+
+.timer .q_timer > svg {
+    position: absolute;
+    left: 60px;
+    top: 59px;
+    z-index: 1;
+    overflow: inherit;
+}
+
+.timer .q_timer > svg .circle {
+    z-index: 2;
+}
+
+.timer .q_timer .m_text {
+    position: absolute;
+    width: 142px;
+    padding-top: 48px;
+    text-align: center;
+    font-size: 38px;
+    color: #000;
+    font-family: "Maplestory-Bold";
+    line-height: 1.2;
+    z-index: 1;
+}
+
+.timer .q_timer.assess .watch {
+    z-index: 0 !important;
+}
+
+.timer .q_timer .m_holl {
+    position: absolute;
+    left: 1.5rem;
+    top: 2.29rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background: white;
+    z-index: 1;
+}
+
+.timer .q_timer .live_guage {
+    position: absolute;
+    width: 205px;
+    height: 77px;
+    left: 75px;
+    top: 25px;
+    background-color: #5400bc;
+    border-radius: 0 23px 23px 0;
+}
+
+.timer .q_timer .live_guage.individual {
+    top: 43px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 25px 25px 0;
+}
+
+.timer .q_timer .live_guage.individual .bar_wrap {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timer .q_timer .live_guage.individual .ico_heart {
+    top: 5px;
+    left: 50px;
+}
+
+.timer .q_timer .live_guage .ico_heart {
+    position: absolute;
+    left: 45px;
+    top: 30px;
+    width: 48px;
+    height: 40px;
+    background: url("/content/mathalive_lib/images/ico_livegauge_heart.png");
+    z-index: 1;
+}
+
+.timer .q_timer .live_guage .bar_wrap {
+    position: absolute;
+    width: 123px;
+    height: 28px;
+    left: 70px;
+    top: 36px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.timer .q_timer .live_guage .bar_wrap .bar {
+    position: relative;
+    background: transparent;
+    z-index: 0;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, #ffc744 0%, #ff9600 100%);
+    border-radius: 20px;
+}
+
+.timer .q_timer .live_guage .bar_wrap .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 20px;
+    color: #2e2e2e;
+    font-family: "maplestory-bold";
+    transform: translate(-50%, -50%);
+}
+
+.timer .q_timer .live_guage .bar_wrap .text.overmax {
+    color: #ff6c00;
+    font-size: 24px;
+}
+
+.timer .q_timer .live_guage .bar_wrap .text.overmax:before {
+    content: attr(data-value);
+    position: absolute;
+    -webkit-text-stroke: 0.2em #fff;
+    left: 0;
+    z-index: -1;
+}
+
+.timer .q_timer .live_guage .team_name {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 11px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    font-family: "maplestory-bold";
+    font-size: 16px;
+}
+
+.timer .q_timer .live_guage .team_name.red {
+    background: linear-gradient(90deg, #f8403a 0%, #f9413a 100%);
+}
+
+.timer .q_timer .live_guage .team_name.red:before {
+    content: "Red";
+}
+
+.timer .q_timer .live_guage .team_name.yellow {
+    background: linear-gradient(90deg, #fbb004 0%, #ffb201 100%);
+}
+
+.timer .q_timer .live_guage .team_name.yellow:before {
+    content: "Yellow";
+}
+
+.timer .q_timer .live_guage .team_name.green {
+    background: linear-gradient(90deg, #74c40a 0%, #74c50a 100%);
+}
+
+.timer .q_timer .live_guage .team_name.green:before {
+    content: "Green";
+}
+
+.timer .q_timer .live_guage .team_name.lucky {
+    background: #4d62d1;
+}
+
+.timer .q_timer .live_guage .team_name.lucky:before {
+    content: "Lucky";
+}
+
+.timer .q_timer .circle {
+    position: absolute;
+    left: 32px;
+    top: 30px;
+    width: 76px;
+    height: 76px;
+    z-index: 1;
+}
+
+.timer .q_timer .minute {
+    position: absolute;
+    left: -5px;
+    bottom: 57px;
+    width: 100%;
+    font-size: 10px;
+    color: #d43030;
+    font-family: "maplestory-light";
+    text-align: center;
+    z-index: 1;
+}
+
+.timer .q_timer .progress-circle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #e3ecf4;
+    z-index: 1;
+}
+
+.timer .q_timer .progress-circle:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: colorload 2s;
+    transition: 1s all;
+}
+
+.timer .q_timer .progress-circle span {
+    font-size: 1.5rem;
+    color: #8b8b8b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    text-align: center;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+}
+
+.timer .q_timer .progress-circle span:after {
+    content: "%";
+    font-weight: 600;
+    color: #8b8b8b;
+}
+
+.timer .q_timer .progress-circle.progress-0:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(90deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-1:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(93.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-2:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(97.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-3:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(100.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-4:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(104.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-5:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(108deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-6:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(111.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-7:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(115.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-8:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(118.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-9:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(122.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-10:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(126deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-11:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(129.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-12:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(133.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-13:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(136.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-14:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(140.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-15:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(144deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-16:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(147.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-17:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(151.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-18:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(154.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-19:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(162deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-20:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(165.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-21:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(169.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-22:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(172.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-23:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(176.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-24:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(180deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-25:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(183.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-26:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(187.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-27:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(190.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-28:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(194.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-29:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(198deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-30:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(201.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-31:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(205.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-32:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(208.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-33:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(212.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-34:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(216deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-35:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(223.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-40:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(226.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-36:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(230.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-37:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(234deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-38:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(237.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-39:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(241.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-41:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(244.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-42:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(248.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-43:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(252deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-44:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(255.6deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-45:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-46:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-47:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(259.2deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-48:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(262.8deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-49:after {
+    background-image: linear-gradient(90deg, #e3ecf4 50%, transparent 50%, transparent), linear-gradient(266.4deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-50:after {
+    background-image: linear-gradient(-90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-51:after {
+    background-image: linear-gradient(-86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-52:after {
+    background-image: linear-gradient(-82.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-53:after {
+    background-image: linear-gradient(-79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-54:after {
+    background-image: linear-gradient(-75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-55:after {
+    background-image: linear-gradient(-72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-56:after {
+    background-image: linear-gradient(-68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-57:after {
+    background-image: linear-gradient(-64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-58:after {
+    background-image: linear-gradient(-61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-59:after {
+    background-image: linear-gradient(-57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-60:after {
+    background-image: linear-gradient(-54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-61:after {
+    background-image: linear-gradient(-50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-62:after {
+    background-image: linear-gradient(-46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-63:after {
+    background-image: linear-gradient(-43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-64:after {
+    background-image: linear-gradient(-39.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-65:after {
+    background-image: linear-gradient(-36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-66:after {
+    background-image: linear-gradient(-32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-67:after {
+    background-image: linear-gradient(-28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-68:after {
+    background-image: linear-gradient(-25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-69:after {
+    background-image: linear-gradient(-21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-70:after {
+    background-image: linear-gradient(-18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-71:after {
+    background-image: linear-gradient(-14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-72:after {
+    background-image: linear-gradient(-10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-73:after {
+    background-image: linear-gradient(-7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-74:after {
+    background-image: linear-gradient(-3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-75:after {
+    background-image: linear-gradient(0deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-76:after {
+    background-image: linear-gradient(3.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-77:after {
+    background-image: linear-gradient(7.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-78:after {
+    background-image: linear-gradient(10.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-79:after {
+    background-image: linear-gradient(14.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-80:after {
+    background-image: linear-gradient(18deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-81:after {
+    background-image: linear-gradient(21.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-82:after {
+    background-image: linear-gradient(25.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-83:after {
+    background-image: linear-gradient(28.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-84:after {
+    background-image: linear-gradient(32.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-85:after {
+    background-image: linear-gradient(36deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-86:after {
+    background-image: linear-gradient(39.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-87:after {
+    background-image: linear-gradient(43.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-88:after {
+    background-image: linear-gradient(46.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-89:after {
+    background-image: linear-gradient(50.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-90:after {
+    background-image: linear-gradient(54deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-91:after {
+    background-image: linear-gradient(57.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-92:after {
+    background-image: linear-gradient(61.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-93:after {
+    background-image: linear-gradient(64.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-94:after {
+    background-image: linear-gradient(68.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-95:after {
+    background-image: linear-gradient(72deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-96:after {
+    background-image: linear-gradient(75.6deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-97:after {
+    background-image: linear-gradient(79.2deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-98:after {
+    background-image: linear-gradient(82.8deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-99:after {
+    background-image: linear-gradient(86.4deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .progress-circle.progress-100:after {
+    background-image: linear-gradient(90deg, #e7a2a6 50%, transparent 50%, transparent), linear-gradient(270deg, #e7a2a6 50%, #e3ecf4 50%, #e3ecf4);
+}
+
+.timer .q_timer .live_guage {
+    background-color: #5400bc;
+}
+
+.timer .q_timer .live_guage .bar_wrap {
+    left: 70px;
+    top: 36px;
+}
+
+.timer .q_timer .live_guage .bar_wrap .bar {
+    width: 0%;
+}
+
+.timer .q_timer .live_guage .ico_heart {
+    display: block;
+    top: 30px;
+}
+
+.timer .q_timer .live_guage .team_name {
+    display: none;
+}
+
+.timer .live_guage {
+    display: none;
+}
+
+.content_page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.content_page > div > iframe {
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+.content_page .pagination {
+    position: absolute;
+    left: 500px;
+    top: 0;
+    width: 280px;
+    height: 60px;
+    padding: 20px 0 0  0;
+    text-align: center;
+    z-index: 10;
+}
+
+.content_page .pagination span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 10px;
+    border-radius: 100%;
+    background-color: #d0d0d0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.content_page .pagination span.on {
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.content_page .left {
+    position: relative;
+    float: left;
+    width: 440px;
+    height: 100%;
+    padding: 20px 30px 0 80px;
+    background-color: #18836b;
+    box-shadow: 3px 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.content_page .left .qqq {
+    position: absolute;
+    width: 330px;
+    height: 544px;
+    padding-bottom: 0;
+    top: 50%;
+    transform: translate(0, -48%);
+}
+
+.content_page .left .qqq .q2 {
+    margin-top: 20px;
+}
+
+.content_page .right {
+    position: relative;
+    float: right;
+    width: 840px;
+    height: 100%;
+    padding-right: 48px;
+    background-color: #fefefe;
+}
+
+.content_page .right .pagination {
+    position: absolute;
+    left: 350px;
+    top: 0;
+    width: 134px;
+    height: 67px;
+    padding: 25px 0 0  0;
+    text-align: center;
+    z-index: 10;
+}
+
+.content_page .right .pagination span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 10px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.content_page .right .pagination span.on {
+    background-color: white;
+}
+
+.content_page .right .target {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: 24px;
+    margin-top: 24px;
+}
+
+.content_page .left .question {
+    font-size: 26px;
+    color: #fff;
+    word-break: keep-all;
+    line-height: 1.1;
+    margin-top: 20px;
+    font-family: "verdana";
+    white-space: break-spaces;
+}
+
+.content_page .left .question p {
+    display: inline-block;
+    height: 30px;
+    margin-right: 5px;
+    color: #4bffd7;
+    font-family: "maplestory-bold";
+}
+
+.content_page .left .question strong {
+    white-space: pre-line;
+    font-weight: normal;
+}
+
+.content_page .left .question.tp02 {
+    margin-top: 0px;
+}
+
+.content_page .left .question_box {
+    content: "";
+    position: relative;
+    height: 133px;
+    margin-top: 18px;
+    border-radius: 25px;
+    background-color: #036c55;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 17px;
+    border-bottom: 0;
+    box-shadow: inset 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.content_page .left .question_box_cover, .content_page .left .question_box_cover2 {
+    content: "";
+    position: relative;
+    height: 133px;
+    margin-top: -133px;
+    border-radius: 25px;
+    background-color: #036c55;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 17px;
+    border-bottom: 0;
+    box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.content_page .left .question_box_cover2 {
+    height: 213px;
+    margin-top: -213px;
+}
+
+.content_page .left .question_box_cover:after, .content_page .left .question_box_cover2:after {
+    content: "?";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 80px;
+    font-family: "maplestory-bold";
+    color: #15594a;
+    transform: translate(-50%, -50%);
+}
+
+.question_box .correct {
+    filter: brightness(0.3);
+}
+
+.content_page .left .question_box img {
+    position: absolute;
+    margin: 0;
+}
+
+.content_page .left .question_box.tp02 {
+    height: 213px;
+}
+
+.content_page .left .question_box.tp02 img {
+    position: absolute;
+    margin: 0;
+}
+
+.animal {
+    position: absolute;
+    display: none;
+}
+
+.animal.show {
+    display: block;
+}
+
+.sign {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sign.o {
+    width: 130px;
+    height: 131px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/img_o.png");
+}
+
+.sign.x {
+    width: 122px;
+    height: 121px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/img_x.png");
+}
+
+/* student */
+.student.content_page .left .question_box {
+    background: none;
+}
+
+.student.content_page .left .question_box:after {
+    display: none;
+}
+
+.student .btn_problem {
+    display: none;
+}
+
+/*.msg {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+} 210518 ���� */
+.msg.great {
+    width: 357px;
+    height: 266px;
+    background: url("/content/mathalive_lib/images/msg_great.png");
+}
+
+.btn_set {
+    margin-top: 36px;
+    text-align: center;
+}
+
+.btn_set button {
+    border: 0;
+}
+
+.btn {
+    width: 200px;
+    height: 78px;
+    margin: 0 2px;
+}
+
+.btn.open {
+    width: 200px;
+    height: 78px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/btn_open.png");
+}
+
+.btn.answer {
+    width: 200px;
+    height: 78px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/btn_answer.png");
+}
+
+.btn.problem {
+    width: 200px;
+    height: 78px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/btn_problem.png");
+}
+
+.btn_problem, .btn_answer {
+    position: absolute;
+    left: 80px;
+    bottom: 30px;
+    width: 330px;
+    height: 70px;
+    border-radius: 20px;
+    border: 0;
+    color: #fff;
+    font-size: 26px;
+    font-family: "maplestory-bold";
+    background-color: #5061a6;
+    box-shadow: 0 8px 0 #424b74;
+}
+
+.btn_problem {
+    display: none;
+}
+
+.btn.send {
+    width: 190px;
+    height: 78px;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/btn_send.png");
+}
+
+.btn.count {
+    position: relative;
+    width: 190px;
+    height: 78px;
+    padding-left: 85px;
+    font-size: 25px;
+    font-family: "MapleStory-Bold";
+    color: #fff;
+    text-align: left;
+    vertical-align: middle;
+    background: url("/content/mathalive_lib/MA/hidden_picture/common/bg_btn_count.png");
+    cursor: pointer;
+}
+
+.btn.count.show {
+    display: inline-block;
+}
+
+.btn.count .text {
+    position: relative;
+    z-index: 10;
+}
+
+.btn.result {
+    background: url("/content/mathalive_lib/MA/hidden_picture/teacher/images/btn_totalresult.png");
+}
+
+.circle-default-style {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    width: 42px;
+    z-index: 10;
+}
+
+.ico_stop {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    margin: -11px 0 0 -7px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+/* circle graph */
+.foreground-circle {
+    fill: none;
+    stroke: #fff;
+}
+
+.foreground-circle-without-stroke-color {
+    fill: none;
+}
+
+.background-circle {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.2);
+}
+
+.circle-text {
+    display: none;
+}
+
+.alert_popup {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.alert_popup.open {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+.alert_popup.closing {
+    pointer-events: unset;
+    z-index: 10001;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.alert_popup.closed {
+    display: none;
+}
+
+.alert_popup .pop_box {
+    width: 310px;
+    height: 282px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+}
+
+.alert_popup .pop_box .ico_alert {
+    width: 110px;
+    height: 110px;
+    background: url("/content/mathalive_lib/images/ico_alert.png");
+    display: inline-block;
+}
+
+.alert_popup .pop_box .text {
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Maplestory-Light";
+    margin-top: 20px;
+    text-align: center;
+}
+
+.alert_popup .pop_box .text.long {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.alert_popup .pop_box .text.middle {
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.alert_popup .pop_box .btns {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.alert_popup .pop_box .btns button {
+    width: 120px;
+    height: 38px;
+    border-radius: 19px;
+    border: none;
+    outline: none;
+    font-family: "Maplestory-Light";
+}
+
+.alert_popup .pop_box .btns button.btn_cancel {
+    background-color: #a6a6a6;
+}
+
+.alert_popup .pop_box .btns button.btn_ok {
+    margin-left: 10px;
+    background-color: #eb6f7b;
+}
+
+.alert_popup .pop_box .btns button span {
+    font-family: "Maplestory-Light";
+    font-size: 16px;
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: "NotoSansB-Regular";
+    background-color: #3f362e;
+    image-rendering: -webkit-optimize-contrast;
+    text-rendering: optimizeSpeed;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contentWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.contentWrap .result_ranking {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 982px;
+    height: 656px;
+    border-radius: 48px;
+    background-color: #410097;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-family: "Maplestory-Bold";
+}
+
+.contentWrap .result_ranking .btn_close {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    right: 20px;
+    border-radius: 100%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.3) url("/content/mathalive_lib/images/ico_video_menu_close.png") no-repeat center;
+    background-size: 22px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.contentWrap .result_ranking .high_rank_list {
+    padding: 40px 00px 40px 30px;
+    margin-bottom: 0px;
+    text-align: left;
+    background-color: #5400bc;
+    border-radius: 48px;
+}
+
+.contentWrap .result_ranking .high_rank_list .confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("/content/mathalive_lib/images/ani_effect_result_850.gif") no-repeat top center;
+}
+
+.contentWrap .result_ranking .high_rank_list .scroll {
+    height: 580px;
+    top: 0px;
+    padding-left: 10px;
+    overflow-y: auto;
+}
+
+.contentWrap .result_ranking .high_rank_list .title {
+    margin-bottom: 20px;
+    font-size: 29px;
+    color: #fff;
+}
+
+.contentWrap .result_ranking .high_rank_list:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contentWrap .result_ranking .high_rank_list ul {
+    margin-bottom: 14px;
+}
+
+.contentWrap .result_ranking .high_rank_list ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contentWrap .result_ranking .high_rank_list li {
+    position: relative;
+    float: left;
+    width: 262px;
+    height: 86px;
+    margin-left: 60px;
+    margin-bottom: 26px;
+    padding: 14px 63px 9px 0px;
+    border-radius: 43px;
+    background-color: #29262c;
+    font-family: "Maplestory-Light";
+    text-align: center;
+}
+
+.contentWrap .result_ranking .high_rank_list li:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+.contentWrap .result_ranking .high_rank_list li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contentWrap .result_ranking .high_rank_list li.gold:after {
+    background-image: url("/content/mathalive_lib/MA/memory_game/common/ico_ranking_gold.png");
+}
+
+.contentWrap .result_ranking .high_rank_list li.silver:after {
+    background-image: url("/content/mathalive_lib/MA/memory_game/common/ico_ranking_silver.png");
+}
+
+.contentWrap .result_ranking .high_rank_list li.bronze:after {
+    background-image: url("/content/mathalive_lib/MA/memory_game/common/ico_ranking_bronze.png");
+}
+
+.contentWrap .result_ranking .high_rank_list li .score {
+    position: relative;
+    top: -7px;
+    left: 65px;
+    width: 164px;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 30px;
+    font-size: 29px;
+    color: #ff9a9a;
+    margin: auto;
+    border-bottom: 1px solid #ff9a9a;
+    text-align: left;
+}
+
+.contentWrap .result_ranking .high_rank_list li .score .heart {
+    position: absolute;
+    left: 100px;
+    top: 8px;
+    line-height: 1;
+    padding-left: 20px;
+    font-size: 11px;
+    background: url("/content/mathalive_lib/images/ico_heart.png") no-repeat left center;
+}
+
+.contentWrap .result_ranking .high_rank_list li .score .plus {
+    position: absolute;
+    left: 100px;
+    top: 23px;
+    line-height: 1;
+    padding-left: 20px;
+    font-size: 11px;
+    background: url("/content/mathalive_lib/images/ico_plus.png") no-repeat left center;
+}
+
+.contentWrap .result_ranking .high_rank_list li .name {
+    font-size: 16px;
+    color: #fff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    max-width: 160px;
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    left: 65px;
+}
+
+.contentWrap .result_ranking .high_rank_list li img,
+.contentWrap .result_ranking .high_rank_list li .defaultImg_f,
+.contentWrap .result_ranking .high_rank_list li .defaultImg_m {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    margin-top: -35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.contentWrap .result_ranking .high_rank_list li .defaultImg_f,
+.contentWrap .result_ranking .high_rank_list li .defaultImg_m {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentWrap .result_ranking .high_rank_list li .defaultImg_f div,
+.contentWrap .result_ranking .high_rank_list li .defaultImg_m div {
+    font-size: 20px;
+    font-family: "Maplestory-Bold";
+    color: #fff;
+}
+
+.contentWrap .result_ranking .high_rank_list li .defaultImg_f {
+    background-color: #ffa1a7;
+}
+
+.contentWrap .result_ranking .high_rank_list li .defaultImg_m {
+    background-color: #2cd1c3;
+}
+
+.contentWrap .result_ranking .high_rank_list.answer {
+    height: 240px;
+}
+
+.contentWrap .result_ranking .high_rank_list.answer .title {
+    margin-bottom: 14px;
+}
+
+.contentWrap .result_ranking .high_rank_list.answer .graph .g {
+    float: left;
+    width: 25%;
+    padding-left: 30px;
+}
+
+.contentWrap .result_ranking .high_rank_list.answer .graph .g .bar {
+    width: 144px;
+    height: 84px;
+    margin-bottom: 13px;
+    text-align: center;
+}
+
+.contentWrap .result_ranking .high_rank_list.answer .graph .g .rst {
+    width: 144px;
+    height: 40px;
+    border: solid 3px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    color: #fff;
+    font-size: 20px;
+    background-color: #5400bc;
+}
+
+.contentWrap .result_ranking .high_rank_list.answer .graph .g .rst .tit {
+    float: left;
+    width: 52px;
+    line-height: 34px;
+    text-align: center;
+    background-color: #430096;
+    border-radius: 40px 0 0 40px;
+}
+
+.contentWrap .result_ranking .high_rank_list.answer .graph .g .rst .value {
+    float: left;
+    width: 86px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 42px;
+    background: url("/content/mathalive_lib/MA/memory_game/common/ico_emoji_smileman.png") no-repeat 10px center;
+}
+
+body {
+    margin: 0;
+    font-family: "NotoSansB-Regular";
+    background-color: #3f362e;
+    image-rendering: -webkit-optimize-contrast;
+    text-rendering: optimizeSpeed;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#wrap .t_timesetting {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+    background: #485cc7;
+    width: 100%;
+    height: 100%;
+    padding-top: 117px;
+    font-family: 'Maplestory-Bold';
+}
+
+#wrap .t_timesetting .btn_menu {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    width: 40px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_menu.png");
+}
+
+#wrap .t_timesetting .student_count {
+    margin-top: 190px;
+    font-size: 180px;
+    color: #fff;
+}
+
+#wrap .t_timesetting .tit {
+    display: block;
+    width: 471px;
+    height: 67px;
+    margin: 0 auto;
+    font-size: 66px;
+    color: #fff;
+}
+
+#wrap .t_timesetting .settingTimer {
+    position: relative;
+    width: 300px;
+    height: 309px;
+    margin: 66px auto 0;
+    background: url("/content/mathalive_lib/images/bg_timer.png");
+}
+
+#wrap .t_timesetting .settingTimer .num {
+    display: inline-block;
+    margin-top: 100px;
+    font-size: 91px;
+    font-family: 'Maplestory-Bold';
+}
+
+#wrap .t_timesetting .settingTimer button {
+    width: 90px;
+    height: 90px;
+    border: 0;
+    position: absolute;
+    top: 100px;
+}
+
+#wrap .t_timesetting .settingTimer button.btn_minus {
+    left: -90px;
+    background: url("/content/mathalive_lib/images/timer/timer_minus.png");
+}
+
+#wrap .t_timesetting .settingTimer button.btn_plus {
+    right: -90px;
+    background: url("/content/mathalive_lib/images/timer/timer_plus.png");
+}
+
+#wrap .t_timesetting .btn_start {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/timer/btn_start.png");
+    background-repeat: no-repeat;
+    width: 340px;
+    height: 98px;
+    pointer-events: unset;
+    cursor: pointer;
+    margin: 15px auto 0;
+}
+
+#wrap .t_timesetting .btn_start:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .btn_start.down {
+    background-image: url("/content/mathalive_lib/images/timer/btn_start.png");
+}
+
+#wrap .t_timesetting .btn_start:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/timer/btn_start.png") url("/content/mathalive_lib/images/timer/btn_start.png") "";
+}
+
+#wrap .t_timesetting .btn_stop_wrap {
+    margin: 15px auto 0;
+    font-size: 41px;
+    color: #fff;
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/timer/btn_stop.png");
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 78px;
+    pointer-events: unset;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0;
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop.down {
+    background-image: url("/content/mathalive_lib/images/timer/btn_stop.png");
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/timer/btn_stop.png") url("/content/mathalive_lib/images/timer/btn_stop.png") "";
+}
+
+#wrap .t_timesetting .setting_popup {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#wrap .t_timesetting .setting_popup.open {
+    pointer-events: unset;
+    z-index: 100;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .t_timesetting .setting_popup.closing {
+    pointer-events: unset;
+    z-index: 100;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_timesetting .setting_popup.closed {
+    display: none;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer {
+    width: 1106px;
+    height: 624px;
+    border-radius: 35px;
+    background: #fff;
+    border: 2px solid #5a5a5a;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 27px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .tit {
+    font-size: 38px;
+    color: #323232;
+    line-height: 1;
+    font-weight: bold;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum {
+    position: absolute;
+    top: 42px;
+    right: 180px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum button {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number.png");
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    pointer-events: unset;
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 7px;
+    margin: 0 -1px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum button.on {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number_on.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum button:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number_on.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png");
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 42px;
+    right: 100px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png") "";
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap {
+    margin: 40px auto 0;
+    width: 910px;
+    padding-left: 27px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList {
+    height: 98px;
+    background: #edfcdf;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 15px;
+    display: block;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList.hide {
+    display: none;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamImg {
+    display: block;
+    width: 73px;
+    height: 74px;
+    border: 2px solid #3c874b;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -27px;
+    margin: auto 0;
+    background: #000;
+    box-sizing: border-box;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamName {
+    float: left;
+    width: 234px;
+    padding-left: 65px;
+    font-size: 27px;
+    line-height: 98px;
+    letter-spacing: -0.5px;
+    text-align: left;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamName .txt {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    max-width: 115px;
+    line-height: 33px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamName .number {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide {
+    float: left;
+    width: 611px;
+    position: relative;
+    height: 100%;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png");
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 34px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    z-index: 10;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev_dis.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png");
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 34px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    z-index: 10;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next_dis.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container {
+    width: 611px;
+    height: 98px;
+    overflow-x: hidden;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup {
+    width: 611px;
+    height: 98px;
+    /*position: absolute;*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 10px 0 20px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user {
+    width: 116px;
+    float: left;
+    height: 100%;
+    font-size: 0;
+    padding-top: 7px;
+    position: relative;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user .img {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #5e15b7;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user .name {
+    font-size: 19px;
+    line-height: 1;
+    margin: 1px auto 0;
+    display: block;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100px;
+    overflow: hidden;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user.popular::before {
+    content: '';
+    width: 47px;
+    height: 48px;
+    background: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/popular.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+    background-repeat: no-repeat;
+    width: 157px;
+    height: 57px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 206px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+    background-repeat: no-repeat;
+    width: 158px;
+    height: 57px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+}
+
+@charset "UTF-8";
+html, body {
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+    border: 0px;
+    backface-visibility: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: none;
+    font-size: 12px;
+    overflow: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    text-rendering: optimizeSpeed;
+}
+
+body, h1, h2, h3, h4, input, button {
+    /*font-family:Helvetica,Arial,"����",Dotum,sans-serif;*/
+    font-size: 12px;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, p {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+img, fieldset, iframe {
+    border: 0 none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: none;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+div, p {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+#common_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#ding_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#dingend_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#wrap {
+    width: 1280px;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+.swiper-scrollbar.white {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.white .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar.black {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.black .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/*
+.common_back{
+	background-size: 100% 100%;
+	@include btn_down_dis(
+		resolve('mathalive_lib/images/btn_back.png'), 
+		resolve('mathalive_lib/images/btn_back_down.png'),
+		'',
+		width('mathalive_lib/images/btn_back.png'),
+		height('mathalive_lib/images/btn_back.png')
+	);
+	&.down{
+		transform: scale(1.1, 1.1);
+	}
+}
+*/
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #47F6E9;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#preload_hidden {
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#preload_hidden .helvetica {
+    font-family: HelveticaRounded;
+}
+
+#preload_hidden .helveticastd {
+    font-family: HelveticaRoundedLTStd;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.none {
+    display: none;
+}
+

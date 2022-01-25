@@ -1,0 +1,49 @@
+@charset "utf-8";
+.quizWrap strong {font-family: hn_BlkIt;}
+.box{padding:60px 20px;font-size:30px;text-align:center;border:2px solid #818080;box-sizing: border-box;border-radius: 10px;font-family: "NotoSans-Medium";}
+.box .underline {display: inline-block;border-bottom:2px solid #000;min-width:100px;margin:0 10px;}
+.box_set:after{content: "";display: block;clear: both;}
+.box_set .box.left {float:left;text-align: center;}
+.box_set .box.right {float:right;}
+.btn.submit{float:right;width:100px;height:50px;margin-top: 10px;}
+.box_set .box .btn.type01 {margin-top:40px;width:100%;}
+.btn_triple {
+    margin-top: 30px;
+}
+.btn_triple .btn.type01 {float:left;width:28.34%;margin-left:7.48%;}
+.btn_triple .btn:first-child{
+    margin-left: 0;
+}
+.desc{
+    padding:20px 0;
+    font-size:21px;
+    font-family: "NotoSans";
+    color:#3c3c3c;
+}
+.desc strong{
+    font-family: "NotoSans_bold";
+    color:#000;
+}
+.desc .btn{
+    margin:10px 0 0 20px;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background:#d7d7d8;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #787878; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #545454; 
+}
+.underline::before {background: none;}

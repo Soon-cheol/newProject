@@ -1,0 +1,104 @@
+@mixin common_navi{
+	position:absolute;
+	display:table;
+	width:auto;
+	top:0px;height:100%;
+	pointer-events: none;
+	transition: left 0.5s, right 0.5s;
+	/* transition-property: left right; */
+	z-index:20;
+	
+	&>div{
+		width:auto;
+		height:100%;
+		display:table-cell;
+		vertical-align:middle;
+		pointer-events: none;
+		&>div{
+			position:relative;
+			width:auto;
+			height:auto;
+			vertical-align:middle;
+			pointer-events: auto;
+			background-color:rgba(0, 0, 0, 0);
+		}
+	}
+}
+
+#common_navi_left{
+	left:0;	
+	@include common_navi;
+	&.off{
+
+		left:-66px;	
+		button.left{
+			pointer-events: none;
+		}
+		button.right{
+			pointer-events: none;
+		}
+	}
+	button.left{
+		display:block;
+		margin-top:-20px;
+		margin-bottom:0;
+		@include btn_down_dis(
+			resolve('mathalive_lib/images/page_left_L.png'), 
+			resolve('mathalive_lib/images/page_left_L.png'),
+			resolve('mathalive_lib/images/page_left_L_dis.png'),
+			width('mathalive_lib/images/page_left_L.png'),
+			height('mathalive_lib/images/page_left_L.png')			
+		);
+	}
+	button.right{
+		display:block;
+		margin-top:0;
+		margin-bottom:0;
+		pointer-events: auto;
+		@include btn_down_dis(
+			resolve('mathalive_lib/images/page_right_L.png'), 
+			resolve('mathalive_lib/images/page_right_L.png'),
+			resolve('mathalive_lib/images/page_right_L_dis.png'),
+			width('mathalive_lib/images/page_right_L.png'),
+			height('mathalive_lib/images/page_right_L.png')			
+		);
+	}
+}
+#common_navi_right{
+	right:0;
+	@include common_navi;
+	&.off{
+		right:-66px;
+		button.left{
+			pointer-events: none;
+		}
+		button.right{
+			pointer-events: none;
+		}	
+	}
+	button.left{
+		display:block;
+		margin-top:-20px;
+		margin-bottom:0;
+		@include btn_down_dis(
+			resolve('mathalive_lib/images/page_left_R.png'), 
+			resolve('mathalive_lib/images/page_left_R.png'),
+			resolve('mathalive_lib/images/page_left_R_dis.png'),
+			width('mathalive_lib/images/page_left_R.png'),
+			height('mathalive_lib/images/page_left_R.png')			
+		);
+	}
+	button.right{
+		display:block;
+		margin-top:0;
+		margin-bottom:0;
+		pointer-events: auto;
+		@include btn_down_dis(
+			resolve('mathalive_lib/images/page_right_R.png'), 
+			resolve('mathalive_lib/images/page_right_R.png'),
+			resolve('mathalive_lib/images/page_right_R_dis.png'),
+			width('mathalive_lib/images/page_right_R.png'),
+			height('mathalive_lib/images/page_right_R.png')			
+		);
+	}
+}

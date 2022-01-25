@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<title>Math Alive Content</title>
+    <link href="/content/mathalive_lib/font.css" rel="stylesheet" />
+    <link href="/content/mathalive_lib/common_v1.css" rel="stylesheet" />
+    <link href="./content.css" rel="stylesheet" />
+    <script src="/content/mathalive_lib/mathcontent_v1.js"></script>
+    <script src="/content/mathalive_lib/libdragdrop.min.js"></script>
+    <script>
+        MobileDragDrop.polyfill({
+            dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+        });
+    </script>
+</head>
+<body>
+	<div class="content_page">
+        <p class="problem_explain right_btn">
+            <button class="btn_sound"></button>
+            <audio></audio>
+            Read the number, and then choose one that shows the same number of beetles in a jar.
+        </p>
+        <div class="choiceWrap horizontal"> <!-- horizontal: 보기와 선택지가 수평으로 있는 경우 -->
+            <div class="sample_img">
+                <img src="./sample_img.png">
+            </div>
+            <div class="btn_wrap">
+                <button class="btn tp01 right" id="choice1" value="1" data-type="choice">
+                    <img src="./btn_img_01.png">
+                </button>
+                <button class="btn tp02 wrong" id="choice2" value="2" data-type="choice">
+                    <img src="./btn_img_02.png">
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./content.js"></script>
+</html>

@@ -1,0 +1,20 @@
+@mixin page{
+	position: absolute;
+	left:0px;width:100%;
+	top:0px;height:100%;
+}
+
+@mixin font{
+	font-family: NotoSans !important;
+	-webkit-font-smoothing: none;
+}
+
+@mixin swiper_scrollbar($width, $color, $radius) {
+	background: rgba(0, 0, 0, 0);
+	width:$width;
+	.swiper-scrollbar-drag {
+		width:$width;
+		background: $color;
+		border-radius: $radius;
+	}
+}

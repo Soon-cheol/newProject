@@ -1,0 +1,18 @@
+@charset "utf-8";
+body {background: #fff6d9;}
+
+.choiceWrap{
+    padding-top: 27px;
+}
+.btn_wrap{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width:300px;
+    height:419px;
+    background-position-y: 60px;
+}
+.btn+.btn{
+    margin-left: 67px;
+}

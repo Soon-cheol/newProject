@@ -1,0 +1,74 @@
+@charset "utf-8";
+html {overflow:hidden;}
+.quizWrap strong {font-family: hn_BlkIt;}
+.box{padding:40px 20px;margin-bottom: 10px;font-size:20px;text-align:center;border:1px solid #ccc;box-sizing: border-box;}
+.box.noborder{border:none;}
+.box .underline {display: inline-block;border-bottom:2px solid #000;min-width:100px;margin:0 10px;}
+.box_set:after{content: "";display: block;clear: both;}
+.box_set .box.left {float:left;text-align: center;}
+.box_set .box.right {float:right;}
+.btn.submit{float:right;width:100px;height:50px;margin-top: 10px;}
+.box_set .box .btn.type01 {margin-top:40px;width:100%;}
+.btn_5 .btn.type01 {width:23.88%;display: inline-block;margin: 0 34px;height:120px;font-size:40px;}
+
+.desc{
+    padding:20px 0;
+    font-size:21px;
+    font-family: "NotoSans";
+    color:#3c3c3c;
+}
+.desc strong{
+    font-family: "NotoSans_bold";
+    color:#000;
+}
+.desc .btn{
+    margin:10px 0 0 20px;
+}
+.desc_list{margin-bottom: 30px;}
+.desc_list li{
+    margin-top: 20px;
+    font-size:19px;
+    padding-left: 15px;
+    font-family: "NotoSans-Regular";
+    letter-spacing: -1px;
+}
+.desc_list li:before{
+    content: "";
+    display:inline-block;
+    width:15px;
+    height:14px;
+    margin-right: 14px;
+    background:url(../../../mathalive_lib/images/blt_type01.png);
+}
+.box_answer {
+    width:124px;
+    height:70px;
+    text-align: center;
+    font-size: 24px;
+    vertical-align: middle;
+}
+.box_answer mjx-container {
+    top:5px;
+}
+.box_answer mjx-line{
+    margin: 0.1em -0.2em -.02em;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background:#d7d7d8;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #787878; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #545454; 
+}

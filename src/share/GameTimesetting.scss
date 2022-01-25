@@ -1,0 +1,570 @@
+body{margin: 0;font-family: "NotoSansB-Regular";background-color: #3f362e; image-rendering: -webkit-optimize-contrast; text-rendering: optimizeSpeed;}
+button {cursor: pointer;}
+button:focus{outline: none;}
+ul{list-style: none;margin:0;padding:0;}
+
+#wrap .t_timesetting {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+    background: #485cc7;
+    width: 100%;
+    height: 100%;
+    padding-top: 117px;
+    font-family: 'Maplestory-Bold';
+}
+
+#wrap .t_timesetting .btn_menu {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    width: 40px;
+    height: 31px;
+    border: 0;
+    background: url("/content/mathalive_lib/images/ico_menu.png");
+}
+
+#wrap .t_timesetting .student_count {
+    margin-top: 190px;
+    font-size: 180px;
+    color: #fff;
+}
+
+#wrap .t_timesetting .tit {
+    display: block;
+    width: 471px;
+    height: 67px;
+    margin: 0 auto;
+    font-size: 66px;
+    color: #fff;
+}
+
+#wrap .t_timesetting .settingTimer {
+    position: relative;
+    width: 300px;
+    height: 309px;
+    margin: 66px auto 0;
+    background: url("/content/mathalive_lib/images/bg_timer.png");
+}
+
+#wrap .t_timesetting .settingTimer .num {
+    display: inline-block;
+    margin-top: 100px;
+    font-size: 91px;
+    font-family: 'Maplestory-Bold';
+}
+
+#wrap .t_timesetting .settingTimer button {
+    width: 90px;
+    height: 90px;
+    border: 0;
+    position: absolute;
+    top: 100px;
+}
+
+#wrap .t_timesetting .settingTimer button.btn_minus {
+    left: -90px;
+    background: url("/content/mathalive_lib/images/timer/timer_minus.png");
+}
+
+#wrap .t_timesetting .settingTimer button.btn_plus {
+    right: -90px;
+    background: url("/content/mathalive_lib/images/timer/timer_plus.png");
+}
+
+#wrap .t_timesetting .btn_start {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/timer/btn_start.png");
+    background-repeat: no-repeat;
+    width: 340px;
+    height: 98px;
+    pointer-events: unset;
+    cursor: pointer;
+    margin: 15px auto 0;
+}
+
+#wrap .t_timesetting .btn_start:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .btn_start.down {
+    background-image: url("/content/mathalive_lib/images/timer/btn_start.png");
+}
+
+#wrap .t_timesetting .btn_start:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/timer/btn_start.png") url("/content/mathalive_lib/images/timer/btn_start.png") "";
+}
+
+#wrap .t_timesetting .btn_stop_wrap {
+    margin: 15px auto 0;
+    font-size: 41px;
+    color: #fff;
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/images/timer/btn_stop.png");
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 78px;
+    pointer-events: unset;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0;
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop.down {
+    background-image: url("/content/mathalive_lib/images/timer/btn_stop.png");
+}
+
+#wrap .t_timesetting .btn_stop_wrap .btn_stop:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/images/timer/btn_stop.png") url("/content/mathalive_lib/images/timer/btn_stop.png") "";
+}
+
+#wrap .t_timesetting .setting_popup {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#wrap .t_timesetting .setting_popup.open {
+    pointer-events: unset;
+    z-index: 100;
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .t_timesetting .setting_popup.closing {
+    pointer-events: unset;
+    z-index: 100;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#wrap .t_timesetting .setting_popup.closed {
+    display: none;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer {
+    width: 1106px;
+    height: 624px;
+    border-radius: 35px;
+    background: #fff;
+    border: 2px solid #5a5a5a;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 27px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .tit {
+    font-size: 38px;
+    color: #323232;
+    line-height: 1;
+    font-weight: bold;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum {
+    position: absolute;
+    top: 42px;
+    right: 180px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum button {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number.png");
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    pointer-events: unset;
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 7px;
+    margin: 0 -1px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum button.on {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number_on.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .teamNum button:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_number_on.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png");
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 42px;
+    right: 100px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_shuffle:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_shuffle.png") "";
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap {
+    margin: 40px auto 0;
+    width: 910px;
+    padding-left: 27px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList {
+    height: 98px;
+    background: #edfcdf;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 15px;
+    display: block;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList.hide {
+    display: none;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamImg {
+    display: block;
+    width: 73px;
+    height: 74px;
+    border: 2px solid #3c874b;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -27px;
+    margin: auto 0;
+    background: #000;
+    box-sizing: border-box;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamName {
+    float: left;
+    width: 234px;
+    padding-left: 65px;
+    font-size: 27px;
+    line-height: 98px;
+    letter-spacing: -0.5px;
+    text-align: left;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamName .txt {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    max-width: 115px;
+    line-height: 33px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .teamName .number {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide {
+    float: left;
+    width: 611px;
+    position: relative;
+    height: 100%;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png");
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 34px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    z-index: 10;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_prev:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_prev_dis.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png");
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 34px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    z-index: 10;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .btn_next:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_team_next_dis.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container {
+    width: 611px;
+    height: 98px;
+    overflow-x: hidden;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup {
+    width: 611px;
+    height: 98px;
+    /*position: absolute;*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 10px 0 20px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user {
+    width: 116px;
+    float: left;
+    height: 100%;
+    font-size: 0;
+    padding-top: 7px;
+    position: relative;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user .img {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #5e15b7;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user .name {
+    font-size: 19px;
+    line-height: 1;
+    margin: 1px auto 0;
+    display: block;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100px;
+    overflow: hidden;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .listWrap .teamList .lineupSlide .swiper-container .lineup .user.popular::before {
+    content: '';
+    width: 47px;
+    height: 48px;
+    background: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/popular.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+    background-repeat: no-repeat;
+    width: 157px;
+    height: 57px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 206px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_cancel:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_cancel.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+    background-repeat: no-repeat;
+    width: 158px;
+    height: 57px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit:disabled {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit.down {
+    background-image: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+}
+
+#wrap .t_timesetting .setting_popup .popContainer .btn_submit:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png") url("/content/mathalive_lib/MA/warmup_quiz/teacher/images/btn_submit.png");
+}

@@ -1,0 +1,143 @@
+@mixin ResultRankingPopup {
+    .result_ranking{
+        &.type02{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            padding:0;
+            font-family: "Maplestory-Bold";
+            background:rgba(0,0,0,.75);
+            .high_rank_list{
+                position: absolute;
+                width:950px;
+                height:660px;
+                left:50%;
+                top:50%;
+                padding:90px 12px 0 40px;
+                margin-bottom: 10px;
+                text-align: left;
+                transform: translate(-50%,-50%);
+                background-color: #5400bc;
+                border-radius: 30px;
+                .confetti{
+                    display: none;
+                    position: absolute;
+                    width:100%;
+                    height:100%;
+                    left:0;
+                    top:0;
+                    background: resolve('mathalive_lib/images/ani_effect_result_850.gif') no-repeat top center;
+                    &.show{
+                        display: block;
+                    }
+                }
+                .btn_close{
+                    position: absolute;
+                    right:15px;
+                    top:15px;
+                    width:50px;
+                    height:50px;
+                    border:0;
+                    background:resolve('mathalive_lib/images/ico_submit_close.png');
+                }
+                .scroll{
+                    height:545px;
+                    padding-left: 10px;
+                    overflow-y: auto;
+                    &::-webkit-scrollbar-thumb {
+                        background: rgba(0, 0, 0, 0.2);
+                        border-radius: 10px;
+                    }
+                    &::-webkit-scrollbar-thumb:hover {
+                        background: rgba(0, 0, 0, 0.5);
+                    }
+                }
+                .title {
+                    margin-bottom: 20px;
+                    font-size: 24px;
+                    color:#fff;
+                    &.line{
+                        padding-top: 22px;
+                        background:resolve('mathalive_lib/images/ranking_result_line.png') no-repeat left top;
+                    }
+                }
+                &:after{
+                    content:"";
+                    display:block;
+                    clear: both;
+                }
+                ul{
+                    margin-bottom: 14px;
+                    &:after{
+                        content:"";
+                        display:block;
+                        clear: both;
+                    }
+                    &.result{
+                        li{
+                            background-color: #450d8a;
+                        }
+                    }
+                }
+                li{
+                    &:nth-child(3n+1) {
+                        margin-left: 0;
+                    }
+                    position: relative;
+                    float:left;
+                    width:262px;
+                    height:86px;
+                    margin-left: 35px;
+                    margin-bottom: 20px;
+                    padding: 14px 63px 9px 120px;
+                    border-radius: 43px;
+                    background-color: #29262c;
+                    font-family: "Maplestory-Light";
+                    text-align: center;
+                    &:after{
+                        content:"";
+                        display:block;
+                        position: absolute;
+                        left:-10px;
+                        top:-10px;
+                        width:40px;
+                        height: 40px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    &.gold:after{
+                        background-image: resolve('common/ico_ranking_gold.png');
+                    }
+                    &.silver:after{
+                        background-image: resolve('common/ico_ranking_silver.png');
+                    }
+                    &.bronze:after{
+                        background-image: resolve('common/ico_ranking_bronze.png');
+                    }
+                    .score{
+                        font-size: 29px;
+                        color:#84c625;
+                    }
+                    .name {
+                        font-size: 16px;
+                        color: #fff;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                        word-wrap:normal;
+                        overflow:hidden;
+                    }
+                    img {
+                        position: absolute;
+                        left:8px;
+                        top:50%;
+                        margin-top:-35px;
+                    }
+                }
+            }
+        }
+    }
+    
+}

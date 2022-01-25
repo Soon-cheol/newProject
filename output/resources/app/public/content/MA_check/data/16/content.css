@@ -1,0 +1,29 @@
+@charset "utf-8";
+body {background: #ffe9e6;}
+
+.choiceWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sample_img{
+    width: 268px;
+    height: 268px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn_wrap{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn{
+    width:253px;
+    height:383px;
+    margin-left: 40px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}

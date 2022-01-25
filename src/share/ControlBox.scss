@@ -1,0 +1,224 @@
+@mixin ControlBox{
+	.control{
+		position:relative;
+		left:0px; 
+		top:0px; 
+		width: 100%; 
+		.control_left{
+			position: absolute;
+			display:inline-block;
+			white-space:nowrap;
+			font-size:0px;
+			margin-right: 20px;
+			vertical-align: middle;
+			
+			.btn_play_pause{
+				display:inline-block;
+				vertical-align: middle;
+				margin-left:30px;
+				@include btn_on(
+					resolve('mathalive_lib/images/controlbox/btn_play.png'),
+					resolve('mathalive_lib/images/controlbox/btn_pause.png'),
+					width('mathalive_lib/images/controlbox/btn_play.png'),
+					height('mathalive_lib/images/controlbox/btn_play.png')
+				);							
+			}
+			.btn_stop{
+				display:inline-block;
+				vertical-align: middle;
+				margin-left:24px;
+				@include btn_down_dis(
+					resolve('mathalive_lib/images/controlbox/btn_stop.png'),
+					resolve('mathalive_lib/images/controlbox/btn_stop_down.png'),
+					resolve('mathalive_lib/images/controlbox/btn_stop.png'),
+					width('mathalive_lib/images/controlbox/btn_stop.png'),
+					height('mathalive_lib/images/controlbox/btn_stop.png')
+				);							
+			}
+		}
+		.control_top{
+			position:absolute;
+			display: inline-block;
+			top:10px;
+			left: 140px;
+			height: 24px;
+			font-size: 0px;
+			&>div{
+				display:table;
+				width:100%;
+				.prog_box{
+					display: table-cell;
+					vertical-align: middle;
+					position: relative;
+					width: auto;
+					.prog_bg{
+						$PH: 6px;
+						position:relative; 
+						top: 0px;
+						vertical-align:middle;
+						height: $PH;
+						border-radius: $PH/2;
+						background-color: #222121;
+						box-shadow: inset 0.7px 0.7px 0px 0px rgba(0, 0, 0, 0.15);
+						&>.prog_tmp{
+							position:absolute;
+							left:0px;right:0px;
+							top:-13px;bottom:-17px;
+							background-color:rgba(255, 0, 0, 0);
+						}
+						&>.prog_bar{
+							position:absolute;   
+							border-radius: 20px;
+							left:0px;width:0%;
+							top:0px;height: $PH;
+							border-radius: $PH/2;
+							background-color:#0087ff;
+						}
+						&>.prog_btn{
+							position:absolute;
+							left: 0%; 
+							top: 50%;
+							z-index:2;
+							transform:translate(-50%, -50%);
+							@include btn_down_dis(
+								resolve('mathalive_lib/images/controlbox/btn_play_bar.png'),
+								resolve('mathalive_lib/images/controlbox/btn_play_bar_on.png'),
+								resolve('mathalive_lib/images/controlbox/btn_play_bar.png'),
+								width('mathalive_lib/images/controlbox/btn_play_bar.png'),
+								height('mathalive_lib/images/controlbox/btn_play_bar.png')
+							);
+						}
+					}
+				}
+				.video_time{
+					display: table-cell;
+					padding-left: 22px;
+					width: 100px;
+					text-align: left;
+					font-size: 15px;
+					color: #6b6b6b;
+					&>span:nth-child(1) {
+						color: #0087ff;
+					}
+				}
+			}
+		}
+
+		&.detail { /* 제출 상세화면에서 */
+			.control_top {
+				top: 4px;
+				left: 0;
+				right: 0;
+				width: 100%;
+				padding-left: 15px;
+			}
+			.control_btm {
+				position: absolute;
+				top: 33px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 10px;
+
+				button {
+					background-size: auto 100%;
+					background-position: center;
+				}
+				.btn_play_pause{
+					display:inline-block;
+					vertical-align: middle;
+					@include btn_on(
+						resolve('mathalive_lib/images/controlbox/btn_play.png'),
+						resolve('mathalive_lib/images/controlbox/btn_pause.png'),
+						width('mathalive_lib/images/controlbox/btn_play.png'),
+						16px
+					);							
+				}
+				.btn_stop{
+					display:inline-block;
+					vertical-align: middle;
+					margin-left:8px;
+					@include btn_down_dis(
+						resolve('mathalive_lib/images/controlbox/btn_stop.png'),
+						resolve('mathalive_lib/images/controlbox/btn_stop_down.png'),
+						resolve('mathalive_lib/images/controlbox/btn_stop.png'),
+						width('mathalive_lib/images/controlbox/btn_stop.png'),
+						16px
+					);							
+				}	
+				.btn_prev{
+					display:inline-block;
+					vertical-align: middle;
+					margin-left:8px;
+					@include btn_down_dis(
+						resolve('mathalive_lib/images/controlbox/btn_prev.png'),
+						resolve('mathalive_lib/images/controlbox/btn_prev_down.png'),
+						resolve('mathalive_lib/images/controlbox/btn_prev.png'),
+						width('mathalive_lib/images/controlbox/btn_prev.png'),
+						16px
+					);							
+				}	
+				.btn_next{
+					display:inline-block;
+					vertical-align: middle;
+					margin-left:8px;
+					@include btn_down_dis(
+						resolve('mathalive_lib/images/controlbox/btn_next.png'),
+						resolve('mathalive_lib/images/controlbox/btn_next_down.png'),
+						resolve('mathalive_lib/images/controlbox/btn_next.png'),
+						width('mathalive_lib/images/controlbox/btn_next.png'),
+						16px
+					);							
+				}	
+				.btn_sound{
+					@include btn_on(
+						resolve('mathalive_lib/images/controlbox/btn_sound.png'),
+						resolve('mathalive_lib/images/controlbox/btn_mute_down.png'),
+						width('mathalive_lib/images/controlbox/btn_sound.png'),
+						16px
+					);
+					background-position-x: right
+				}
+				.btn_fullscreen{
+					@include btn_down_dis(
+						resolve('mathalive_lib/images/controlbox/btn_fullscreen.png'),
+						resolve('mathalive_lib/images/controlbox/btn_fullscreen_down.png'),
+						'',
+						width('mathalive_lib/images/controlbox/btn_fullscreen.png'),
+						16px
+					);
+					background-position-x: right
+				}
+				.btn_fullscreen_off{
+					@include btn_down_dis(
+						resolve('mathalive_lib/images/controlbox/btn_smallscreen.png'),
+						resolve('mathalive_lib/images/controlbox/btn_smallscreen_down.png'),
+						'',
+						width('mathalive_lib/images/controlbox/btn_smallscreen.png'),
+						16px
+					);
+					background-position-x: right
+				}
+			}
+			&.audio {
+				display: flex;
+				align-items: center;
+				.control_top {
+					position: static;
+					order: 2;
+					margin-top: -12px;
+				}
+				.control_btm {
+					position: static;
+					order: 1;
+					&>div:last-child {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

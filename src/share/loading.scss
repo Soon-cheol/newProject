@@ -1,0 +1,45 @@
+
+@mixin loading{
+    .loading{
+        position: fixed;
+        width:100%;
+        height:100%;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        z-index: 110;
+        &.hide{
+            display: none;
+        }
+    }
+    .loading_bg{
+        position: absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        background:rgba(0,0,0,.5);
+    }
+    .loading_img {
+        position: relative;
+        width:177px;
+        margin:240px auto 0;
+        text-align: center;
+        color:#fff;
+        z-index: 10;
+        font-size: 28px;
+        .img{
+            display: block;
+            width: 182px;
+            height: 200px;
+            margin-bottom: 10px;
+            background-image : resolve('mathalive_lib/images/loading.png');
+            animation: loading 1s steps(37) infinite;
+        }
+    }
+    @keyframes loading{
+        from{background-position-x:0px;}
+        to{background-position-x:-6734px;}
+    }
+}

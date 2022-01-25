@@ -1,0 +1,14 @@
+@mixin btnsendlive {
+    .btn_heart {
+        @include btn_on(
+            resolve('mathalive_lib/images/send_heart.png'), 
+            resolve('mathalive_lib/images/send_heart_on.png'),
+            width('mathalive_lib/images/send_heart.png'),
+            height('mathalive_lib/images/send_heart.png')
+        );
+        position: absolute;
+        bottom: 94px;
+        right: 0;
+        z-index: 101;/* send & share 보다 1 높게*/
+    }
+}

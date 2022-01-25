@@ -1,0 +1,107 @@
+@import "../config.scss";
+@import "../common/component/button.scss";
+@import "../share/video-direction.scss";
+@import "../share/navi.scss";
+@import "../share/sendui.scss";
+@import "./teacher/t_check.scss";
+
+body{
+	background-color: transparent;
+}
+#wrap{
+
+	@mixin my-scroll-container($W, $H){
+		width: $W;
+		height: $H;
+		overflow: hidden;
+	}
+	@mixin my-scroll-wrapper($W, $H){
+		position: relative;
+		white-space: nowrap;
+		width:auto;
+		height: $H;
+		transition: left 0.3s;
+		transition-timing-function: ease-in;
+		&>div{
+			position: relative;
+			display: inline-block;
+			white-space: unset;
+			width: $W;
+			height: $H;
+			overflow: hidden;
+		}
+	}
+	
+	&>.content-container{
+		$W: 1280px;
+		$H: 800px;
+		@include my-scroll-container($W, $H);
+		position: absolute;
+		.content-wrapper{
+			@include my-scroll-wrapper($W, $H);
+			.sub-container{
+				.sub-wrapper {
+					@include my-scroll-wrapper($W, $H);
+				}
+			}
+		}
+		&.hide{
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	
+	.video-direction{
+		@include video-direction;
+		
+
+		&>div.direction{
+			position: absolute;
+			background-image: resolve("common/direction.png");
+			width: width("common/direction.png");
+			height:  height("common/direction.png");
+			left: calc(50% - width("common/direction.png")/2);
+			top: calc(50% - height("common/direction.png")/2);
+		}
+		&>div.text{
+			position: absolute;
+			left: 82px;
+			top: 242px;
+			.t2{
+				color:#8c65f4;
+			}
+		}
+		&>div.text_cate{
+			position: absolute;
+			background-image: resolve("common/text_cate.png");
+			width: width("common/text_cate.png");
+			height:  height("common/text_cate.png");
+			right: 20px;
+			top: 15px;
+		}
+		&>div.lesson{
+			position: absolute;
+			left: 30px; top: 20px;		
+			font-size: 40px;
+			color: #fff;
+		}
+	}
+	@include t_check;
+
+	.btn-back {
+		float:left;
+		width:50px;
+		height:50px;
+		margin:28px 0 0 10px;
+		background: resolve('teacher/images/ico_back.png');
+		background-size: cover;
+		border:0;
+	}
+
+	.fel_topad{
+		@include fel_topad;
+	}
+	.fel_stop{
+		@include fel_stop;
+	}
+}

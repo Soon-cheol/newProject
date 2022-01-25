@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+.quizWrap h3{
+    word-break: break-word;
+}
+
+.box_set {width:100%;margin:0 auto;}
+.box_set .box{position: relative;height:165px;padding:20px;border:2px solid #b2b3b4;box-sizing: border-box;background-color: #ffff;border-radius: 20px;}
+.box_set:after{content: "";display: block;clear: both;}
+.box_set .box.left {float:left;width:37%;padding-top:15px;overflow:hidden;text-align:center;}
+.box_set .box.left .text{font-size: 33px; font-family: "NotoSans_bold";}
+.box_set .box.left .text span {display: inline-block;min-width:140px;height: 55px;border-bottom:3px solid #000;}
+.box_set .box.right {float:right;width:60%;}
+
+.fraction {position: relative;width:47px;margin:0 auto;text-align: center;}
+.fraction .txt {font-size: 36px;color:#050102;padding:0;line-height: 1;}
+.fraction input {width:46px;height: 42px;font-size: 36px;text-align: center;background-color: #d5eabf;border:none;border-radius: 8px;border:3px solid #fff;}
+.fraction input:hover {border:3px solid #75bb2a;}
+.fraction .bar {display:block;width: 52px;height:3px;margin:11px 0 ;background:#363435;border-radius: 3px;}
+
+.desc{
+    padding:20px 0;
+    font-size:21px;
+    font-family: "NotoSans-Medium";
+    color:#3c3c3c;
+}
+.desc strong{
+    font-family: "NotoSans_bold";
+}
+.desc .btn{
+    margin:10px 0 0 20px;
+}
+.fr{float:right;}
+.point_color{
+    color: #2f8c7a;
+}

@@ -1,0 +1,9 @@
+@import "../config.scss";
+
+@import "./student/s_sample.scss";
+
+#wrap{
+	font-family: NotoSans;
+
+	@include s_sample;
+}

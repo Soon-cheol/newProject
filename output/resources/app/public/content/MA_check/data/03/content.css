@@ -1,0 +1,137 @@
+@charset "utf-8";
+html {overflow:hidden;}
+.content_page {padding:0 80px;}
+.fraction {font-size: 40px;}
+.explainWrap strong {font-family: hn_BlkIt;}
+.box{padding:40px 20px;margin-bottom: 10px;font-size:20px;text-align:center;border:2px solid #818080;box-sizing: border-box;border-radius: 12px;}
+.box.noborder{border:0;}
+.box .target {width:80%;margin:0 auto;padding-top:30px;text-align: center}
+.btn.type01:hover {background-color:#7ec6f6;}
+.btn.type01:active {background-color:#3895d4;}
+.box_set .box .btn.type01 {margin-top:40px;width:100%;}
+
+.text_dest {
+    position: relative;
+    display:inline-block;
+    width:124px;
+    height:67px;
+    border:none;
+    background-color: #e6e6e8;
+    border-radius: 10px;
+    margin: 0 45px;
+    text-align: center;
+    vertical-align: middle;
+}
+.text_dest:first-child:after{
+    content:"";
+    position: absolute;
+    top:24px;
+    right:-60px;
+    display: inline-block;
+    width:20px;
+    height:4px;
+    background-color: #323232;
+    border-radius: 5px;
+}
+
+.box .source .number{
+    display:inline-block;
+    width:124px;
+    height:67px;
+    margin: 0 43px;
+    background-color: #e6e6e8;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.box .target img,
+.box .source .number img{
+    cursor: pointer;
+}
+.box.right {
+    border:none;
+}
+.box.right .source .number.n1{
+    top:20px;
+    left:50px;
+}
+.box.right .source .number.n2{
+    top:80px;
+    left:50px;
+}
+.box.right .source .number.n3{
+    top:140px;
+    left:50px;
+}
+.box.right .source .number.n4{
+    top:200px;
+    left:50px;
+}
+
+.desc{
+    padding:60px 0;
+    font-size:21px;
+    font-family: "NotoSans";
+    color:#3c3c3c;
+}
+.desc strong{
+    font-family: "NotoSans_bold";
+    color:#000;
+}
+.desc .dash {
+    font-size:30px;
+}
+.desc .btn{
+    margin:10px 0 0 20px;
+}
+.desc_img_01 {
+    float:left;
+    margin-right: 50px;
+    margin-top:-10px;
+}
+.desc_list{margin-bottom: 30px;}
+.desc_list li{
+    margin-top: 20px;
+    font-size:19px;
+    padding-left: 15px;
+    font-family: "NotoSans-Regular";
+}
+.desc_list li:before{
+    content: "";
+    display:inline-block;
+    width:15px;
+    height:14px;
+    margin-right: 14px;
+    background:url(../../../mathalive_lib/images/blt_type01.png);
+}
+.box_answer {
+    width:124px;
+    height:70px;
+    text-align: center;
+    font-size: 24px;
+    vertical-align: middle;
+}
+.box_answer mjx-container {
+    top:5px;
+}
+.box_answer mjx-line{
+    margin: 0.1em -0.2em -.02em;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background:#d7d7d8;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #787878; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #545454; 
+}

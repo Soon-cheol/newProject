@@ -1,0 +1,152 @@
+@mixin mapresenter {
+    .mapresenter{
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,.75);
+        z-index: 102;
+        /* 20210909 최순철 모듈포트폴리오 activity_stop 때문에 값 변경
+        z-index: 100;*/
+        .content{
+            position: absolute;
+            left:50%;
+            top:50%;
+            width:325px;
+            text-align: center;
+            transform: translate(-50%,-50%);
+            font-family: "maplestory-bold";
+            .profile_img{
+               
+                position: relative;
+                display: inline-block;
+                width:256px;
+                height:256px;
+                border-radius: 100%;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    width:256px;
+                    height:256px;
+                    border-radius: 100%;
+                    border:8px solid #fff;
+                    box-sizing: border-box;
+                }
+                box-shadow: 10px 10px 20px rgba(0,0,0,.2);
+                .thumbnail {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                }
+                .defaultImg_m,
+                .defaultImg_f {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    font-size: 80px;
+                }
+                .defaultImg_m {
+                    background-color: #2cd1c3;
+                }
+                .defaultImg_f {
+                    background-color: #ffa1a7;
+                }
+            }
+            .profile_name{
+                margin-top: 30px;
+                font-size: 38px;
+                color:#fff;
+            }
+            .live_name {
+                margin-top: 40px;
+                .number{
+                    text-align: right;
+                    font-size: 24px;
+                    color: #fff;
+                    line-height: 1;
+                    span{
+                        color: #75c906;
+                    }
+                }
+                .box{
+                    position: relative;
+                    height: 80px;
+                    line-height: 80px;
+                    margin-top: 10px;
+                    border-radius: 10px;
+                    font-size: 36px;
+                    color:#fff;
+                    background: #75c906;
+                    &.gray{
+                        background-color: #999796;
+                        .ico_heart{
+                            background: resolve('mathalive_lib/images/ico_gray_heart.png') no-repeat center;
+                        }
+                    }
+                    .ico_heart{
+                        display: inline-block;
+                        width:56px;
+                        height:56px;
+                        margin-right: 5px;
+                        border-radius: 100%;
+                        vertical-align: middle;
+                        background: resolve('mathalive_lib/images/ico_green_heart.png');
+                    }
+                    .twinkles{
+                        span{
+                            position: absolute;
+                            background-size: cover;
+                            &.t1{
+                                width:29px;
+                                height:34px;
+                                background:resolve('mathalive_lib/images/ico_twinkle_01.png');
+                            }
+                            &.t2{
+                                width:22px;
+                                height:21px;
+                                background:resolve('mathalive_lib/images/ico_twinkle_02.png');
+                            }
+                            &:nth-child(1){
+                                left:60px;
+                                top:-15px;
+                                animation: star01 .29s alternate infinite;
+                            }
+                            &:nth-child(2){
+                                left:5px;
+                                top:10px;
+                                animation: star01 .3s alternate infinite;
+                            }
+                            &:nth-child(3){
+                                left:15px;
+                                top:60px;
+                                animation: star01 .35s alternate infinite;
+                            }
+                            &:nth-child(4){
+                                left:-25px;
+                                top:30px;
+                                animation: star01 .25s alternate infinite;
+                            }
+                            &:nth-child(5){
+                                left:85px;
+                                top:10px;
+                                animation: star01 .31s alternate infinite;
+                            }
+                            &:nth-child(6){
+                                left:75px;
+                                top:57px;
+                                animation: star01 .33s alternate infinite;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

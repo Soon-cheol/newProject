@@ -1,0 +1,138 @@
+@mixin btnprogress {
+	.progressWrap { /* 210518 수정 */
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: height('mathalive_lib/images/btn_stop_quiz.png');
+		.btn_progress {
+			@include btn_down_dis(
+				resolve('mathalive_lib/images/btn_stop_quiz.png'),
+				resolve('mathalive_lib/images/btn_stop_quiz.png'),
+				resolve('mathalive_lib/images/btn_stop_quiz_dis.png'),
+				width('mathalive_lib/images/btn_stop_quiz.png'),
+				height('mathalive_lib/images/btn_stop_quiz.png')
+			);
+			text-align: center;
+			span {
+				font-size: 15px;
+				color: #fff;
+				line-height: 1;
+				position: relative;
+				top: 10px;
+				left: -3px;
+				font-family: "Maplestory-Bold";
+			}
+			&:disabled {
+				span {
+					color: rgba(255,255,255,.3);
+				}
+			}
+		}	
+		.msg{
+			position: absolute;
+			opacity: 0;
+			left:100px;
+			text-align: center;
+			span{
+				position: absolute;
+				width:30px;
+				height:44px;
+				background:resolve('mathalive_lib/images/msg_rst_twinkle.png') no-repeat center;
+				background-size: contain;
+				&:nth-child(1){
+					left: 35px;
+					top: 23px;
+					width: 10px;
+					height: 15px;
+					background-size: contain;
+					animation: star01 .2s alternate infinite;
+				}
+				&:nth-child(2){
+					left:43px;
+					top:8px;
+					width:10px;
+					height:15px;
+					background-size: contain;
+					animation: star01 .23s alternate infinite;
+				}
+				&:nth-child(3){
+					left: 128px;
+					top: 7px;
+					width: 10px;
+					height: 15px;
+					background-size: contain;
+					animation: star01 .25s alternate infinite;
+				}
+				&:nth-child(4){
+					left: 132px;
+					top: 35px;
+					width: 10px;
+					height: 15px;
+					animation: star01 .23s alternate infinite;
+				}
+				&:nth-child(5){
+					left: 140px;
+					top: 20px;
+					width: 10px;
+					height: 20px;
+					background-size: contain;
+					animation: star01 .37s alternate infinite;
+				}
+				&:nth-child(6){
+					left: 116px;
+					top: 7px;
+					width: 9px;
+					height: 15px;
+					animation: star01 .26s alternate infinite;
+				}
+				&:nth-child(7){
+					left: 116px;
+					top: 48px;
+					width: 9px;
+					height: 15px;
+					background-size: contain;
+					animation: star01 .28s alternate infinite;
+				}
+				&:nth-child(8){
+					left:373px;
+					top:68px;
+					width:25px;
+					height:36px;
+					background-size: contain;
+					animation: star01 .2s alternate infinite;
+				}
+			}
+		}
+		&.end { /* 제출 종료 후 */
+			.btn_progress {
+				/*width:290px;
+				height:104px; 
+				210521 삭제*/
+				background:resolve('mathalive_lib/images/btn_re_quiz.png') no-repeat right top;
+			}
+			.msg{
+				left:auto;
+				right: 100px;
+				/* 210521 위치 수정 */
+				top:20px;
+				width:190px;
+				height:60px;
+				line-height: 60px;
+				font-size: 25px;
+				font-family: "maplestory-bold";
+				color:#fff;
+				border-radius: 30px;
+				background:rgba(0,0,0,.25);
+				transition: .5s all;
+				opacity: 1;
+				&.hide{
+					opacity: 0;
+				}
+			}
+		}
+	}
+	@keyframes star01 {
+		from {transform:scale(.2);}
+		to {transform:scale(1);}
+	}
+}

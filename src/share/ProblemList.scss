@@ -1,0 +1,481 @@
+@import "./AlertPopup.scss";
+@mixin problemlist {
+    .t_problem{
+        height:100%;
+        background:resolve('mathalive_lib/images/bg_pattern_01.png');
+        &.topic_strategy{
+            background: #faf0c6;
+            .top_header{
+                background-color: rgba(255,184,32,.8);
+                .select_list {
+                    background-color: rgba(187,118,18,.3);
+                    button{
+                        &.on{
+                            background-color: rgba(255,255,255,.8);
+                        }
+                        &.list_01{
+                            background-image: resolve('mathalive_lib/images/ico_list_style03.png');
+                        }
+                        &.list_02{
+                            background-image: resolve('mathalive_lib/images/ico_list_style04.png');
+                        }
+                    }
+                }
+                .worksheet{
+                    display: block;
+                    position: absolute;
+                    left:80px;
+                    top:11px;
+                    width:232px;
+                    height:44px;
+                    line-height:44px;
+                    padding-left: 47px;
+                    border-radius: 40px;
+                    color: #fff;
+                    font-size: 20px;
+                    font-family: "maplestory-bold";
+                    box-sizing: border-box;
+                    background: rgba(187,118,18,.3) resolve('mathalive_lib/images/ico_hdr_worksheet.png') no-repeat 6px center;
+                }
+            }
+            .content{
+                .thumbset{
+                    width: 880px;
+                    background-color: transparent;
+                    .thumb_cnt {
+                        border:4px solid #968974;
+                    }
+                }
+                &.view12{
+                    margin-top: 20px;
+                    padding-top: 20px;
+                    .thumbset{
+                        width: 552px;
+                        margin: 0 5px 14px;
+                    }
+                }
+            }
+        }
+        .top_header{
+            position: relative;
+            height:67px;
+            background-color: #d0c8b5;
+            
+            .worksheet{
+                display: none;
+            }
+            .btn_menu{
+                width:40px;
+                height:31px;
+                margin:18px 0 0 20px;
+                border:0;
+                background:resolve('mathalive_lib/images/ico_video_top_menu.png');
+                z-index: 20;
+            }
+            .left_menu{
+                &.show{
+                    display:block;
+                }
+                display:none;
+                position: fixed;
+                left:0;
+                top:0;
+                width:265px;
+                height:345px;
+                z-index: 10;
+                .innerbox{
+                    height:100%;
+                    border-radius: 0 30px 30px 30px;
+                    background-color: #3cbdab;
+                    box-shadow: 0 3px 7px rgba(0,0,0,.16);
+                    .close{
+                        text-align: right;
+                        .btn_close{
+                            position: absolute;
+                            right:15px;
+                            top:8px;
+                            width:50px;
+                            height:50px;
+                            border:0;
+                            background: resolve('mathalive_lib/images/ico_video_menu_close.png') no-repeat center;
+                        }
+                    }
+                    ul{
+                        padding: 78px 0 0 0;
+                        li{
+                            height: 81px;
+                            line-height: 81px;
+                            text-align: center;
+                            font-family: "Maplestory-Bold";
+                            color:#fff;
+                            font-size: 28px;
+                            background:resolve('mathalive_lib/images/bg_left_menu_line.png') no-repeat center top;
+                            cursor: pointer;
+                            &:first-child{
+                                background: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .select_list{
+                position: absolute;
+                left:50%;
+                top:50%;
+                width:146px;
+                height:51px;
+                padding: 6px;
+                border-radius: 10px;
+                background-color: #b1aa9a;
+                box-sizing: border-box;
+                transform: translate(-50%,-50%);
+                button{
+                    width:65px;
+                    height: 39px;
+                    border:0;
+                    background-color:transparent;
+                    background-repeat: no-repeat;
+                    background-position:center;
+                    border-radius: 7px;
+                    &.on {
+                        background-color: #e0ddd7;
+                    }
+                    &.list_01{
+                        float:left;
+                        background-image:resolve('mathalive_lib/images/ico_list_style01.png');
+                    }
+                    &.list_02{
+                        float:right;
+                        background-image:resolve('mathalive_lib/images/ico_list_style02.png');
+                    }
+                }
+            }
+        }
+        .content{
+            overflow-y:auto;
+            height: calc(100% - 67px); /* 210527 수정 */
+            padding-top: 28px;
+            &::-webkit-scrollbar {
+                width: 8px;
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: rgba(0,0,0,.25);
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            &::-webkit-scrollbar-track-piece {
+                background: transparent;
+            }
+            .thumbset {
+                width:855px;
+                height: 312px;
+                padding:5px;
+                margin: 0 auto 20px;
+                background-color: #756659;
+                border-radius: 35px;
+                .thumb_cnt{
+                    position: relative;
+                    width:420px;
+                    height:303px;
+                    background-color: #ac8f60;
+                    border-radius: 32px;
+                    overflow: hidden;
+                    font-family: "mapleStory-bold";
+                    &.left{
+                        float:left;
+                    }
+                    &.right{
+                        float:right;
+                    }
+                    .title{
+                        height:40px;
+                        color:#fff;
+                        background-color: #574134;
+                        transform: scale(1.0);/* 다시 렌더링 해줌 */
+                        .num{
+                            position: relative;
+                            float:left;
+                            width:70px;
+                            height:40px;
+                            line-height:40px;
+                            background-color: #2e221b;
+                            font-size: 24px;
+                            text-align: center;
+                            &.plus:after{
+                                content:"+";
+                            }
+                        }
+                        ul.step{
+                            float:left;
+                            font-family: "maplestory-light";
+                            li{
+                                position: relative;
+                                float:left;
+                                min-width:70px;
+                                height:40px;
+                                line-height: 40px;
+                                font-size: 16px;
+                                padding-left: 50px;
+                                background-repeat: no-repeat;
+                                background-position: 23px center;
+                                box-sizing: border-box;
+                                background-image: resolve('mathalive_lib/images/ico_thumb_cnt_check.png');
+                                opacity: .5;
+                                &.on{
+                                    opacity: 1;
+                                    background-image: resolve('mathalive_lib/images/ico_thumb_cnt_check_on.png');
+                                    &:before{
+                                        background-color: #fff;
+                                    }
+                                }
+                                &:before{
+                                    content:"";
+                                    position: absolute;
+                                    top:20px;
+                                    left:8px;
+                                    display: inline-block;
+                                    width:7px;
+                                    height:1px;
+                                    background-color:#8a7a71;
+                                }
+                                &:first-child{
+                                    padding-left: 40px;
+                                    background-position-x: 15px;
+                                    &:before{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        ul.result{
+                            float: left;
+                            padding:0 0 0 10px;
+                            font-family: "maplestory-light";
+                            li{
+                                position: relative;
+                                float:left;
+                                min-width:70px;
+                                height:40px;
+                                line-height: 44px;
+                                font-size: 18px;
+                                padding-left: 40px;
+                                margin-left: 0;
+                                background-repeat: no-repeat;
+                                background-position: 10px center;
+                                background-size: 15px 15px;
+                                box-sizing: border-box;
+                                opacity: .5;
+                                &.on{
+                                    opacity: 1;
+                                    cursor: pointer;
+                                }
+                                &:first-child{margin-left: 0;}
+                                &:after{
+                                    content:"";
+                                    position: absolute;
+                                    top:14px;
+                                    right:-1px;
+                                    width:1px;
+                                    height:14px;
+                                    background:#705d52;
+                                }
+                                &:before{
+                                    content:"";
+                                    position: absolute;
+                                    top:14px;
+                                    right:0px;
+                                    width:1px;
+                                    height:14px;
+                                    background:#3c2d24;
+                                }
+                                &:last-child{
+                                    &:before, &:after{
+                                        display:none;
+                                    }
+                                }
+                                &.type01{
+                                    background-image: resolve('mathalive_lib/images/ico_thumb_cnt_01.png');
+                                }
+                                &.type02{
+                                    background-image: resolve('mathalive_lib/images/ico_thumb_cnt_02.png');
+                                }
+                                &.type03{
+                                    background-image: resolve('mathalive_lib/images/ico_thumb_cnt_03.png');
+                                }
+                                &.type04{
+                                    background-image: resolve('mathalive_lib/images/ico_thumb_cnt_04.png');
+                                }
+                            }
+                        }
+                    }
+                    img{
+                        width:100%;
+                        cursor: pointer; /* 210629 수정 */
+                    }
+                    .ico_star {
+                        position: absolute;
+                        left:20px;
+                        bottom:20px;
+                        width:138px;
+                        height:38px;
+                        padding: 8px 0 0 13px;
+                        border-radius: 30px;
+                        background:#fff resolve('mathalive_lib/images/bg_star_rate.png') no-repeat 13px 10px;
+                        span{
+                            display:inline-block;
+                            width:23px;
+                            height:21px;
+                            background: resolve('mathalive_lib/images/ico_rate_star.png');
+                        }
+                    }
+                    .btn_retry{
+                        position:absolute;
+                        right:9px;
+                        bottom:9px;
+                        width:57px;
+                        height:57px;
+                        border: 0;
+                        background: resolve('mathalive_lib/images/ico_thumb_retry.png');
+                    }
+                    .btn_check{
+                        position:absolute;
+                        right:9px;
+                        bottom:9px;
+                        width:57px;
+                        height:57px;
+                        border: 0;
+                        background: resolve('mathalive_lib/images/ico_thumb_check_off.png');
+                        z-index: 20;
+                        &.on{
+                            background-image: resolve('mathalive_lib/images/ico_thumb_check_on.png');
+                        }
+                    }
+                    &.light {
+                        background-color: #fff;
+                        ul{
+                            li{
+                                &:before{
+                                    background:#ea691b;
+                                }
+                                &:after{
+                                    background:#fea670;
+                                }
+                            }
+                        }
+                        .title{
+                            background-color: #e5722d;
+                            .num{
+                                background-color: #d75304;
+                            }
+                        }
+                    }
+                }
+            }/* content */
+            &.view12{
+                /*margin: 28px 0 0px 0; 210611삭제*/
+                padding-left: 80px;
+                text-align:center;
+                .thumbset{
+                    float:left;
+                    width:542px;
+                    height:204px;
+                    padding:5px;
+                    margin: 0 7px 14px;
+                    border-radius: 23px;
+                    .thumb_cnt{
+                        width:262px;
+                        height: 194px;
+                        border-radius: 17px;
+                        &.light02{
+                            background-color: #fff;
+                        }
+                        &.light03{
+                            background-color: #ffeab5;
+                        }
+                        .title{
+                            height:30px;
+                            .num{
+                                width:46px;
+                                height:30px;
+                                line-height:30px;
+                                font-size: 20px;
+                                &.plus:after{
+                                    font-size: 18px;
+                                }
+                            }
+                            ul.step{
+                                li{
+                                    height: 30px;
+                                    line-height: 30px;
+                                    min-width: 60px;
+                                    font-size: 12px;
+                                    padding-left: 33px;
+                                    background-position-x: 15px;
+                                    background-size: 14px;
+                                    &:before{
+                                        left:5px;
+                                        top:14px;
+                                    }
+                                    &:first-child{
+                                        padding-left: 32px;
+                                        background-position-x: 13px;
+                                    }
+                                }
+                            }
+                            ul.result{
+                                padding: 0;
+                                li{
+                                    min-width:40px;
+                                    height:30px;
+                                    line-height:32px;
+                                    font-size: 14px;
+                                    padding-left: 28px;
+                                    padding-right: 10px;
+                                    margin-left: 0px;
+                                    background-size: 14px auto;
+                                    &:after,&:before{
+                                        top:9px;
+                                    }
+                                }
+                            }
+                        }
+                        img{
+                            width:100%;
+                        }
+                        .ico_star{
+                            width:86px;
+                            height:24px;
+                            background:#fff resolve('mathalive_lib/images/bg_star_rate.png') no-repeat 8px 5px;
+                            background-size: 68px 14px;
+                            text-align: left;
+                            padding: 5px 0 0 10px;
+                            border-radius: 20px;
+                            left:12px;
+                            bottom: 12px;
+                            span{
+                                width:15px;
+                                height:14px;
+                                margin-left: -2px;
+                                background-size: 15px auto;
+                            }
+                        }
+                        .btn_retry{
+                            width:36px;
+                            height:36px;
+                            background-size: cover;
+                        }
+                        .btn_check {
+                            width:36px;
+                            height:36px;
+                            background-size: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include AlertPopup; 
+}

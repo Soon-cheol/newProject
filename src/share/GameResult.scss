@@ -1,0 +1,232 @@
+body{margin: 0;font-family: "NotoSansB-Regular";background-color: #3f362e; image-rendering: -webkit-optimize-contrast; text-rendering: optimizeSpeed;}
+button {cursor: pointer;}
+button:focus{outline: none;}
+ul{list-style: none;margin:0;padding:0;}
+
+.contentWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+.result_ranking{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 982px;
+    height: 656px;
+    border-radius: 48px;
+    background-color: #410097;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-family: "Maplestory-Bold";
+    .btn_close {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 20px;
+        right: 20px;
+        border-radius: 100%;
+        border: 0;
+        background: rgba(255, 255, 255, 0.3) url("/content/mathalive_lib/images/ico_video_menu_close.png") no-repeat center;
+        background-size: 22px;
+        z-index: 100;
+        cursor: pointer;
+    }
+    .high_rank_list{
+        padding:40px 00px 40px 30px;
+        margin-bottom: 0px;
+        text-align: left;
+        .confetti{
+            position: absolute;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+            background: url('/content/mathalive_lib/images/ani_effect_result_850.gif') no-repeat top center;
+        }
+        .scroll{
+            height:580px;
+            top: 0px;
+            padding-left: 10px;
+            overflow-y: auto;
+        }
+        .title {
+            margin-bottom: 20px;
+            font-size: 29px;
+            color:#fff;
+        }
+        &:after{
+            content:"";
+            display:block;
+            clear: both;
+        }
+        background-color: #5400bc;
+        border-radius: 48px;
+        ul{
+            margin-bottom: 14px;
+            &:after{
+                content:"";
+                display:block;
+                clear: both;
+            }
+        }
+        li{
+            &:nth-child(3n+1) {
+                margin-left: 0;
+            }
+            position: relative;
+            float:left;
+            width:262px;
+            height:86px;
+            margin-left: 60px;
+            margin-bottom: 26px;
+            padding: 14px 63px 9px 0px;
+            border-radius: 43px;
+            background-color: #29262c;
+            font-family: "Maplestory-Light";
+            text-align: center;
+            &:after{
+                content:"";
+                display:block;
+                position: absolute;
+                left:-10px;
+                top:-10px;
+                width:40px;
+                height: 40px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            &.gold:after{
+                background-image: resolve('mathalive_lib/MA/memory_game/common/ico_ranking_gold.png');
+            }
+            &.silver:after{
+                background-image: resolve('mathalive_lib/MA/memory_game/common/ico_ranking_silver.png');
+            }
+            &.bronze:after{
+                background-image: resolve('mathalive_lib/MA/memory_game/common/ico_ranking_bronze.png');
+            }
+            .score{
+                position: relative;
+                top: -7px;
+                left: 65px;
+                width: 164px;
+                height: 45px;
+                line-height: 45px;
+                padding-left: 30px;
+                font-size: 29px;
+                color:#ff9a9a;
+                margin: auto;
+                border-bottom:1px solid #ff9a9a;
+                text-align: left;
+                .heart{
+                    position: absolute;
+                    left:100px;
+                    top:8px;
+                    line-height: 1;
+                    padding-left: 20px;
+                    font-size: 11px;
+                    background:resolve('mathalive_lib/images/ico_heart.png') no-repeat left center;
+                }
+                .plus{
+                    position: absolute;
+                    left:100px;
+                    top:23px;
+                    line-height: 1;
+                    padding-left: 20px;
+                    font-size: 11px;
+                    background:resolve('mathalive_lib/images/ico_plus.png') no-repeat left center;
+                }
+            }
+            .name {
+                font-size: 16px;
+                color: #fff;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                word-wrap:normal;
+                overflow:hidden;
+                max-width: 160px;
+                display: inline-block;
+                margin: auto;
+                position: relative;
+                left: 65px;
+            }
+            img,
+            .defaultImg_f,
+            .defaultImg_m {
+                position: absolute;
+                left:8px;
+                top:50%;
+                margin-top:-35px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+            }
+            .defaultImg_f,
+            .defaultImg_m {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                div {
+                    font-size: 20px;
+                    font-family: "Maplestory-Bold";
+                    color: #fff;    
+                }
+            }
+            .defaultImg_f {
+                background-color: #ffa1a7;
+            }
+            .defaultImg_m {
+                background-color: #2cd1c3;
+            }
+        }
+        &.answer{
+            height:240px;
+            .title{
+                margin-bottom: 14px;
+            }
+            .graph{
+                .g{
+                    float:left;
+                    width:25%;
+                    padding-left:30px;
+                    .bar{
+                        width:144px;
+                        height:84px;
+                        margin-bottom: 13px;
+                        text-align: center;
+                    }
+                    .rst{
+                        width: 144px;
+                        height:40px;
+                        border: solid 3px rgba(0, 0, 0, 0.2);
+                        border-radius: 40px;
+                        color:#fff;
+                        font-size: 20px;
+                        background-color: #5400bc;
+                        .tit{
+                            float:left;
+                            width:52px;
+                            line-height: 34px;
+                            text-align: center;
+                            background-color: #430096;
+                            border-radius: 40px 0 0 40px;
+                        }
+                        .value{
+                            float:left;
+                            width:86px;
+                            height:34px;
+                            line-height: 34px;
+                            padding-left: 42px;
+                            background:resolve('mathalive_lib/MA/memory_game/common/ico_emoji_smileman.png') no-repeat 10px center;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+}
